@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* Montserrat Font-faces */
+@font-face {
+  font-family: montserrat-light;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("fonts/montserrat/Montserrat-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: montserrat-med;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/montserrat/Montserrat-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: montserrat-semibold;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/montserrat/Montserrat-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: montserrat-bold;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: montserrat-extrabold;
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/montserrat/Montserrat-ExtraBold.ttf") format("truetype");
+}
+
+@theme {
+  /* Colors */
+  --color-primary: #507dbb;
+  --color-black: var(--color-stale-950);
+  --color-white: var(--color-stone-200);
+
+  /* Montserrat Fonts */
+  --font-mont-light: "montserrat-light", "sans-sarif";
+  --font-mont-med: "montserrat-med", "sans-sarif";
+  --font-mont-semibold: "montserrat-semibold", "sans-sarif";
+  --font-mont-bold: "montserrat-bold", "sans-sarif";
+  --font-mont-exbold: "montserrat-extrabold", "sans-sarif";
+}
+@layer {
+  body {
+    font-family: var(--font-mont-med);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    margin: 2rem 0;
+  }
+}
+@utility container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
