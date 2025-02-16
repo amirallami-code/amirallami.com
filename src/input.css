@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Montserrat Font-faces */
 @font-face {
@@ -37,30 +39,138 @@
   src: url("fonts/montserrat/Montserrat-ExtraBold.ttf") format("truetype");
 }
 
-@theme {
-  /* Colors */
-  --color-primary: #507dbb;
-  --color-black: var(--color-stale-950);
-  --color-white: var(--color-stone-200);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  /* Montserrat Fonts */
-  --font-mont-light: "montserrat-light", "sans-sarif";
-  --font-mont-med: "montserrat-med", "sans-sarif";
-  --font-mont-semibold: "montserrat-semibold", "sans-sarif";
-  --font-mont-bold: "montserrat-bold", "sans-sarif";
-  --font-mont-exbold: "montserrat-extrabold", "sans-sarif";
-}
-@layer {
+@layer base {
   body {
-    font-family: var(--font-mont-med);
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    margin: 2rem 0;
+    @apply flex items-center justify-center font-mont-med select-none bg-primary text-white my-10;
   }
-}
-@utility container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  /* section {
+    height: 30rem;
+    width: 50rem;
+    background-color: red;
+    margin-bottom: 5rem;
+  } */
+  .menu-context {
+    @apply flex 
+    flex-col 
+    md:items-center 
+    justify-start 
+    gap-1 p-4 
+    md:p-0 
+    mt-4 
+    font-medium 
+    border 
+    border-gray-100 
+    rounded-2xl 
+    bg-gray-50 
+    md:space-x-8 
+    rtl:space-x-reverse 
+    md:flex-row 
+    md:mt-0 
+    md:border-0 
+    md:bg-transparent 
+    dark:bg-gray-800
+    md:dark:bg-transparent 
+    dark:border-gray-700;
+  }
+  .menu-item {
+    @apply block 
+    py-2 
+    px-3 
+    rounded-lg 
+    
+    text-gray-900 
+    md:text-white 
+
+    hover:bg-gray-200 
+    hover:text-gray-900 
+    md:hover:text-white 
+
+
+
+    md:hover:bg-transparent 
+    md:hover:underline 
+    md:p-0 
+    md:dark:hover:underline 
+    md:underline-offset-4
+    md:dark:hover:bg-transparent 
+
+
+    dark:text-white 
+    dark:hover:bg-gray-700 
+    dark:hover:text-white 
+    dark:border-gray-700;
+  }
+  .active {
+    @apply block 
+    py-2 
+    px-3 
+    rounded-lg 
+
+    text-white 
+    bg-primary 
+    antialiased
+    tracking-wide
+    
+    md:bg-transparent
+    md:font-mont-exbold 
+    md:dark:text-white;
+  }
+  /* dark/light mode toggle button styles */
+  #theme-toggle-button {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 4rem;
+    cursor: pointer;
+  }
+  #toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  #container,
+  #patches,
+  #stars,
+  #button,
+  #sun,
+  #moon,
+  #cloud {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.25s;
+  }
+  #toggle:checked + svg #container {
+    fill: #2b4360;
+  }
+  #toggle:checked + svg #button {
+    transform: translate(28px, 2.333px);
+  }
+  #sun {
+    opacity: 1;
+  }
+  #toggle:checked + svg #sun {
+    opacity: 0;
+  }
+  #moon {
+    opacity: 0;
+  }
+  #toggle:checked + svg #moon {
+    opacity: 1;
+  }
+  #cloud {
+    opacity: 1;
+  }
+  #toggle:checked + svg #cloud {
+    opacity: 0;
+  }
+  #stars {
+    opacity: 0;
+  }
+  #toggle:checked + svg #stars {
+    opacity: 1;
+  }
 }
