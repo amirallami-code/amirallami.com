@@ -666,7 +666,7 @@ body{
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
 }
 
-@media (min-width: 768px){
+@media (min-width: 1024px){
   .menu-context{
     margin-top: 0px;
     flex-direction: row;
@@ -726,7 +726,7 @@ body{
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-@media (min-width: 768px){
+@media (min-width: 1024px){
   .menu-item{
     padding: 0px;
     --tw-text-opacity: 1;
@@ -777,13 +777,9 @@ body{
 
 .theme-switch {
   --toggle-size: 15px;
-  /* the size is adjusted using font-size,
-     this is not transform scale,
-     so you can choose any size */
   --container-width: 5em;
   --container-height: 2.5em;
   --container-radius: 6.25em;
-  /* radius 0 - minecraft mode :) */
   --container-light-bg: #3d7eae;
   --container-night-bg: #1d1f2c;
   --circle-container-diameter: 3.375em;
@@ -1088,10 +1084,6 @@ body{
   max-width: 1280px;
 }
 
-.transform{
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .flex-row{
   flex-direction: row;
 }
@@ -1159,10 +1151,6 @@ body{
   color: rgb(30 58 138 / var(--tw-text-opacity, 1));
 }
 
-.filter{
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 .backdrop-blur-sm{
   --tw-backdrop-blur: blur(4px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -1179,22 +1167,6 @@ body{
 }
 
 @media (min-width: 768px){
-  .md\:order-1{
-    order: 1;
-  }
-
-  .md\:order-2{
-    order: 2;
-  }
-
-  .md\:flex{
-    display: flex;
-  }
-
-  .md\:hidden{
-    display: none;
-  }
-
   .md\:h-10{
     height: 2.5rem;
   }
@@ -1202,12 +1174,30 @@ body{
   .md\:w-44{
     width: 11rem;
   }
+}
 
-  .md\:w-auto{
+@media (min-width: 1024px){
+  .lg\:order-1{
+    order: 1;
+  }
+
+  .lg\:order-2{
+    order: 2;
+  }
+
+  .lg\:flex{
+    display: flex;
+  }
+
+  .lg\:hidden{
+    display: none;
+  }
+
+  .lg\:w-auto{
     width: auto;
   }
 
-  .md\:space-x-0 > :not([hidden]) ~ :not([hidden]){
+  .lg\:space-x-0 > :not([hidden]) ~ :not([hidden]){
     --tw-space-x-reverse: 0;
     margin-right: calc(0px * var(--tw-space-x-reverse));
     margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));

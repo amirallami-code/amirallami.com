@@ -56,24 +56,24 @@
   .menu-context {
     @apply flex 
     flex-col 
-    md:items-center 
+    lg:items-center 
     justify-start 
     gap-1 p-4 
-    md:p-0 
+    lg:p-0 
     mt-4 
     font-medium 
     border 
     border-gray-100 
     rounded-2xl 
     bg-gray-50 
-    md:space-x-8 
+    lg:space-x-8 
     rtl:space-x-reverse 
-    md:flex-row 
-    md:mt-0 
-    md:border-0 
-    md:bg-transparent 
+    lg:flex-row 
+    lg:mt-0 
+    lg:border-0 
+    lg:bg-transparent 
     dark:bg-gray-800
-    md:dark:bg-transparent 
+    lg:dark:bg-transparent 
     dark:border-gray-700;
   }
   .menu-item {
@@ -81,24 +81,17 @@
     py-2 
     px-3 
     rounded-lg 
-    
     text-gray-900 
-    md:text-white 
-
+    lg:text-white 
     hover:bg-gray-200 
     hover:text-gray-900 
-    md:hover:text-white 
-
-
-
-    md:hover:bg-transparent 
-    md:hover:underline 
-    md:p-0 
-    md:dark:hover:underline 
-    md:underline-offset-4
-    md:dark:hover:bg-transparent 
-
-
+    lg:hover:text-white 
+    lg:hover:bg-transparent 
+    lg:hover:underline 
+    lg:p-0 
+    lg:dark:hover:underline 
+    lg:underline-offset-4
+    lg:dark:hover:bg-transparent 
     dark:text-white 
     dark:hover:bg-gray-700 
     dark:hover:text-white 
@@ -121,13 +114,9 @@
   }
   .theme-switch {
     --toggle-size: 15px;
-    /* the size is adjusted using font-size,
-     this is not transform scale,
-     so you can choose any size */
     --container-width: 5em;
     --container-height: 2.5em;
     --container-radius: 6.25em;
-    /* radius 0 - minecraft mode :) */
     --container-light-bg: #3d7eae;
     --container-night-bg: #1d1f2c;
     --circle-container-diameter: 3.375em;
