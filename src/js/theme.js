@@ -1,4 +1,4 @@
-const toggleButton = document.getElementById('theme-toggle-button');
+const toggleButton = document.getElementById('theme-switch');
 const toggleCheckbox = document.getElementById('toggle');
 const htmlElement = document.documentElement;
 
