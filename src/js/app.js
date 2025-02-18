@@ -56,8 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Define the roles to cycle through, starting with the current one
     const roles = [
         rolePart,
-        "Graphic Designer",
-        "Web Developer"
+        "Graphic Designer"
     ];
 
     // Find the span that will change in the title

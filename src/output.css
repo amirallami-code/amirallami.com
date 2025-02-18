@@ -1309,6 +1309,10 @@ body{
   flex-grow: 1;
 }
 
+.cursor-not-allowed{
+  cursor: not-allowed;
+}
+
 .flex-row{
   flex-direction: row;
 }
@@ -1428,6 +1432,10 @@ body{
 .px-4{
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.font-mont-med{
+  font-family: montserrat-med, sans-sarif;
 }
 
 .text-sm{
