@@ -46,53 +46,73 @@ const updateActiveMenuItem = () => {
 window.addEventListener('scroll', updateActiveMenuItem);
 updateActiveMenuItem();
 
-
 // Typewriter Logic
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the h1 element
+    // Extract the initial role from the title
     const titleElement = document.querySelector('.title');
+    const initialText = titleElement.textContent.trim();
+    const rolePart = initialText.split("I'm a ")[1] || "Front-end developer";
 
-    // Store the base text and the alternating professions
-    const baseText = "Hi, My name is Amir. I'm a ";
-    const professions = ["Front-end Developer", "Graphic Designer"];
-    let currentProfessionIndex = 0;
+    // Define the roles to cycle through, starting with the current one
+    const roles = [
+        rolePart,
+        "Graphic Designer",
+        "Web Developer"
+    ];
 
-    // Set the initial text
-    titleElement.textContent = baseText;
+    // Find the span that will change in the title
+    const titleSpan = document.createElement('span');
+    titleSpan.id = 'role-text';
 
-    // Variables to control the typing effect
-    let isTyping = true;
+    // Replace the text after "I'm a " with the span
+    titleElement.innerHTML = initialText.split("I'm a ")[0] + "I'm a ";
+    titleElement.appendChild(titleSpan);
+
+    let roleIndex = 0;
+    let isDeleting = false;
+    let text = '';
     let charIndex = 0;
-    let currentText = professions[currentProfessionIndex];
+    let typingSpeed = 100;
+    let deletingSpeed = 50;
+    let pauseEnd = 1500;
+    let pauseStart = 500;
 
     function typeWriter() {
-        if (isTyping) {
-            // Typing forward
-            if (charIndex < currentText.length) {
-                titleElement.textContent = baseText + currentText.substring(0, charIndex + 1);
-                charIndex++;
-                setTimeout(typeWriter, 100); // Typing speed
-            } else {
-                // Pause at the end of typing before starting to erase
-                isTyping = false;
-                setTimeout(typeWriter, 2000); // Pause before erasing
-            }
-        } else {
-            // Erasing
-            if (charIndex > 0) {
-                titleElement.textContent = baseText + currentText.substring(0, charIndex - 1);
-                charIndex--;
-                setTimeout(typeWriter, 50); // Erasing speed (faster than typing)
-            } else {
-                // Switch to the next profession
-                isTyping = true;
-                currentProfessionIndex = (currentProfessionIndex + 1) % professions.length;
-                currentText = professions[currentProfessionIndex];
-                setTimeout(typeWriter, 500); // Pause before typing the next profession
-            }
+        const roleText = document.getElementById('role-text');
+        const roleCodeText = document.getElementById('role-code-text');
+        const currentRole = roles[roleIndex];
+
+        if (!roleText || !roleCodeText) return;
+
+        // Typing effect
+        if (!isDeleting && charIndex < currentRole.length) {
+            text += currentRole.charAt(charIndex);
+            roleText.textContent = text;
+            roleCodeText.textContent = text;
+            charIndex++;
+            setTimeout(typeWriter, typingSpeed);
+        }
+        // Pause at the end before deleting
+        else if (!isDeleting && charIndex === currentRole.length) {
+            isDeleting = true;
+            setTimeout(typeWriter, pauseEnd);
+        }
+        // Deleting effect
+        else if (isDeleting && charIndex > 0) {
+            charIndex--;
+            text = currentRole.substring(0, charIndex);
+            roleText.textContent = text;
+            roleCodeText.textContent = text;
+            setTimeout(typeWriter, deletingSpeed);
+        }
+        // Move to next role
+        else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            setTimeout(typeWriter, pauseStart);
         }
     }
 
     // Start the typewriter effect
-    typeWriter();
+    setTimeout(typeWriter, pauseStart);
 });

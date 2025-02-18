@@ -138,16 +138,63 @@
         id="home"
         class="flex flex-row flex-wrap w-full h-auto justify-center items-center mx-auto px-4 gap-8"
       >
-        <div class="home-info flex flex-col w-full max-w-xl gap-6">
-          <h1 class="title min-h-28 md:min-h-36">
-            Hi, My name is Amir. I'm a Front-end developer
+        <div class="home-info flex flex-col w-full max-w-[38rem] gap-6">
+          <h1 class="title min-h-[2.5em]">
+            Hi, My name is Amir. I'm a Web developer
           </h1>
           <div class="buttons-wrapper flex flex-row flex-wrap gap-4">
             <button class="button"><a href="#about">Who am I?!</a></button>
             <button class="button"><a href="#touch">Connect</a></button>
           </div>
         </div>
-        <div class="home-graphic"></div>
+        <div class="home-graphic">
+          <div class="code-editor w-full h-auto shadow-lg">
+            <div class="editor-header flex items-center gap-3">
+              <div class="tab active-tab border-b-2 border-primary">
+                index.html
+              </div>
+              <div class="tab border-b-2 border-[#EFD81D]">
+                tailwind.config.js
+              </div>
+              <div class="flex-grow"></div>
+              <div class="flex space-x-2 mr-2">
+                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+              </div>
+            </div>
+            <div class="editor-content h-full relative">
+              <div class="line-numbers">
+                <div>137</div>
+                <div>138</div>
+                <div>139</div>
+                <div>140</div>
+                <div>141</div>
+                <div>142</div>
+                <div>143</div>
+                <div>144</div>
+                <div>145</div>
+                <div>146</div>
+                <div>147</div>
+                <div>148</div>
+              </div>
+              <pre
+                class="code-content"
+              ><code class="html-code">&lt;<span class="tag">section</span> <span class="attr">id</span>=<span class="string">"home"</span><span class="attr">class</span>=<span class="string">"flex flex-row flex-wrap w-full h-auto justify-center items-center mx-auto px-4 gap-8"</span>&gt;
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="string">"home-info flex flex-col w-full max-w-xl gap-6"</span>&gt;
+    &lt;<span class="tag">h1</span> <span class="attr">class</span>=<span class="string">"title min-h-28 md:min-h-36"</span>&gt;
+        Hi, My name is Amir. I'm a <span id="role-code-text"></span>
+    &lt;/<span class="tag">h1</span>&gt;
+    &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="string">"buttons-wrapper flex flex-row flex-wrap gap-4"</span>&gt;
+      &lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="string">"button"</span>&gt;&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="string">"#about"</span>&gt;Who am I?!&lt;/<span class="tag">a</span>&gt;&lt;/<span class="tag">button</span>&gt;
+      &lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="string">"button"</span>&gt;&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="string">"#touch"</span>&gt;Connect&lt;/<span class="tag">a</span>&gt;&lt;/<span class="tag">button</span>&gt;
+    &lt;/<span class="tag">div</span>&gt;
+  &lt;/<span class="tag">div</span>&gt;
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="string">"home-graphic"</span>&gt;&lt;/<span class="tag">div</span>&gt;
+&lt;/<span class="tag">section</span>&gt;</code></pre>
+            </div>
+          </div>
+        </div>
       </section>
       <section id="about"></section>
       <section id="tech"></section>

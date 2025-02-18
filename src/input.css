@@ -53,7 +53,8 @@
   .button {
     @apply px-5 py-2 font-mont-bold bg-priBlue border-2 border-priGray rounded-xl shadow-btn;
   }
-  .button:active {
+  .button:active,
+  .button:focus {
     transform: translate(-5px, 4px);
     box-shadow: none;
   }
@@ -374,5 +375,148 @@
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+  }
+
+  /* General styles for the code editor */
+  .home-graphic {
+    max-width: 30rem;
+    height: auto;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .code-editor {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .editor-header {
+    background-color: #252526;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #333;
+  }
+
+  .tab {
+    padding: 6px 12px;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0.5;
+  }
+
+  .active-tab {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    border-bottom: 2px solid #569cd6;
+    opacity: 1;
+  }
+
+  .flex-grow {
+    flex-grow: 1;
+  }
+
+  .flex.space-x-2 {
+    display: flex;
+    gap: 8px;
+  }
+
+  .w-3.h-3 {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .bg-red-500 {
+    background-color: #ff5f56;
+  }
+
+  .bg-yellow-500 {
+    background-color: #ffbd2e;
+  }
+
+  .bg-green-500 {
+    background-color: #27c93f;
+  }
+
+  .editor-content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .line-numbers {
+    background-color: #252526;
+    color: #858585;
+    padding: 8px 4px;
+    text-align: right;
+    user-select: none;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .line-numbers div {
+    padding-right: 8px;
+  }
+
+  .code-content {
+    flex-grow: 1;
+    padding: 8px;
+    margin: 0;
+    overflow: auto;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .html-code {
+    white-space: inherit;
+  }
+
+  /* Syntax highlighting for HTML */
+  .tag {
+    color: #569cd6;
+  }
+
+  .attr {
+    color: #9cdcfe;
+  }
+
+  .string {
+    color: #ce9178;
+  }
+
+  .comment {
+    color: #6a9955;
+  }
+
+  .keyword {
+    color: #569cd6;
+  }
+
+  .operator {
+    color: #d4d4d4;
+  }
+
+  .code-content::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+    scrollbar-width: thin;
+  }
+  .code-content::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #c1c1c149;
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
   }
 }
