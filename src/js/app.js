@@ -45,3 +45,54 @@ const updateActiveMenuItem = () => {
 
 window.addEventListener('scroll', updateActiveMenuItem);
 updateActiveMenuItem();
+
+
+// Typewriter Logic
+document.addEventListener('DOMContentLoaded', function () {
+    // Get the h1 element
+    const titleElement = document.querySelector('.title');
+
+    // Store the base text and the alternating professions
+    const baseText = "Hi, My name is Amir. I'm a ";
+    const professions = ["Front-end Developer", "Graphic Designer"];
+    let currentProfessionIndex = 0;
+
+    // Set the initial text
+    titleElement.textContent = baseText;
+
+    // Variables to control the typing effect
+    let isTyping = true;
+    let charIndex = 0;
+    let currentText = professions[currentProfessionIndex];
+
+    function typeWriter() {
+        if (isTyping) {
+            // Typing forward
+            if (charIndex < currentText.length) {
+                titleElement.textContent = baseText + currentText.substring(0, charIndex + 1);
+                charIndex++;
+                setTimeout(typeWriter, 100); // Typing speed
+            } else {
+                // Pause at the end of typing before starting to erase
+                isTyping = false;
+                setTimeout(typeWriter, 2000); // Pause before erasing
+            }
+        } else {
+            // Erasing
+            if (charIndex > 0) {
+                titleElement.textContent = baseText + currentText.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(typeWriter, 50); // Erasing speed (faster than typing)
+            } else {
+                // Switch to the next profession
+                isTyping = true;
+                currentProfessionIndex = (currentProfessionIndex + 1) % professions.length;
+                currentText = professions[currentProfessionIndex];
+                setTimeout(typeWriter, 500); // Pause before typing the next profession
+            }
+        }
+    }
+
+    // Start the typewriter effect
+    typeWriter();
+});

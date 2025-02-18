@@ -4,10 +4,15 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
+      boxShadow: {
+        'btn': '-5px 4px 0px 0px #241c15',
+      },
       colors: {
         primary: '#507dbb',
+        priBlue: '#45638b',
         priWhite: '#f4f4f5',
         priBlack: '#0f172a',
+        priGray: '#241c15',
         dark: {
           primary: '#1e3a8a',
         },

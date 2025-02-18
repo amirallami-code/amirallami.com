@@ -9,9 +9,9 @@
     <link rel="icon" href="images/favicon.png" type="image/x-icon" />
   </head>
   <body>
-    <header class="header container">
+    <header class="header container h-20">
       <nav
-        class="navbar fixed w-full z-20 top-0 start-0 bg-gradient-to-b from-white/20 via-white/10 to-transparent backdrop-blur-sm"
+        class="navbar fixed w-full h-auto z-20 top-0 start-0 bg-gradient-to-b from-white/20 via-white/10 to-transparent backdrop-blur-sm"
       >
         <div
           class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -133,8 +133,22 @@
         </div>
       </nav>
     </header>
-    <main class="main">
-      <section id="home"></section>
+    <main class="main container">
+      <section
+        id="home"
+        class="flex flex-row flex-wrap w-full h-auto justify-center items-center mx-auto px-4 gap-8"
+      >
+        <div class="home-info flex flex-col w-full max-w-xl gap-6">
+          <h1 class="title min-h-28 md:min-h-36">
+            Hi, My name is Amir. I'm a Front-end developer
+          </h1>
+          <div class="buttons-wrapper flex flex-row flex-wrap gap-4">
+            <button class="button"><a href="#about">Who am I?!</a></button>
+            <button class="button"><a href="#touch">Connect</a></button>
+          </div>
+        </div>
+        <div class="home-graphic"></div>
+      </section>
       <section id="about"></section>
       <section id="tech"></section>
       <section id="certificates"></section>

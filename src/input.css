@@ -45,14 +45,18 @@
 
 @layer base {
   body {
-    @apply flex items-center justify-center font-mont-med select-none bg-primary text-white my-10;
+    @apply flex flex-col items-center justify-center font-mont-med select-none bg-primary text-white gap-12;
   }
-  /* section {
-    height: 30rem;
-    width: 50rem;
-    background-color: red;
-    margin-bottom: 5rem;
-  } */
+  .title {
+    @apply font-mont-exbold text-3xl md:text-5xl;
+  }
+  .button {
+    @apply px-5 py-2 font-mont-bold bg-priBlue border-2 border-priGray rounded-xl shadow-btn;
+  }
+  .button:active {
+    transform: translate(-5px, 4px);
+    box-shadow: none;
+  }
   .menu-context {
     @apply flex 
     flex-col 
@@ -112,6 +116,7 @@
     md:font-mont-exbold 
     md:dark:text-white;
   }
+  /* dark/light mode Button Styles */
   .theme-switch {
     --toggle-size: 15px;
     --container-width: 5em;

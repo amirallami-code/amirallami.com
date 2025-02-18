@@ -621,14 +621,14 @@ video {
 }
 
 body{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
   display: flex;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 3rem;
   --tw-bg-opacity: 1;
   background-color: rgb(80 125 187 / var(--tw-bg-opacity, 1));
   font-family: montserrat-med, sans-sarif;
@@ -636,12 +636,40 @@ body{
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-/* section {
-    height: 30rem;
-    width: 50rem;
-    background-color: red;
-    margin-bottom: 5rem;
-  } */
+.title{
+  font-family: montserrat-extrabold, sans-sarif;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (min-width: 768px){
+  .title{
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.button{
+  border-radius: 0.75rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(36 28 21 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(69 99 139 / var(--tw-bg-opacity, 1));
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-family: montserrat-bold, sans-sarif;
+  --tw-shadow: -5px 4px 0px 0px #241c15;
+  --tw-shadow-colored: -5px 4px 0px 0px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.button:active {
+  transform: translate(-5px, 4px);
+  box-shadow: none;
+}
 
 .menu-context{
   margin-top: 1rem;
@@ -774,6 +802,8 @@ body{
     color: rgb(255 255 255 / var(--tw-text-opacity, 1));
   }
 }
+
+/* dark/light mode Button Styles */
 
 .theme-switch {
   --toggle-size: 15px;
@@ -1060,8 +1090,20 @@ body{
   height: 3rem;
 }
 
+.h-20{
+  height: 5rem;
+}
+
 .h-7{
   height: 1.75rem;
+}
+
+.h-auto{
+  height: auto;
+}
+
+.min-h-28{
+  min-height: 7rem;
 }
 
 .w-12{
@@ -1084,8 +1126,16 @@ body{
   max-width: 1280px;
 }
 
+.max-w-xl{
+  max-width: 36rem;
+}
+
 .flex-row{
   flex-direction: row;
+}
+
+.flex-col{
+  flex-direction: column;
 }
 
 .flex-wrap{
@@ -1102,6 +1152,18 @@ body{
 
 .justify-between{
   justify-content: space-between;
+}
+
+.gap-4{
+  gap: 1rem;
+}
+
+.gap-6{
+  gap: 1.5rem;
+}
+
+.gap-8{
+  gap: 2rem;
 }
 
 .space-x-3 > :not([hidden]) ~ :not([hidden]){
@@ -1141,6 +1203,11 @@ body{
   padding: 1rem;
 }
 
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1169,6 +1236,10 @@ body{
 @media (min-width: 768px){
   .md\:h-10{
     height: 2.5rem;
+  }
+
+  .md\:min-h-36{
+    min-height: 9rem;
   }
 
   .md\:w-44{
