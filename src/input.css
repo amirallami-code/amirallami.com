@@ -40,6 +40,9 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
     @apply flex flex-col items-center justify-center font-mont-med bg-primary text-white gap-12;
   }
