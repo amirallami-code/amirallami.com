@@ -24,6 +24,9 @@ module.exports = {
         "mont-bold": ["montserrat-bold", "sans-sarif"],
         "mont-exbold": ["montserrat-extrabold", "sans-sarif"],
       },
+      zIndex: {
+        '1': '1',
+      },
     },
   },
   plugins: [],
