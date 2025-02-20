@@ -48,6 +48,13 @@ updateActiveMenuItem();
 
 // Typewriter Logic
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Add horizontal scroll to the code editor for devices with an innerWidth under 450px.
+    if (window.innerWidth <= 450) {
+        const container = document.getElementById('code-content');
+        container.scrollLeft = container.scrollWidth * 0.15;
+    }
+
     // Extract the initial role from the title
     const titleElement = document.querySelector('.title');
     const initialText = titleElement.textContent.trim();

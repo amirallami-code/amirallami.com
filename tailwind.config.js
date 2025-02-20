@@ -15,6 +15,7 @@ module.exports = {
         priGray: '#241c15',
         dark: {
           primary: '#1e3a8a',
+          backGround: '#1f2937',
         },
       },
       fontFamily: {
