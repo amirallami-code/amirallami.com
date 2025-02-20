@@ -226,7 +226,7 @@
       </section>
       <section
         id="about"
-        class="section bg-priWhite dark:bg-dark-backGround gap-8"
+        class="section bg-priWhite dark:bg-dark-backGround gap-8 mt-40"
       >
         <div class="divider divider-top"></div>
         <div class="about-graphic min-w-64 max-w-xl">
@@ -247,7 +247,10 @@
         <div
           class="about-content flex flex-col gap-4 text-justify w-full max-w-2xl md:basis-1/2 text-priBlue z-1"
         >
-          <h2 class="title section-title text-primary" data-title="ABOUT ME">
+          <h2
+            class="title section-title title-about text-primary"
+            data-title="ABOUT ME"
+          >
             About me
           </h2>
           <p class="about-text">
@@ -293,10 +296,131 @@
             Let's chat about code, design, or the latest tech trends!
           </p>
         </div>
+      </section>
+      <!-- <section id="tech"></section> -->
+      <section
+        id="certificates"
+        class="section bg-priWhite dark:bg-dark-backGround py-16"
+      >
+        <div
+          class="cercertificates-content flex flex-col justify-center items-center gap-8"
+        >
+          <h2
+            class="title section-title title-cer text-primary"
+            data-title="CERTIFICATES"
+          >
+            Certificates
+          </h2>
+          <div
+            class="certificates-cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6"
+          >
+            <!-- Introduction to Front-end Development Certificate -->
+            <div
+              class="certificates-card flex flex-col gap-3 bg-primary p-5 border-2 border-priGray rounded-3xl shadow-btn max-w-80"
+            >
+              <div class="cer-picture w-full h-auto">
+                <img
+                  src="images/certificates/png/cer-IFD.png"
+                  alt="Coursera Certificate - Introduction to Front-end Development"
+                />
+              </div>
+              <div
+                class="cer-context h-full flex flex-col gap-2 justify-between"
+              >
+                <div class="flex flex-col gap-2 flex-1">
+                  <p class="cer-earnDate text-sm">
+                    Earned on <b>Jul 7, 2024</b>
+                  </p>
+                  <div
+                    class="cer-logo bg-white px-2 py-1 w-[4.5rem] rounded-full"
+                  >
+                    <img src="images/logos/meta-logo.png" alt="Meta Logo" />
+                  </div>
+                  <a
+                    title="verify link"
+                    href="https://www.coursera.org/account/accomplishments/verify/HF7Y6KJLLGK9"
+                    class="cer-title font-mont-bold leading-5 hover:underline"
+                    target="_blank"
+                  >
+                    Introduction to Front-end Development
+                  </a>
+                </div>
+                <div>
+                  <p class="cer-info text-xs">
+                    offered by <b>Meta</b> in <b>Coursera</b>
+                  </p>
+                  <a
+                    href="images/certificates/pdf/cer-IFD.pdf"
+                    download="cer-IFD.pdf"
+                    class="cer-download"
+                    target="_blank"
+                  >
+                    <button
+                      class="button w-full mt-2 font-mont-med text-sm whitespace-nowrap overflow-hidden text-ellipsis"
+                    >
+                      Download Certificate
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Programming with JavaScript Certificate -->
+            <div
+              class="certificates-card flex flex-col gap-3 bg-primary p-5 border-2 border-priGray rounded-3xl shadow-btn max-w-80"
+            >
+              <div class="cer-picture w-full h-auto">
+                <img
+                  src="images/certificates/png/cer-js.png"
+                  alt="Coursera Certificate - Programming with JavaScript"
+                />
+              </div>
+              <div
+                class="cer-context h-full flex flex-col gap-2 justify-between"
+              >
+                <div class="flex flex-col gap-2 flex-1">
+                  <p class="cer-earnDate text-sm">
+                    Earned on <b>Jan 25, 2025</b>
+                  </p>
+                  <div
+                    class="cer-logo bg-white px-2 py-1 w-[4.5rem] rounded-full"
+                  >
+                    <img src="images/logos/meta-logo.png" alt="Meta Logo" />
+                  </div>
+                  <a
+                    title="verify link"
+                    href="https://www.coursera.org/account/accomplishments/verify/C8G31UOCMO46"
+                    class="cer-title font-mont-bold leading-5 hover:underline"
+                    target="_blank"
+                  >
+                    Programming with JavaScript
+                  </a>
+                </div>
+                <div>
+                  <p class="cer-info text-xs">
+                    offered by <b>Meta</b> in <b>Coursera</b>
+                  </p>
+                  <a
+                    href="images/certificates/pdf/cer-JS.pdf"
+                    download="cer-JS.pdf"
+                    class="cer-download"
+                    target="_blank"
+                  >
+                    <button
+                      class="button w-full mt-2 font-mont-med text-sm whitespace-nowrap overflow-hidden text-ellipsis"
+                    >
+                      Download Certificate
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more certificates here -->
+          </div>
+        </div>
         <div class="divider divider-bottom"></div>
       </section>
-      <section id="tech"></section>
-      <section id="certificates"></section>
       <section id="github"></section>
       <section id="touch"></section>
     </main>

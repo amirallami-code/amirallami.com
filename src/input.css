@@ -54,19 +54,16 @@
     @apply scroll-smooth;
   }
   body {
-    @apply flex flex-col items-center justify-center font-mont-med bg-primary text-white gap-12;
+    @apply flex flex-col items-center justify-center font-mont-med bg-primary text-white gap-12 select-none;
   }
   header {
     @apply container h-20;
   }
   main {
-    @apply main justify-center items-center w-full;
+    @apply flex flex-col justify-center items-center w-full;
   }
   b {
     @apply font-mont-bold;
-  }
-  .main {
-    @apply flex flex-col gap-40;
   }
   .section {
     @apply relative flex flex-row flex-wrap w-full h-full min-h-min justify-center items-center px-4 md:p-0;
@@ -76,7 +73,13 @@
   }
   .section-title::after {
     content: attr(data-title);
-    @apply absolute -left-4 -top-4 text-5xl md:text-6xl text-priWhite -z-10 opacity-5 dark:text-opacity-15 text-stroke dark:text-stroke-none;
+    @apply absolute text-5xl md:text-6xl text-priWhite -z-10 opacity-5 dark:text-opacity-15 text-stroke dark:text-stroke-none;
+  }
+  .title-about::after {
+    @apply -left-4 -top-4;
+  }
+  .title-cer::after {
+    @apply -left-20 -top-1;
   }
   .about-interests {
     @apply relative pl-4 block;
