@@ -48,21 +48,18 @@
     <meta name="language" content="English, Persian" />
     <meta name="theme-color" content="#507dbb" />
 
+    <!-- Google analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MF91X9QV0M"
+    ></script>
     <script>
-      const trackingId = "%VITE_GA_TRACKING_ID%";
-      if (trackingId && trackingId !== "%VITE_GA_TRACKING_ID%") {
-        const script = document.createElement("script");
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
-        script.async = true;
-        document.head.appendChild(script);
-
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", trackingId);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
+      gtag("js", new Date());
+      gtag("config", "G-MF91X9QV0M");
     </script>
   </head>
   <body>
