@@ -13,6 +13,13 @@ module.exports = {
         priWhite: '#f4f4f5',
         priBlack: '#0f172a',
         priGray: '#241c15',
+
+        // Github section's color
+        gitBlack: '#0d1116',
+        gitWhite: '#fff',
+        gitGray: '#3d444d',
+        gitBlue: '#4493f8',
+
         dark: {
           primary: '#1e3a8a',
           backGround: '#1f2937',
