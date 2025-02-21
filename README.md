@@ -1,8 +1,8 @@
 # My Portfolio
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![GitHub last commit](https://img.shields.io/github/last-commit/amirallami-code/amirhosseinallami.com)
-![GitHub stars](https://img.shields.io/github/stars/amirallami-code/amirhosseinallami.com?style=flat&color=yellow)
+![GitHub last commit](https://img.shields.io/github/last-commit/amirallami-code/amirallami.com)
+![GitHub stars](https://img.shields.io/github/stars/amirallami-code/amirallami.com?style=flat&color=yellow)
 
 A modern, responsive portfolio website showcasing my skills as a Frontend Developer and Graphic Designer.
 
@@ -29,11 +29,11 @@ A modern, responsive portfolio website showcasing my skills as a Frontend Develo
 
 1. Clone the repository:
    ```
-   git clone https://github.com/amirallami-code/amirhosseinallami.com.git
+   git clone https://github.com/amirallami-code/amirallami.com.git
    ```
 2. Navigate to the project directory:
    ```
-   cd amirhosseinallami.com
+   cd amirallami.com
    ```
 3. Install dependencies (if using Tailwind CSS):
    ```
@@ -55,7 +55,7 @@ To personalize the portfolio:
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Check the [issues page](https://github.com/amirallami-code/amirhosseinallami.com/issues) for existing discussions.
+Contributions, issues, and feature requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Check the [issues page](https://github.com/amirallami-code/amirallami.com/issues) for existing discussions.
 
 ## License
 
@@ -65,7 +65,7 @@ This project is licensed under the [MIT License](https://choosealicense.com/lice
 
 Amirhossein Allami - amirallami.dev@gmail.com
 
-Project Link: [https://github.com/amirallami-code/amirhosseinallami.com](https://github.com/amirallami-code/amirhosseinallami.com)
+Project Link: [https://github.com/amirallami-code/amirhosseinallami.com](https://github.com/amirallami-code/amirallami.com)
 
 ---
 
