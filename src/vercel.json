@@ -1,8 +1,7 @@
 {
     "build": {
-      "env": {
+        "env": {
         "VITE_GA_TRACKING_ID": "@VITE_GA_TRACKING_ID"
-      }
+        }
     }
-  }
-  
+}  
