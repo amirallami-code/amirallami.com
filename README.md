@@ -1,72 +1,67 @@
-# My Portfolio
+# Amirhossein Allami - Portfolio
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![GitHub Release](https://img.shields.io/github/v/release/amirallami-code/amirallami.com)
 ![GitHub last commit](https://img.shields.io/github/last-commit/amirallami-code/amirallami.com)
 ![GitHub stars](https://img.shields.io/github/stars/amirallami-code/amirallami.com?style=flat&color=yellow)
+![Forks](https://img.shields.io/github/forks/amirallami-code/amirallami.com?style=flat&color=yellow)
 
-A modern, responsive portfolio website showcasing my skills as a Frontend Developer and Graphic Designer.
-
-## Features
-
-- Responsive design optimized for all devices
-- Dynamic content loading leveraging GitHub API
-- Interactive user interface elements
-- Smooth animations and transitions for enhanced user experience
-- Dark/Light mode toggle for personalized viewing
-- Comprehensive project showcase with live demos and source code links
-- Detailed skills and technologies section
-- Integrated contact form for easy communication
-
-## Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript
-- Tailwindcss v3
-- GitHub API
-
-## Installation
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/amirallami-code/amirallami.com.git
-   ```
-2. Navigate to the project directory:
-   ```
-   cd amirallami.com
-   ```
-3. Install dependencies (if using Tailwind CSS):
-   ```
-   npm install
-   ```
-4. Open `index.html` in your preferred browser to view the site locally.
-5. For Tailwind CSS users, run the build process:
-   ```
-   npm run build
-   ```
-
-## Usage
-
-To personalize the portfolio:
-
-1. Modify the content in HTML files to reflect your personal information, projects, and skills.
-2. Update the styling in CSS files (or Tailwind configuration) to align with your design preferences.
-3. Customize JavaScript files to add or modify interactive features as needed.
-
-## Contributing
-
-Contributions, issues, and feature requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Check the [issues page](https://github.com/amirallami-code/amirallami.com/issues) for existing discussions.
-
-## License
-
-This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
-
-## Contact
-
-Amirhossein Allami - amirallami.dev@gmail.com
-
-Project Link: [https://github.com/amirallami-code/amirhosseinallami.com](https://github.com/amirallami-code/amirallami.com)
+Welcome to my personal portfolio website! This is a modern, responsive, and performance-optimized showcase of my work as a **Frontend Developer** and **Graphic Designer**. Explore my projects, skills, and creative journey at [amirallami.com](https://amirallami.com).
 
 ---
 
-We appreciate your interest in this project. If you find it helpful, consider starring the repository.
+## ✨ Features
+
+- **Fully Responsive Design**: Optimized for seamless viewing across all devices, from desktops to mobile phones.
+- **Performance Optimization**: Utilizes **vanilla lazyload library** for faster image loading and improved performance.
+- **Dynamic Content**: Leverages the GitHub API to display real-time project updates and contributions.
+- **Interactive UI**: Engaging user interface elements with smooth animations and transitions.
+- **Dark/Light Mode**: A toggleable theme for personalized user experience.
+- **Project Showcase**: Detailed project descriptions with live demos and source code links.
+- **Skills & Technologies**: A comprehensive breakdown of my technical expertise and tools.
+- **Contact Form**: An integrated form for easy communication and collaboration inquiries.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Styling Framework**: Tailwind CSS v3
+- **Performance**: Vanilla Lazyload Library
+- **Hosting**: Vercel
+- **APIs**: GitHub API
+- **Version Control**: Git
+
+---
+
+## 🤝 Contributing
+
+I welcome contributions, suggestions, and feedback! If you'd like to contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Submit a pull request with a detailed description of your changes.
+
+For major changes, please open an issue first to discuss your ideas.
+
+[View Open Issues](https://github.com/amirallami-code/amirallami.com/issues)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for details.
+
+---
+
+## 📧 Contact
+
+- **Name**: Amirhossein Allami
+- **Email**: [amirallami.dev@gmail.com](mailto:amirallami.dev@gmail.com)
+- **Portfolio**: [https://amirallami.com](https://amirallami.com)
+- **GitHub**: [amirallami-code](https://github.com/amirallami-code)
+- **Project Link**: [https://github.com/amirallami-code/amirallami.com](https://github.com/amirallami-code/amirallami.com)
+
+---
+
+⭐ If you find this project helpful or inspiring, please consider giving it a **star** on GitHub! Your support is greatly appreciated.
