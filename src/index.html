@@ -66,6 +66,20 @@
     </script>
   </head>
   <body>
+    <!-- Loader -->
+    <div
+      id="loading-screen"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-primary transition-opacity duration-1000"
+    >
+      <div class="loader">
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__ball"></div>
+      </div>
+    </div>
     <header class="header">
       <nav
         class="navbar fixed w-full h-auto z-20 top-0 start-0 bg-gradient-to-b from-primary/100 via-primary/60 to-primary/40 backdrop-blur-md"
@@ -621,6 +635,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="js/loader.js"></script>
     <script src="js/app.js"></script>
     <script src="js/theme.js"></script>
     <script>
