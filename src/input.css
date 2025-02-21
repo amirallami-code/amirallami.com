@@ -60,7 +60,6 @@
   body::-webkit-scrollbar-thumb {
     @apply bg-priBlue cursor-pointer;
   }
-
   html {
     @apply scroll-smooth;
   }
@@ -68,7 +67,7 @@
     @apply container h-20;
   }
   body {
-    @apply flex flex-col items-center justify-center font-mont-med bg-primary text-white gap-12 select-none transition;
+    @apply flex flex-col items-center justify-center font-mont-med bg-primary text-white select-none transition;
   }
   main {
     @apply flex flex-col justify-center items-center w-full;
