@@ -2,6 +2,7 @@
 const menuIcon = document.getElementById('menu-icon')
 const closeIcon = document.getElementById('x-icon')
 
+
 function toggleMenu() {
     const menu = document.getElementById("navbar-sticky");
     menu.classList.toggle("hidden");
@@ -20,6 +21,7 @@ menuItems.forEach(item => {
         const targetId = item.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
         targetSection.scrollIntoView({ behavior: 'smooth' });
+        toggleMenu()
     });
 });
 

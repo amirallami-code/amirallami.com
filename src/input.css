@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Montserrat Font-faces */
+/* Montserrat font faces */
 @font-face {
   font-family: montserrat-light;
   font-style: normal;
@@ -49,7 +49,32 @@
     text-stroke: 0px black;
   }
 }
+
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  header {
+    @apply container h-20;
+  }
+
+  body {
+    @apply flex flex-col items-center justify-center font-mont-med bg-primary text-white select-none transition;
+  }
+
+  main {
+    @apply flex flex-col justify-center items-center w-full;
+  }
+
+  footer {
+    @apply w-full;
+  }
+
+  b {
+    @apply font-mont-bold;
+  }
+
   /* Scroll-bar */
   body::-webkit-scrollbar {
     @apply w-3;
@@ -60,154 +85,107 @@
   body::-webkit-scrollbar-thumb {
     @apply bg-priBlue cursor-pointer;
   }
-  html {
-    @apply scroll-smooth;
-  }
-  header {
-    @apply container h-20;
-  }
-  body {
-    @apply flex flex-col items-center justify-center font-mont-med bg-primary text-white select-none transition;
-  }
-  main {
-    @apply flex flex-col justify-center items-center w-full;
-  }
-  footer {
-    @apply w-full;
-  }
-  b {
-    @apply font-mont-bold;
-  }
+}
+
+@layer components {
   .section {
     @apply relative flex flex-row flex-wrap w-full h-full min-h-min justify-center items-center px-4 md:p-0;
   }
+
   .title {
     @apply relative font-mont-exbold text-3xl md:text-5xl z-1;
   }
+
   .section-title::after {
     content: attr(data-title);
     @apply absolute text-5xl md:text-6xl text-priWhite -z-10 opacity-5 dark:text-opacity-15 text-stroke dark:text-stroke-none;
   }
+
   .title-about::after {
     @apply -left-4 -top-4;
   }
+
   .title-cer::after {
     @apply mx-auto;
   }
+
   .about-interests {
     @apply relative pl-4 block;
     text-indent: -1.1rem;
     padding-left: 1.1rem;
   }
+
   .about-interests::before {
     content: "";
     @apply inline-block w-[6px] h-[6px] bg-primary rounded-full;
     vertical-align: middle;
     margin-right: 0.5rem;
   }
+
   .about-interests b {
     @apply text-priBlue dark:text-primary;
   }
+
   .about-links {
     @apply text-blue-600 underline underline-offset-4;
   }
+
   .button {
     @apply px-5 py-2 font-mont-bold bg-priBlue border-2 border-priGray rounded-xl shadow-btn;
   }
+
   .button:active,
   .button:focus {
     transform: translate(-5px, 4px);
     box-shadow: none;
   }
+
+  /* section divider */
   .divider {
-    position: absolute;
-    width: 100%;
-    height: 100px;
+    @apply absolute w-full h-[100px];
     background: inherit;
   }
+
   .divider-top {
-    top: -6rem;
+    @apply top-[-6rem];
     clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 50%, 100% 0%);
   }
+
   .divider-bottom {
-    bottom: -6rem;
+    @apply bottom-[-6rem];
     clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 50%, 0% 100%);
   }
+
+  /* Menu settings */
   .menu-context {
-    @apply flex 
-    flex-col 
-    lg:items-center 
-    justify-start 
-    gap-1 p-4 
-    lg:p-0 
-    mt-4 
-    font-medium 
-    border 
-    border-gray-100 
-    rounded-2xl 
-    bg-gray-50 
-    lg:space-x-8 
-    rtl:space-x-reverse 
-    lg:flex-row 
-    lg:mt-0 
-    lg:border-0 
-    lg:bg-transparent 
-    dark:bg-gray-800
-    lg:dark:bg-transparent 
-    dark:border-gray-700;
+    @apply flex flex-col lg:items-center justify-start gap-1 p-4 lg:p-0 mt-4 
+           font-medium border border-gray-100 rounded-2xl bg-gray-50 lg:space-x-8 
+           rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent 
+           dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700;
   }
+
   .menu-item {
-    @apply block 
-    py-2 
-    px-3 
-    rounded-lg
-    transition-all 
-    text-gray-900 
-    lg:text-white 
-    hover:bg-gray-200 
-    hover:text-gray-900 
-    lg:hover:text-white 
-    lg:hover:bg-transparent 
-    lg:hover:underline 
-    lg:p-0 
-    lg:dark:hover:underline 
-    lg:underline-offset-4
-    lg:dark:hover:bg-transparent 
-    dark:text-white 
-    dark:hover:bg-gray-700 
-    dark:hover:text-white 
-    dark:border-gray-700;
+    @apply block py-2 px-3 rounded-lg transition-all text-gray-900 lg:text-white 
+           hover:bg-gray-200 hover:text-gray-900 lg:hover:text-white lg:hover:bg-transparent 
+           lg:hover:underline lg:p-0 lg:dark:hover:underline lg:underline-offset-4 
+           lg:dark:hover:bg-transparent dark:text-white dark:hover:bg-gray-700 
+           dark:hover:text-white dark:border-gray-700;
   }
+
   .active {
-    @apply block 
-    py-2 
-    px-3 
-    rounded-lg 
-
-    text-white 
-    bg-primary 
-    antialiased
-    tracking-wide
-
-    hover:bg-primary
-    lg:hover:bg-transparent
-    lg:dark:hover:bg-transparent
-    hover:text-white
-    lg:hover:no-underline 
-    lg:dark:hover:no-underline 
-
-    dark:hover:bg-primary
-    dark:hover:text-white 
-
-    lg:bg-transparent
-    lg:font-mont-exbold 
-    lg:dark:text-white;
+    @apply block py-2 px-3 rounded-lg text-white bg-primary antialiased tracking-wide
+           hover:bg-primary lg:hover:bg-transparent lg:dark:hover:bg-transparent 
+           hover:text-white lg:hover:no-underline lg:dark:hover:no-underline 
+           dark:hover:bg-primary dark:hover:text-white lg:bg-transparent 
+           lg:font-mont-exbold lg:dark:text-white;
   }
+
   .touch-listItem__title::before {
     content: "";
     @apply absolute -left-[2px] w-[10px] h-full bg-primary opacity-30 rounded-full;
   }
-  /* dark/light mode Button Styles */
+
+  /* Theme Switch */
   .theme-switch {
     --toggle-size: 15px;
     --container-width: 5em;
@@ -417,8 +395,6 @@
     transition: var(--transition);
   }
 
-  /* actions */
-
   .theme-switch__checkbox:checked + .theme-switch__container {
     background-color: var(--container-night-bg);
   }
@@ -467,180 +443,124 @@
     transform: translateY(-50%);
   }
 
-  /* General styles for the code editor */
+  /* Code Editor Styles */
   .code-editor {
-    background-color: #282c34;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    @apply bg-[#282c34] rounded-lg overflow-hidden flex flex-col;
   }
 
   .editor-header {
-    background-color: #21252b;
-    padding: 8px 8px 0 8px;
-    display: flex;
-    align-items: center;
+    @apply bg-[#21252b] p-2 pb-0 flex items-center;
   }
 
   .tab {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 6px 12px;
-    background-color: #282c34;
-    color: #d4d4d4;
-    border-radius: 4px 4px 0 0;
-    font-size: 14px;
-    opacity: 0.35;
+    @apply flex justify-between items-center gap-2 p-[6px_12px] bg-[#282c34] 
+           text-[#d4d4d4] rounded-t-lg text-sm opacity-35;
   }
+
   .xIcon-tab {
     @apply size-4 cursor-pointer;
   }
 
   .active-tab {
-    background-color: #282c34;
-    color: #d4d4d4;
-    border-bottom: 2px solid #569cd6;
-    opacity: 1;
+    @apply bg-[#282c34] text-[#d4d4d4] border-b-2 border-[#569cd6] opacity-100;
   }
 
   .editor-content {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    overflow: hidden;
+    @apply flex flex-row h-full overflow-hidden;
   }
 
   .line-numbers {
-    background-color: #21252b;
-    color: #858585;
-    padding: 8px 4px;
-    text-align: right;
-    user-select: none;
-    font-size: 14px;
-    line-height: 1.5;
+    @apply bg-[#21252b] text-[#858585] p-2 text-right select-none text-sm leading-6;
   }
 
   .line-numbers div {
-    padding-right: 8px;
+    @apply pr-2;
   }
 
   .code-content {
-    flex-grow: 1;
-    padding: 8px;
-    margin: 0;
-    overflow: auto;
-    background-color: #282c34;
-    color: #d4d4d4;
-    font-size: 14px;
-    line-height: 1.5;
+    @apply flex-grow p-2 m-0 overflow-auto bg-[#282c34] text-[#d4d4d4] text-sm leading-6;
   }
 
   .html-code {
     white-space: inherit;
   }
 
-  /* Syntax highlighting for HTML */
+  /* Syntax highlighting */
   .tag {
-    color: #e06c75;
+    @apply text-[#e06c75];
   }
-
   .attr {
-    color: #c79a66;
+    @apply text-[#c79a66];
   }
-
   .string {
-    color: #98c379;
+    @apply text-[#98c379];
   }
-
   .comment {
-    color: #6a9955;
+    @apply text-[#6a9955];
   }
-
   .keyword {
-    color: #569cd6;
+    @apply text-[#569cd6];
   }
-
   .operator {
-    color: #d4d4d4;
+    @apply text-[#d4d4d4];
   }
 
-  /* code editor scroll bar */
+  /* Code editor scrollbar */
   .code-content::-webkit-scrollbar {
+    @apply w-[5px];
     -webkit-appearance: none;
-    width: 5px;
     scrollbar-width: thin;
   }
+
   .code-content::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: #c1c1c149;
+    @apply rounded bg-[#c1c1c149];
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
   }
 
-  /* Loader style */
+  /* Loader */
   .loader {
-    position: relative;
-    width: 75px;
-    height: 100px;
+    @apply relative w-[75px] h-[100px];
   }
 
   .loader__bar {
-    position: absolute;
-    bottom: 0;
-    width: 10px;
-    height: 50%;
-    background: #1f2937;
+    @apply absolute bottom-0 w-[10px] h-1/2 bg-gray-800;
     transform-origin: center bottom;
     box-shadow: 1px 1px 0 rgb(31, 41, 55, 0.2);
+  }
+
+  .loader__ball {
+    @apply absolute bottom-[10px] left-0 w-[10px] h-[10px] bg-zinc-100 rounded-full;
+    animation: ball624 4s infinite;
   }
 
   .loader__bar:nth-child(1) {
     left: 0px;
     transform: scale(1, 0.2);
-    -webkit-animation: barUp1 4s infinite;
     animation: barUp1 4s infinite;
   }
 
   .loader__bar:nth-child(2) {
     left: 15px;
     transform: scale(1, 0.4);
-    -webkit-animation: barUp2 4s infinite;
     animation: barUp2 4s infinite;
   }
 
   .loader__bar:nth-child(3) {
     left: 30px;
     transform: scale(1, 0.6);
-    -webkit-animation: barUp3 4s infinite;
     animation: barUp3 4s infinite;
   }
 
   .loader__bar:nth-child(4) {
     left: 45px;
     transform: scale(1, 0.8);
-    -webkit-animation: barUp4 4s infinite;
     animation: barUp4 4s infinite;
   }
 
   .loader__bar:nth-child(5) {
     left: 60px;
     transform: scale(1, 1);
-    -webkit-animation: barUp5 4s infinite;
     animation: barUp5 4s infinite;
-  }
-
-  .loader__ball {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    background: #f4f4f5;
-    border-radius: 50%;
-    -webkit-animation: ball624 4s infinite;
-    animation: ball624 4s infinite;
   }
 
   @keyframes ball624 {
