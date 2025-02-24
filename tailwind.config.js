@@ -26,6 +26,7 @@ module.exports = {
         },
       },
       fontFamily: {
+        "firacode": ["firacode", "sans-sarif"],
         "mont-light": ["montserrat-light", "sans-sarif"],
         "mont-med": ["montserrat-med", "sans-sarif"],
         "mont-semibold": ["montserrat-semibold", "sans-sarif"],

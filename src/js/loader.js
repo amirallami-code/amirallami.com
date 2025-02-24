@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 loadingScreen.classList.add('hidden');
             }, 1000); // This should match the duration in the transition class (1000ms)
-        }, 2000); // Initial delay before starting the fade
+        }, 200); // Initial delay before starting the fade
     });
 });
 
