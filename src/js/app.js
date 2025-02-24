@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const initialText = titleElement.textContent.trim();
     const rolePart = initialText.split("I'm a ")[1] || "Front-end developer";
 
-    const roles = [rolePart, "Graphic Designer"];
+    const roles = [rolePart, "Graphic Designer", "UI/UX Designer"];
 
     // Create span for title
     const titleSpan = document.createElement('span');

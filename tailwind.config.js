@@ -14,7 +14,7 @@ module.exports = {
         priBlack: '#0f172a',
         priGray: '#241c15',
 
-        // Github section's color
+        // Github section color
         gitBlack: '#0d1116',
         gitWhite: '#fff',
         gitGray: '#3d444d',

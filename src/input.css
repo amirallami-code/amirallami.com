@@ -83,7 +83,7 @@
     @apply font-mont-bold;
   }
 
-  /* Scroll-bar */
+  /* Main scroll-bar */
   body::-webkit-scrollbar {
     @apply w-3;
   }

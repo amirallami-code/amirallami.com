@@ -632,7 +632,7 @@ b {
   font-family: montserrat-bold, sans-sarif;
 }
 
-/* Scroll-bar */
+/* Main scroll-bar */
 
 body::-webkit-scrollbar {
   width: 0.75rem;
@@ -1757,12 +1757,60 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
+.h-\[2em\] {
+  height: 2em;
+}
+
+.h-\[2\.5em\] {
+  height: 2.5em;
+}
+
+.max-h-\[3\.7em\] {
+  max-height: 3.7em;
+}
+
+.max-h-\[2\.5em\] {
+  max-height: 2.5em;
+}
+
+.max-h-36 {
+  max-height: 9rem;
+}
+
 .min-h-28 {
   min-height: 7rem;
 }
 
 .min-h-\[3\.7em\] {
   min-height: 3.7em;
+}
+
+.min-h-24 {
+  min-height: 6rem;
+}
+
+.min-h-10 {
+  min-height: 2.5rem;
+}
+
+.min-h-40 {
+  min-height: 10rem;
+}
+
+.min-h-36 {
+  min-height: 9rem;
+}
+
+.min-h-\[3\.7rem\] {
+  min-height: 3.7rem;
+}
+
+.min-h-3 {
+  min-height: 0.75rem;
 }
 
 .w-12 {
@@ -1875,6 +1923,10 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -1901,6 +1953,10 @@ body::-webkit-scrollbar-thumb {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -2142,6 +2198,18 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
 .shadow-btn {
   --tw-shadow: -5px 4px 0px 0px #241c15;
   --tw-shadow-colored: -5px 4px 0px 0px var(--tw-shadow-color);
@@ -2174,6 +2242,12 @@ body::-webkit-scrollbar-thumb {
 
 .transition-opacity {
   transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-all {
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2286,6 +2360,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 640px) {
+  .sm\:mt-12 {
+    margin-top: 3rem;
+  }
+
+  .sm\:min-h-0 {
+    min-height: 0px;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2302,6 +2384,10 @@ body::-webkit-scrollbar-thumb {
 
   .md\:min-h-\[2\.5em\] {
     min-height: 2.5em;
+  }
+
+  .md\:min-h-0 {
+    min-height: 0px;
   }
 
   .md\:w-44 {
