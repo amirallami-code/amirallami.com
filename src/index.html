@@ -3,15 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome - Amirhossein Allami</title>
-    <link href="./output.css" rel="stylesheet" />
-
-    <!-- vanilla loazyload CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.8.8/lazyload.min.js"></script>
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
-
     <!-- Primary Meta Tags -->
     <meta
       name="description"
@@ -51,25 +42,329 @@
     <meta name="language" content="English, Persian" />
     <meta name="theme-color" content="#507dbb" />
 
-    <!-- Google analytics -->
+    <title>Welcome - Amirhossein Allami</title>
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+
+    <style>
+      body {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+        background-color: #507dbb;
+      }
+
+      body.content-loaded {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Loader */
+      .loader {
+        position: relative;
+        width: 75px;
+        height: 100px;
+      }
+
+      .loader__bar {
+        position: absolute;
+        bottom: 0;
+        width: 10px;
+        height: 50%;
+        background-color: rgb(31, 41, 55);
+        transform-origin: center bottom;
+        box-shadow: 1px 1px 0 rgba(31, 41, 55, 0.2);
+      }
+
+      .loader__ball {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background-color: rgb(244, 244, 245);
+        border-radius: 9999px;
+        animation: ball624 4s infinite;
+      }
+
+      .loader__bar:nth-child(1) {
+        left: 0px;
+        transform: scale(1, 0.2);
+        animation: barUp1 4s infinite;
+      }
+
+      .loader__bar:nth-child(2) {
+        left: 15px;
+        transform: scale(1, 0.4);
+        animation: barUp2 4s infinite;
+      }
+
+      .loader__bar:nth-child(3) {
+        left: 30px;
+        transform: scale(1, 0.6);
+        animation: barUp3 4s infinite;
+      }
+
+      .loader__bar:nth-child(4) {
+        left: 45px;
+        transform: scale(1, 0.8);
+        animation: barUp4 4s infinite;
+      }
+
+      .loader__bar:nth-child(5) {
+        left: 60px;
+        transform: scale(1, 1);
+        animation: barUp5 4s infinite;
+      }
+
+      @keyframes ball624 {
+        0% {
+          transform: translate(0, 0);
+        }
+
+        5% {
+          transform: translate(8px, -14px);
+        }
+
+        10% {
+          transform: translate(15px, -10px);
+        }
+
+        17% {
+          transform: translate(23px, -24px);
+        }
+
+        20% {
+          transform: translate(30px, -20px);
+        }
+
+        27% {
+          transform: translate(38px, -34px);
+        }
+
+        30% {
+          transform: translate(45px, -30px);
+        }
+
+        37% {
+          transform: translate(53px, -44px);
+        }
+
+        40% {
+          transform: translate(60px, -40px);
+        }
+
+        50% {
+          transform: translate(60px, 0);
+        }
+
+        57% {
+          transform: translate(53px, -14px);
+        }
+
+        60% {
+          transform: translate(45px, -10px);
+        }
+
+        67% {
+          transform: translate(37px, -24px);
+        }
+
+        70% {
+          transform: translate(30px, -20px);
+        }
+
+        77% {
+          transform: translate(22px, -34px);
+        }
+
+        80% {
+          transform: translate(15px, -30px);
+        }
+
+        87% {
+          transform: translate(7px, -44px);
+        }
+
+        90% {
+          transform: translate(0, -40px);
+        }
+
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      @keyframes barUp1 {
+        0% {
+          transform: scale(1, 0.2);
+        }
+
+        40% {
+          transform: scale(1, 0.2);
+        }
+
+        50% {
+          transform: scale(1, 1);
+        }
+
+        90% {
+          transform: scale(1, 1);
+        }
+
+        100% {
+          transform: scale(1, 0.2);
+        }
+      }
+
+      @keyframes barUp2 {
+        0% {
+          transform: scale(1, 0.4);
+        }
+
+        40% {
+          transform: scale(1, 0.4);
+        }
+
+        50% {
+          transform: scale(1, 0.8);
+        }
+
+        90% {
+          transform: scale(1, 0.8);
+        }
+
+        100% {
+          transform: scale(1, 0.4);
+        }
+      }
+
+      @keyframes barUp3 {
+        0% {
+          transform: scale(1, 0.6);
+        }
+
+        100% {
+          transform: scale(1, 0.6);
+        }
+      }
+
+      @keyframes barUp4 {
+        0% {
+          transform: scale(1, 0.8);
+        }
+
+        40% {
+          transform: scale(1, 0.8);
+        }
+
+        50% {
+          transform: scale(1, 0.4);
+        }
+
+        90% {
+          transform: scale(1, 0.4);
+        }
+
+        100% {
+          transform: scale(1, 0.8);
+        }
+      }
+
+      @keyframes barUp5 {
+        0% {
+          transform: scale(1, 1);
+        }
+
+        40% {
+          transform: scale(1, 1);
+        }
+
+        50% {
+          transform: scale(1, 0.2);
+        }
+
+        90% {
+          transform: scale(1, 0.2);
+        }
+
+        100% {
+          transform: scale(1, 1);
+        }
+      }
+
+      .main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="./output.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="./output.css" /></noscript>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.add("content-loaded");
+      });
+    </script>
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <!-- vanilla loazyload CDN -->
     <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MF91X9QV0M"
+      src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.8.8/lazyload.min.js"
+      defer
     ></script>
+
+    <!-- Google analytics -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-      gtag("config", "G-MF91X9QV0M");
+
+      // Load GA after page load
+      window.addEventListener("load", function () {
+        const script = document.createElement("script");
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-MF91X9QV0M";
+        script.async = true;
+        document.head.appendChild(script);
+
+        script.onload = function () {
+          gtag("js", new Date());
+          gtag("config", "G-MF91X9QV0M");
+        };
+      });
     </script>
   </head>
   <body>
-    <!-- loader -->
     <div
-      id="loading-screen"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-primary transition-opacity duration-1000"
+      id="initial-loader"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #507dbb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      "
     >
       <div class="loader">
         <div class="loader__bar"></div>
@@ -302,20 +597,32 @@
       >
         <div class="divider divider-top"></div>
         <div class="about-graphic min-w-64 max-w-xl">
-          <creattie-embed
-            src="https://d1jj76g3lut4fe.cloudfront.net/saved_colors/100163/yeqC1PUoUTdAmwao.json"
-            delay="1"
-            speed="100"
-            loading="lazy"
-            frame_rate="24"
-            trigger="loop"
-            class="bg-transparent"
-          >
-          </creattie-embed>
-          <script
-            src="https://creattie.com/js/embed.js?id=3f6954fde297cd31b441"
-            defer
-          ></script>
+          <div class="animation-placeholder" id="creattie-container"></div>
+          <script>
+            // Load animation only after page is fully loaded
+            window.addEventListener("load", function () {
+              const script = document.createElement("script");
+              script.src =
+                "https://creattie.com/js/embed.js?id=3f6954fde297cd31b441";
+              document.body.appendChild(script);
+
+              const animation = document.createElement("creattie-embed");
+              animation.setAttribute(
+                "src",
+                "https://d1jj76g3lut4fe.cloudfront.net/saved_colors/100163/yeqC1PUoUTdAmwao.json"
+              );
+              animation.setAttribute("delay", "1");
+              animation.setAttribute("speed", "100");
+              animation.setAttribute("loading", "lazy");
+              animation.setAttribute("frame_rate", "24");
+              animation.setAttribute("trigger", "loop");
+              animation.className = "bg-transparent";
+
+              document
+                .getElementById("creattie-container")
+                .appendChild(animation);
+            });
+          </script>
         </div>
         <div
           class="about-content flex flex-col gap-4 text-justify w-full max-w-2xl md:basis-1/2 text-priBlue z-1"
@@ -543,22 +850,23 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/loader.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/loader.js" defer></script>
+    <script src="js/app.js" defer></script>
     <script type="module" src="js/data.js"></script>
     <script type="module" src="js/generator.js"></script>
-    <script src="js/theme.js"></script>
-    <script>
-      var lazyLoadInstance = new LazyLoad({
-        elements_selector: ".lazy",
-        callback_loading: (element) => {
+    <script src="js/theme.js" defer></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        var lazyLoadInstance = new LazyLoad({
+          elements_selector: ".lazy",
+          callback_loading: (element) => {
           // Show spinner
           const spinnerContainer = element.previousElementSibling;
           if (spinnerContainer) {
             spinnerContainer.style.display = "flex";
           }
         },
-        callback_loaded: (element) => {
+          callback_loaded: (element) => {
           // Hide spinner and show image
           const spinnerContainer = element.previousElementSibling;
           if (spinnerContainer) {
@@ -567,7 +875,9 @@
           element.classList.remove("opacity-0");
           element.classList.add("opacity-100");
         },
-      });
+          })
+        })
+      })
     </script>
   </body>
 </html>

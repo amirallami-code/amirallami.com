@@ -1,3 +1,18 @@
+document.addEventListener('DOMContentLoaded', function () {
+    // Hide the initial loader after a small delay to ensure everything is loaded
+    setTimeout(() => {
+        const initialLoader = document.getElementById('initial-loader');
+        if (initialLoader) {
+            initialLoader.style.opacity = '0';
+            initialLoader.style.transition = 'opacity 0.3s ease';
+
+            setTimeout(() => {
+                initialLoader.style.display = 'none';
+            }, 300);
+        }
+    }, 200);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const loadingScreen = document.getElementById('loading-screen');
 
