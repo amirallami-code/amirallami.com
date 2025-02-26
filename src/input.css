@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mona Sans font faces */
+@font-face {
+  font-family: monasans-bold;
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/monasans/MonaSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: monasans-med;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/monasans/MonaSans-Medium.ttf") format("truetype");
+}
 /* Fira code font face */
 @font-face {
   font-family: firacode;

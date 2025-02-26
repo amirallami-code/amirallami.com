@@ -17,7 +17,8 @@ module.exports = {
         // Github section color
         gitBlack: '#0d1116',
         gitWhite: '#fff',
-        gitGray: '#3d444d',
+        gitDarkGray: '#3d444d',
+        gitGray: '#919895',
         gitBlue: '#4493f8',
 
         dark: {
@@ -26,6 +27,8 @@ module.exports = {
         },
       },
       fontFamily: {
+        "monasans-bold": ["monasans-bold", "sans-sarif"],
+        "monasans-med": ["monasans-med", "sans-sarif"],
         "firacode": ["firacode", "sans-sarif"],
         "mont-light": ["montserrat-light", "sans-sarif"],
         "mont-med": ["montserrat-med", "sans-sarif"],
