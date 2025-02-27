@@ -4,55 +4,55 @@ import { techStackData, certificatesData } from './data.js';
 
 // Function to initialize everything
 function initializeContent() {
-    renderTechStack();
-    renderCertificates();
-    setupLazyLoading();
+  renderTechStack();
+  renderCertificates();
+  setupLazyLoading();
 }
 
 // Tech Stack Generator Functions
 function renderTechStack() {
-    // For mobile view
-    const mobileContainer = document.querySelector('.block.md\\:hidden.space-y-6');
-    if (mobileContainer) {
-        techStackData.categories.forEach(category => {
-            // Create category heading
-            const categoryHeading = document.createElement('div');
-            categoryHeading.className = 'mb-8';
-            categoryHeading.innerHTML = `
+  // For mobile view
+  const mobileContainer = document.querySelector('.block.md\\:hidden.space-y-6');
+  if (mobileContainer) {
+    techStackData.categories.forEach(category => {
+      // Create category heading
+      const categoryHeading = document.createElement('div');
+      categoryHeading.className = 'mb-8';
+      categoryHeading.innerHTML = `
         <h3 class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 px-4 py-3 mb-3 rounded-t-lg">
           ${category.name}
         </h3>
       `;
 
-            // Create skill cards for this category
-            category.skills.forEach(skill => {
-                const skillCard = createMobileSkillCard(skill);
-                categoryHeading.appendChild(skillCard);
-            });
+      // Create skill cards for this category
+      category.skills.forEach(skill => {
+        const skillCard = createMobileSkillCard(skill);
+        categoryHeading.appendChild(skillCard);
+      });
 
-            mobileContainer.appendChild(categoryHeading);
-        });
-    }
+      mobileContainer.appendChild(categoryHeading);
+    });
+  }
 
-    // For desktop view (table)
-    const tableBody = document.getElementById('tech-desktop-table');
-    if (tableBody) {
-        techStackData.categories.forEach(category => {
-            let tableHead = createDesktopSkillHead(category)
-            tableBody.insertAdjacentHTML('beforeend', tableHead)
-            category.skills.forEach(skill => {
-                const skillRow = createDesktopSkillRow(skill);
-                tableBody.appendChild(skillRow);
-            });
-        });
-    }
+  // For desktop view (table)
+  const tableBody = document.getElementById('tech-desktop-table');
+  if (tableBody) {
+    techStackData.categories.forEach(category => {
+      let tableHead = createDesktopSkillHead(category)
+      tableBody.insertAdjacentHTML('beforeend', tableHead)
+      category.skills.forEach(skill => {
+        const skillRow = createDesktopSkillRow(skill);
+        tableBody.appendChild(skillRow);
+      });
+    });
+  }
 }
 
 function createMobileSkillCard(skill) {
-    const card = document.createElement('div');
-    card.className = 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg mb-4 overflow-hidden shadow-sm';
+  const card = document.createElement('div');
+  card.className = 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg mb-4 overflow-hidden shadow-sm';
 
-    card.innerHTML = `
+  card.innerHTML = `
     <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
       <div class="flex items-center gap-3">
         <img src="${skill.icon}" alt="${skill.name}" title="${skill.name}" class="w-6 h-6" />
@@ -86,11 +86,11 @@ function createMobileSkillCard(skill) {
     </div>
   `;
 
-    return card;
+  return card;
 }
 
 function createDesktopSkillHead(category) {
-    let html = `<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 rounded-md">
+  let html = `<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 rounded-md">
                     <tr>
                     <th scope="col" class="px-6 py-3">${category.name}</th>
                     <th scope="col" class="px-6 py-3">Proficiency</th>
@@ -99,14 +99,14 @@ function createDesktopSkillHead(category) {
                     </tr>
                 </thead>`
 
-    return html;
+  return html;
 }
 
 function createDesktopSkillRow(skill) {
-    const row = document.createElement('tr');
-    row.className = 'bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200';
+  const row = document.createElement('tr');
+  row.className = 'bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200';
 
-    row.innerHTML = `
+  row.innerHTML = `
     <th scope="row" class="flex flex-row items-center gap-3 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
       <img src="${skill.icon}" alt="${skill.name}" title="${skill.name}" class="w-6 h-6" />
       ${skill.fullName}
@@ -136,29 +136,29 @@ function createDesktopSkillRow(skill) {
     </td>
   `;
 
-    return row;
+  return row;
 }
 
 // Certificate Generator Functions
 function renderCertificates() {
-    const certificatesContainer = document.querySelector('.certificates-cards');
-    if (certificatesContainer) {
-        // Clear existing certificates if any
-        certificatesContainer.innerHTML = '';
+  const certificatesContainer = document.querySelector('.certificates-cards');
+  if (certificatesContainer) {
+    // Clear existing certificates if any
+    certificatesContainer.innerHTML = '';
 
-        // Generate certificate cards
-        certificatesData.forEach(cert => {
-            const certCard = createCertificateCard(cert);
-            certificatesContainer.appendChild(certCard);
-        });
-    }
+    // Generate certificate cards
+    certificatesData.forEach(cert => {
+      const certCard = createCertificateCard(cert);
+      certificatesContainer.appendChild(certCard);
+    });
+  }
 }
 
 function createCertificateCard(cert) {
-    const card = document.createElement('div');
-    card.className = 'certificates-card flex flex-col justify-between items-center gap-3 bg-primary p-5 border-2 border-priGray rounded-3xl shadow-btn max-w-80';
+  const card = document.createElement('div');
+  card.className = 'certificates-card flex flex-col justify-between items-center gap-3 bg-primary p-5 border-2 border-priGray rounded-3xl shadow-btn max-w-80';
 
-    card.innerHTML = `
+  card.innerHTML = `
     <div class="cer-picture w-full h-full">
       <div class="spinner flex justify-center items-center w-full h-full place-items-center">
         <div role="status">
@@ -192,48 +192,48 @@ function createCertificateCard(cert) {
     </div>
   `;
 
-    return card;
+  return card;
 }
 
 // Setup lazy loading for certificate images
 function setupLazyLoading() {
-    // Check if IntersectionObserver is supported
-    if ('IntersectionObserver' in window) {
-        const lazyImages = document.querySelectorAll('img.lazy');
+  // Check if IntersectionObserver is supported
+  if ('IntersectionObserver' in window) {
+    const lazyImages = document.querySelectorAll('img.lazy');
 
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
 
-                    // Show image after it's loaded
-                    img.onload = () => {
-                        img.classList.remove('opacity-0');
-                        img.classList.add('opacity-100');
-
-                        // Hide spinner when image loads
-                        const spinner = img.parentElement.querySelector('.spinner');
-                        if (spinner) {
-                            spinner.style.display = 'none';
-                        }
-                    };
-
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-
-        lazyImages.forEach(img => imageObserver.observe(img));
-    } else {
-        // Fallback for browsers that don't support IntersectionObserver
-        const lazyImages = document.querySelectorAll('img.lazy');
-        lazyImages.forEach(img => {
-            img.src = img.dataset.src;
+          // Show image after it's loaded
+          img.onload = () => {
             img.classList.remove('opacity-0');
             img.classList.add('opacity-100');
-        });
-    }
+
+            // Hide spinner when image loads
+            const spinner = img.parentElement.querySelector('.spinner');
+            if (spinner) {
+              spinner.style.display = 'none';
+            }
+          };
+
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
+  } else {
+    // Fallback for browsers that don't support IntersectionObserver
+    const lazyImages = document.querySelectorAll('img.lazy');
+    lazyImages.forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.remove('opacity-0');
+      img.classList.add('opacity-100');
+    });
+  }
 }
 
 // Run initialization when DOM is fully loaded

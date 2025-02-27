@@ -306,13 +306,8 @@
       }
     </style>
 
-    <link
-      rel="stylesheet"
-      href="./output.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript><link rel="stylesheet" href="./output.css" /></noscript>
+    <link rel="preload" href="./output.css" as="style" />
+    <link rel="stylesheet" href="./output.css" />
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
