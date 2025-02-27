@@ -769,21 +769,24 @@
             <div
               class="github-information bg-gitWhite dark:bg-gitBlack font-monasans-med flex flex-row gap-3 rounded-2xl p-3 shadow-md dark:shadow-none dark:border-2 border-gitDarkGray"
             >
-              <img
-                src="images/github/profile.jpeg"
-                alt="Github Profile"
-                class="max-w-12 max-h-12 rounded-full"
-              />
               <div class="github-self flex flex-col gap-2">
                 <div
-                  class="github-self__titles flex flex-row flex-wrap items-center justify-start gap-2"
+                  class="github-self__titles flex flex-row flex-wrap items-center justify-start gap-4"
                 >
-                  <p class="font-monasans-bold">
-                    <a href="https://github.com/amirallami-code">
+                  <img
+                    src="images/github/profile.jpeg"
+                    alt="Github Profile"
+                    class="max-w-12 max-h-12 rounded-full"
+                  />
+                  <div class="flex flex-col h-full">
+                    <a
+                      href="https://github.com/amirallami-code"
+                      class="font-monasans-bold"
+                    >
                       Amirhossein Allami
                     </a>
-                  </p>
-                  <p class="text-gitGray text-sm">@amirallami-code</p>
+                    <p class="text-gitGray text-sm">amirallami-code</p>
+                  </div>
                 </div>
                 <div class="github-self__desc">
                   Front-end enthusiast by day, algorithm adventurer by night.
@@ -792,18 +795,20 @@
                   class="github-self__stats flex flex-wrap text-gitGray text-sm gap-2"
                 >
                   <p>
-                    <span class="github-self__repos font-monasans-bold">7</span>
+                    <span class="github-self__repos font-monasans-bold"
+                      >loading</span
+                    >
                     repository
                   </p>
                   <p>
                     <span class="github-self__followers font-monasans-bold"
-                      >410</span
+                      >loading</span
                     >
                     followers
                   </p>
                   <p>
                     <span class="github-self__stars font-monasans-bold"
-                      >101</span
+                      >loading</span
                     >
                     stars earned
                   </p>
@@ -819,11 +824,13 @@
               class="github-desktop hidden lg:block max-w-xl"
               src="images/github/desktop.png"
               alt="Github Section's Background"
+              loading="lazy"
             />
             <img
               class="github-mobile lg:hidden w-full"
               src="images/github/mobile.png"
               alt="Github Section's Background"
+              loading="lazy"
             />
           </div>
         </div>
@@ -931,29 +938,29 @@
     <script type="module" src="js/data.js"></script>
     <script type="module" src="js/generator.js"></script>
     <script src="js/theme.js" defer></script>
+    <script src="js/github-card.js" defer></script>
     <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         var lazyLoadInstance = new LazyLoad({
           elements_selector: ".lazy",
           callback_loading: (element) => {
-          // Show spinner
-          const spinnerContainer = element.previousElementSibling;
-          if (spinnerContainer) {
-            spinnerContainer.style.display = "flex";
-          }
-        },
+            // Show spinner
+            const spinnerContainer = element.previousElementSibling;
+            if (spinnerContainer) {
+              spinnerContainer.style.display = "flex";
+            }
+          },
           callback_loaded: (element) => {
-          // Hide spinner and show image
-          const spinnerContainer = element.previousElementSibling;
-          if (spinnerContainer) {
-            spinnerContainer.style.display = "none";
-          }
-          element.classList.remove("opacity-0");
-          element.classList.add("opacity-100");
-        },
-          })
-        })
-      })
+            // Hide spinner and show image
+            const spinnerContainer = element.previousElementSibling;
+            if (spinnerContainer) {
+              spinnerContainer.style.display = "none";
+            }
+            element.classList.remove("opacity-0");
+            element.classList.add("opacity-100");
+          },
+        });
+      });
     </script>
   </body>
 </html>
