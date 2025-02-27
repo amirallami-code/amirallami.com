@@ -1490,8 +1490,8 @@ body::-webkit-scrollbar-thumb {
   margin-top: 0.5rem;
 }
 
-.mt-24 {
-  margin-top: 6rem;
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .mt-40 {
@@ -1500,10 +1500,6 @@ body::-webkit-scrollbar-thumb {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
 }
 
 .block {
@@ -1632,12 +1628,12 @@ body::-webkit-scrollbar-thumb {
   width: 4.5rem;
 }
 
-.w-auto {
-  width: auto;
-}
-
 .w-full {
   width: 100%;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .min-w-64 {

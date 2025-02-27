@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const loadingScreen = document.getElementById('loading-screen');
+    const loadingScreen = document.getElementById('initial-loader');
 
     // Hide loading screen after content loads
     window.addEventListener('load', () => {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Enhanced show/hide functions with transitions
 function showLoader() {
-    const loadingScreen = document.getElementById('loading-screen');
+    const loadingScreen = document.getElementById('initial-loader');
     loadingScreen.classList.remove('hidden');
     // Force a reflow
     loadingScreen.offsetHeight;
@@ -40,7 +40,7 @@ function showLoader() {
 }
 
 function hideLoader() {
-    const loadingScreen = document.getElementById('loading-screen');
+    const loadingScreen = document.getElementById('initial-loader');
     loadingScreen.classList.add('opacity-0');
     setTimeout(() => {
         loadingScreen.classList.add('hidden');
