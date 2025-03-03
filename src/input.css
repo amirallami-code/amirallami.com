@@ -68,8 +68,8 @@
     text-stroke: 1px black;
   }
   .text-stroke-none {
-    -webkit-text-stroke: 0px black;
-    text-stroke: 0px black;
+    -webkit-text-stroke: 1px #507dbb;
+    text-stroke: 1px #507dbb;
   }
 }
 
@@ -121,7 +121,7 @@
 
   .section-title::after {
     content: attr(data-title);
-    @apply absolute text-5xl md:text-6xl text-priWhite -z-10 opacity-5 dark:text-opacity-15 text-stroke dark:text-stroke-none;
+    @apply absolute h-[1em] text-5xl md:text-6xl text-transparent -z-10 opacity-5 dark:text-opacity-15 text-stroke dark:text-stroke-none;
   }
 
   .title-about::after {
@@ -170,12 +170,12 @@
   }
 
   .divider-top {
-    @apply top-[-6rem];
+    @apply top-[-5rem];
     clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 50%, 100% 0%);
   }
 
   .divider-bottom {
-    @apply bottom-[-6rem];
+    @apply bottom-[-5rem];
     clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 50%, 0% 100%);
   }
 
@@ -494,10 +494,6 @@
 
   .line-numbers {
     @apply bg-[#f3f3f3] dark:bg-[#21252b] text-[#237893] dark:text-[#858585] p-2 text-right select-none text-sm leading-6;
-  }
-
-  .line-numbers div {
-    @apply pr-2;
   }
 
   .code-content {
