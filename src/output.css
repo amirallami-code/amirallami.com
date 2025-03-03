@@ -2183,6 +2183,11 @@ body::-webkit-scrollbar-thumb {
   color: rgb(133 77 14 / var(--tw-text-opacity, 1));
 }
 
+.text-gitBlue {
+  --tw-text-opacity: 1;
+  color: rgb(68 147 248 / var(--tw-text-opacity, 1));
+}
+
 .underline-offset-2 {
   text-underline-offset: 2px;
 }

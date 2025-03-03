@@ -164,6 +164,17 @@ const certificatesData = [
         imageAlt: "Coursera Certificate - Programming with JavaScript",
         providerLogo: "images/logos/meta-logo.png"
     },
+    {
+        title: "Version Control",
+        provider: "Meta",
+        platform: "Coursera",
+        earnedOn: "Mar 3, 2025",
+        verifyLink: "https://www.coursera.org/account/accomplishments/verify/0XEJ04PVV5ZW",
+        downloadPath: "images/certificates/pdf/cer-VC.pdf",
+        imagePath: "images/certificates/png/cer-VC.png",
+        imageAlt: "Coursera Certificate - Version Control",
+        providerLogo: "images/logos/meta-logo.png"
+    },
 ];
 
 // Export the data for use in other files
