@@ -55,7 +55,7 @@ function createMobileSkillCard(skill) {
   card.innerHTML = `
     <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
       <div class="flex items-center gap-3">
-        <img src="${skill.icon}" alt="${skill.name}" title="${skill.name}" class="w-6 h-6" />
+        <img src="${skill.icon}" loading="lazy" alt="${skill.name}" title="${skill.name}" class="w-6 h-6" />
         <h4 class="font-medium text-gray-900 dark:text-white">${skill.name}</h4>
       </div>
       <div class="mt-2">
@@ -108,7 +108,7 @@ function createDesktopSkillRow(skill) {
 
   row.innerHTML = `
     <th scope="row" class="flex flex-row items-center gap-3 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-      <img src="${skill.icon}" alt="${skill.name}" title="${skill.name}" class="w-6 h-6" />
+      <img src="${skill.icon}" loading="lazy" alt="${skill.name}" title="${skill.name}" class="w-6 h-6" />
       ${skill.fullName}
     </th>
     <td class="px-6 py-4">
@@ -174,7 +174,7 @@ function createCertificateCard(cert) {
     <div class="cer-context h-full w-full flex flex-col gap-2 justify-between">
       <div class="flex flex-col gap-2 flex-1">
         <p class="cer-earnDate text-sm">Earned on <b>${cert.earnedOn}</b></p>
-        <div class="cer-logo bg-white px-2 py-1 w-[4.5rem] rounded-full">
+        <div class="cer-logo w-20 py-1 px-2 bg-white rounded-full">
           <img src="${cert.providerLogo}" alt="${cert.provider} Logo" />
         </div>
         <a title="verify link" href="${cert.verifyLink}" class="cer-title font-mont-bold leading-5 hover:underline" target="_blank">

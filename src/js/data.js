@@ -149,9 +149,9 @@ const certificatesData = [
         earnedOn: "Jul 7, 2024",
         verifyLink: "https://www.coursera.org/account/accomplishments/verify/HF7Y6KJLLGK9",
         downloadPath: "images/certificates/pdf/cer-IFD.pdf",
-        imagePath: "images/certificates/png/cer-IFD.png",
+        imagePath: "images/certificates/png/cer-IFD.jpg",
         imageAlt: "Coursera Certificate - Introduction to Front-end Development",
-        providerLogo: "images/logos/meta-logo.png"
+        providerLogo: "images/certificates/provider/meta-logo.webp"
     },
     {
         title: "Programming with JavaScript",
@@ -160,9 +160,9 @@ const certificatesData = [
         earnedOn: "Jan 25, 2025",
         verifyLink: "https://www.coursera.org/account/accomplishments/verify/C8G31UOCMO46",
         downloadPath: "images/certificates/pdf/cer-JS.pdf",
-        imagePath: "images/certificates/png/cer-js.png",
+        imagePath: "images/certificates/png/cer-js.jpg",
         imageAlt: "Coursera Certificate - Programming with JavaScript",
-        providerLogo: "images/logos/meta-logo.png"
+        providerLogo: "images/certificates/provider/meta-logo.webp"
     },
     {
         title: "Version Control",
@@ -171,9 +171,9 @@ const certificatesData = [
         earnedOn: "Mar 3, 2025",
         verifyLink: "https://www.coursera.org/account/accomplishments/verify/0XEJ04PVV5ZW",
         downloadPath: "images/certificates/pdf/cer-VC.pdf",
-        imagePath: "images/certificates/png/cer-VC.png",
+        imagePath: "images/certificates/png/cer-VC.jpg",
         imageAlt: "Coursera Certificate - Version Control",
-        providerLogo: "images/logos/meta-logo.png"
+        providerLogo: "images/certificates/provider/meta-logo.webp"
     },
 ];
 
