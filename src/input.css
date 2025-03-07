@@ -64,12 +64,12 @@
 
 @layer utilities {
   .text-stroke {
-    -webkit-text-stroke: 1px black;
-    text-stroke: 1px black;
+    -webkit-text-stroke: 1px theme("colors.brand.dark");
+    text-stroke: 1px theme("colors.brand.dark");
   }
   .text-stroke-none {
-    -webkit-text-stroke: 1px #507dbb;
-    text-stroke: 1px #507dbb;
+    -webkit-text-stroke: 1px theme("colors.brand.primary");
+    text-stroke: 1px theme("colors.brand.primary");
   }
 }
 
@@ -83,7 +83,7 @@
   }
 
   body {
-    @apply flex flex-col items-center justify-center font-mont-med bg-primary text-white select-none transition;
+    @apply flex flex-col items-center justify-center font-mont-med bg-brand-primary text-brand-light select-none transition;
   }
 
   main {
@@ -106,7 +106,7 @@
     @apply bg-slate-200 bg-opacity-50;
   }
   body::-webkit-scrollbar-thumb {
-    @apply bg-priBlue cursor-pointer;
+    @apply bg-brand-secondary cursor-pointer;
   }
 }
 
@@ -140,13 +140,13 @@
 
   .about-interests::before {
     content: "";
-    @apply inline-block w-[6px] h-[6px] bg-primary rounded-full;
+    @apply inline-block w-[6px] h-[6px] bg-brand-primary rounded-full;
     vertical-align: middle;
     margin-right: 0.5rem;
   }
 
   .about-interests b {
-    @apply text-priBlue dark:text-primary;
+    @apply text-brand-secondary dark:text-brand-primary;
   }
 
   .about-links {
@@ -154,7 +154,7 @@
   }
 
   .button {
-    @apply px-5 py-2 font-mont-bold bg-priBlue border-2 border-priGray rounded-xl shadow-btn;
+    @apply px-5 py-2 font-mont-bold bg-brand-secondary border-2 border-brand-neutral rounded-xl shadow-btn;
   }
 
   .button:active,
@@ -188,24 +188,24 @@
   }
 
   .menu-item {
-    @apply block py-2 px-3 rounded-lg transition-all text-gray-900 lg:text-white 
-           hover:bg-gray-200 hover:text-gray-900 lg:hover:text-white lg:hover:bg-transparent 
+    @apply block py-2 px-3 rounded-lg transition-all text-gray-900 lg:text-brand-light 
+           hover:bg-gray-200 hover:text-gray-900 lg:hover:text-brand-light lg:hover:bg-transparent 
            lg:hover:underline lg:p-0 lg:dark:hover:underline lg:underline-offset-4 
-           lg:dark:hover:bg-transparent dark:text-white dark:hover:bg-gray-700 
-           dark:hover:text-white dark:border-gray-700;
+           lg:dark:hover:bg-transparent dark:text-brand-light dark:hover:bg-gray-700 
+           dark:hover:text-brand-light dark:border-gray-700;
   }
 
   .active {
-    @apply block py-2 px-3 rounded-lg text-white bg-primary antialiased tracking-wide
-           hover:bg-primary lg:hover:bg-transparent lg:dark:hover:bg-transparent 
-           hover:text-white lg:hover:no-underline lg:dark:hover:no-underline 
-           dark:hover:bg-primary dark:hover:text-white lg:bg-transparent 
-           lg:font-mont-exbold lg:dark:text-white;
+    @apply block py-2 px-3 rounded-lg text-brand-light bg-brand-primary antialiased tracking-wide
+           hover:bg-brand-primary lg:hover:bg-transparent lg:dark:hover:bg-transparent 
+           hover:text-brand-light lg:hover:no-underline lg:dark:hover:no-underline 
+           dark:hover:bg-brand-primary dark:hover:text-brand-light lg:bg-transparent 
+           lg:font-mont-exbold lg:dark:text-brand-light;
   }
 
   .touch-listItem__title::before {
     content: "";
-    @apply absolute -left-[2px] w-[10px] h-full bg-primary opacity-30 rounded-full;
+    @apply absolute -left-[2px] w-[10px] h-full bg-brand-primary opacity-30 rounded-full;
   }
 
   /* Theme Switch */
@@ -497,11 +497,11 @@
   }
 
   .code-content {
-    @apply flex-grow p-2 m-0 overflow-auto bg-[#ffffff] dark:bg-[#282c34] text-black dark:text-[#d4d4d4] text-sm leading-6;
+    @apply flex-grow p-2 m-0 overflow-auto bg-[#ffffff] dark:bg-[#282c34] text-brand-dark dark:text-[#d4d4d4] text-sm leading-6;
   }
 
   .html-code {
-    white-space: inherit;
+    brand-light-space: inherit;
   }
 
   /* Syntax highlighting */

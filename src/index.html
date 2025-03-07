@@ -380,7 +380,7 @@
     <header class="header">
       <!-- Menu -->
       <nav
-        class="navbar fixed w-full h-auto z-20 top-0 start-0 bg-gradient-to-b from-primary/100 via-primary/60 to-primary/40 backdrop-blur-md"
+        class="navbar fixed w-full h-auto z-20 top-0 start-0 bg-gradient-to-b from-brand-primary/100 via-brand-primary/60 to-brand-primary/40 backdrop-blur-md"
       >
         <div
           class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -438,7 +438,7 @@
             <button
               onclick="toggleMenu()"
               type="button"
-              class="inline-flex items-center p-2 w-12 h-12 justify-center text-sm text-dark-primary rounded-lg lg:hidden hover:bg-primary hover:bg-opacity-30"
+              class="inline-flex items-center p-2 w-12 h-12 justify-center text-sm text-[#1e3a8a] rounded-lg lg:hidden hover:bg-brand-primary hover:bg-opacity-30"
               aria-controls="navbar-sticky"
               aria-expanded="false"
             >
@@ -506,7 +506,9 @@
       <!-- Home -->
       <section id="home" class="section container gap-8 mt-12">
         <div class="home-info flex flex-col w-full max-w-[38rem] gap-4">
-          <h1 class="title h-full min-h-[3.7em] sm:min-h-[2.5em] leading-tight">
+          <h1
+            class="title h-full min-h-[3.7em] sm:min-h-[2.5em] leading-tight text-brand-light"
+          >
             Hi, My name is Amir. I'm a Web developer
           </h1>
           <div class="buttons-wrapper flex flex-row flex-wrap gap-4">
@@ -596,7 +598,7 @@
       <!-- About -->
       <section
         id="about"
-        class="section bg-priWhite dark:bg-dark-backGround gap-8 mt-40"
+        class="section bg-brand-light dark:bg-brand-background gap-8 mt-40"
       >
         <div class="divider divider-top"></div>
         <div class="about-graphic min-w-64 max-w-xl">
@@ -615,7 +617,7 @@
                 "https://d1jj76g3lut4fe.cloudfront.net/saved_colors/100163/yeqC1PUoUTdAmwao.json"
               );
               animation.setAttribute("delay", "1");
-              animation.setAttribute("speed", "100");
+              animation.setAttribute("speed", "75");
               animation.setAttribute("loading", "lazy");
               animation.setAttribute("frame_rate", "24");
               animation.setAttribute("trigger", "loop");
@@ -628,24 +630,24 @@
           </script>
         </div>
         <div
-          class="about-content flex flex-col gap-4 text-justify w-full max-w-2xl md:basis-1/2 text-priBlue z-1"
+          class="about-content flex flex-col gap-4 text-justify w-full max-w-2xl md:basis-1/2 text-brand-secondary z-1"
         >
           <h2
-            class="title section-title title-about text-primary"
+            class="title section-title title-about text-brand-primary"
             data-title="ABOUT ME"
           >
             About me
           </h2>
           <p class="about-text">
             Hi! I'm Amirhossein Allami, a front-end developer and designer based
-            in Shiraz. My tech journey began at age 12 with Photoshop, sparking
-            a passion that evolved into web development. I'm currently pursuing
-            Computer Science while building my skills in JavaScript and React.
-            With a background in design – including 5 years of collaboration
-            with NeuroTRACT creating visual content – I bring a unique
-            perspective to web development.
+            in Shiraz, Iran. My tech journey began at age 12 with Photoshop,
+            sparking a passion that evolved into web development. I'm currently
+            pursuing Computer Science while building my skills in JavaScript and
+            React. With a background in design – including 5 years of
+            collaboration with NeuroTRACT creating visual content – I bring a
+            unique perspective to web development.
           </p>
-          <span class="font-mont-exbold text-primary text-lg"
+          <span class="font-mont-exbold text-brand-primary text-lg"
             >My Toolkit & Interests</span
           >
           <ul class="flex flex-col gap-2 text-left">
@@ -667,6 +669,7 @@
               <a
                 class="about-links"
                 href="https://github.com/amirallami-code/amirallami.com"
+                rel="noopener noreferrer"
                 target="_blank"
                 >amirallami.com
               </a>
@@ -684,11 +687,11 @@
       <!-- Tech Stack -->
       <section
         id="tech"
-        class="section bg-priWhite dark:bg-dark-backGround gap-8 pt-12 px-4 sm:px-6 lg:px-8"
+        class="section bg-brand-light dark:bg-brand-background gap-8 pt-12 px-4 sm:px-6 lg:px-8"
       >
         <div class="tech-content max-w-6xl mx-auto">
           <h2
-            class="title section-title title-cer w-full flex flex-row items-center justify-center overflow-hidden text-center text-primary h-12 mb-8"
+            class="title section-title title-cer w-full flex flex-row items-center justify-center overflow-hidden text-center text-brand-primary h-12 mb-8"
             data-title="TECH STACK"
           >
             Tech Stack
@@ -701,12 +704,12 @@
           >
             <table
               id="tech-desktop-table"
-              class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+              class="w-full text-sm text-center rtl:text-right text-gray-500 dark:text-gray-400"
             >
               <caption
-                class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800 text-center"
+                class="p-5 text-lg font-semibold rtl:text-right text-gray-900 bg-brand-light dark:text-brandbg-brand-light dark:bg-gray-800 text-center"
               >
-                <p class="mt-1 text-sm font-normal text-primary">
+                <p class="mt-1 text-sm font-normal text-brand-primary">
                   Here's a list of technologies I work with, along with my
                   proficiency level and examples of how I've used them.
                 </p>
@@ -740,13 +743,13 @@
       <!-- Certificates -->
       <section
         id="certificates"
-        class="section bg-priWhite dark:bg-dark-backGround py-16"
+        class="section bg-brand-light dark:bg-brand-background py-16"
       >
         <div
           class="certificates-content flex flex-col justify-center items-center gap-8"
         >
           <h2
-            class="title section-title title-cer w-full flex flex-row items-center justify-center overflow-hidden text-center text-primary h-12"
+            class="title section-title title-cer w-full flex flex-row items-center justify-center overflow-hidden text-center text-brand-primary h-12"
             data-title="CERTIFICATES"
           >
             Certificates
@@ -761,66 +764,64 @@
       <!-- Github -->
       <section
         id="github"
-        class="section bg-gitWhite dark:bg-gitBlack lg:pb-32 mt-20 p-0"
+        class="section bg-github-light dark:bg-github-dark lg:pb-32 mt-20 p-0"
       >
         <div class="divider divider-top"></div>
         <div
           class="github-content flex w-full h-[28rem] md:h-[30rem] lg:h-auto items-center justify-center flex-wrap gap-4"
         >
           <div
-            class="github-context container flex flex-col max-w-lg lg:max-w-auto items-center justify-center gap-4 text-gitBlack dark:text-gitWhite z-10 -mb-[35%] lg:mb-0 px-4"
+            class="github-context container flex flex-col max-w-lg lg:max-w-auto items-center justify-center gap-4 text-github-dark dark:text-github-light z-10 -mb-[35%] lg:mb-0 px-4"
           >
             <h2 class="title w-full text-left">My Github</h2>
+
+            <!-- Spinner Loader -->
             <div
-              class="github-information bg-gitWhite dark:bg-gitBlack font-monasans-med flex flex-row gap-3 rounded-2xl p-3 shadow-md dark:shadow-none dark:border-2 border-gitDarkGray"
+              id="github-loader"
+              class="flex justify-center items-center w-full py-8"
+            >
+              <div
+                class="spinner w-10 h-10 border-4 border-github-muted border-t-github-dark dark:border-t-github-light rounded-full animate-spin"
+              ></div>
+            </div>
+
+            <div
+              id="github-information"
+              class="github-information w-full bg-github-light dark:bg-github-dark font-monasans-med flex-row gap-3 rounded-2xl p-3 shadow-md dark:shadow-none dark:border-2 border-github-muted hidden"
             >
               <div class="github-self flex flex-col gap-2">
                 <div
                   class="github-self__titles flex flex-row flex-wrap items-center justify-start gap-4"
                 >
                   <img
-                    src="images/github/profile.jpg"
+                    id="github-profile-img"
+                    src="#"
                     alt="Github Profile"
-                    class="max-w-12 max-h-12 rounded-full"
+                    class="hidden max-w-12 max-h-12 rounded-full"
                   />
                   <div class="flex flex-col h-full">
                     <a
                       href="https://github.com/amirallami-code"
-                      class="font-monasans-bold"
+                      class="github-self__name font-monasans-bold"
                     >
-                      Amirhossein Allami
                     </a>
-                    <p class="text-gitGray text-sm">amirallami-code</p>
+                    <p
+                      class="github-self__id text-github-secondary text-sm"
+                    ></p>
                   </div>
                 </div>
-                <div class="github-self__desc">
-                  Front-end enthusiast by day, algorithm adventurer by night.
-                </div>
+                <div class="github-self__desc"></div>
                 <div
-                  class="github-self__stats flex flex-wrap text-gitGray text-sm gap-2"
+                  class="github-self__stats flex flex-wrap text-github-secondary text-sm gap-2"
                 >
-                  <p>
-                    <span class="github-self__repos font-monasans-bold"
-                      >loading</span
-                    >
-                    repository
+                  <p class="github-self__repos font-monasans-bold">
+                    loading...
                   </p>
-                  <p>
-                    <span class="github-self__followers font-monasans-bold"
-                      >loading</span
-                    >
-                    followers
-                  </p>
-                  <p>
-                    <span class="github-self__stars font-monasans-bold"
-                      >loading</span
-                    >
-                    stars earned
-                  </p>
+                  <p class="github-self__followers font-monasans-bold"></p>
+                  <p class="github-self__stars font-monasans-bold"></p>
                 </div>
               </div>
             </div>
-            <div class="github-repos"></div>
           </div>
           <div
             class="github-graphic flex items-center justify-center overflow-hidden"
@@ -847,7 +848,7 @@
       <!-- Stay in touch -->
       <section
         id="touch"
-        class="section bg-priWhite dark:bg-dark-backGround flex pb-20"
+        class="section bg-brand-light dark:bg-brand-background flex pb-20"
       >
         <div class="divider divider-top"></div>
         <div
@@ -883,16 +884,17 @@
             </script>
           </div>
           <div
-            class="touch-context w-full flex flex-col gap-6 md:gap-12 text-priBlue dark:text-primary"
+            class="touch-context w-full flex flex-col gap-6 md:gap-12 text-brand-secondary dark:text-brand-primary"
           >
-            <h2 class="title text-primary">Stay in touch</h2>
+            <h2 class="title text-brand-primary">Stay in touch</h2>
             <ul class="touch-listWrapper flex flex-col gap-8">
               <li class="touch-listItem flex flex-col gap-2">
                 <b class="touch-listItem__title relative pl-5 text-xl">EMAIL</b>
                 <a
                   target="_blank"
                   href="mailto:amirallami.dev@gmail.com"
-                  class="text-primary hover:underline"
+                  rel="noopener noreferrer"
+                  class="text-brand-primary hover:underline"
                   >amirallami.dev@gmail.com</a
                 >
               </li>
@@ -903,7 +905,8 @@
                 <a
                   target="_blank"
                   href="https://github.com/amirallami-code"
-                  class="text-primary hover:underline"
+                  rel="noopener noreferrer"
+                  class="text-brand-primary hover:underline"
                   >@amirallami-code</a
                 >
               </li>
@@ -914,7 +917,8 @@
                 <a
                   target="_blank"
                   href="https://t.me/amirhosseinallami"
-                  class="text-primary hover:underline"
+                  rel="noopener noreferrer"
+                  class="text-brand-primary hover:underline"
                   >t.me/@amirhosseinallami</a
                 >
               </li>
@@ -925,7 +929,8 @@
                 <a
                   target="_blank"
                   href="https://www.linkedin.com/in/amirhosseinallami/"
-                  class="text-primary hover:underline"
+                  rel="noopener noreferrer"
+                  class="text-brand-primary hover:underline"
                   >in/amirhosseinallami</a
                 >
               </li>
@@ -958,7 +963,7 @@
     <script type="module" src="js/data.js"></script>
     <script type="module" src="js/generator.js"></script>
     <script src="js/theme.js" defer></script>
-    <script src="js/github-card.js" defer></script>
+    <script src="js/github.js" defer></script>
     <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         var lazyLoadInstance = new LazyLoad({

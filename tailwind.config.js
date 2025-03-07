@@ -13,28 +13,32 @@ module.exports = {
         'btn': '-5px 4px 0px 0px #241c15',
       },
       colors: {
-        primary: '#507dbb',
-        priBlue: '#45638b',
-        priWhite: '#f4f4f5',
-        priBlack: '#0f172a',
-        priGray: '#241c15',
+        // Brand colors
+        brand: {
+          primary: '#507dbb',
+          secondary: '#45638b',
+          light: '#f4f4f5',
+          dark: '#0f172a',
+          neutral: '#241c15',
+          background: '#1f2937',
+        },
 
-        // Github section color
-        gitBlack: '#0d1116',
-        gitWhite: '#fff',
-        gitDarkGray: '#3d444d',
-        gitGray: '#919895',
-        gitBlue: '#4493f8',
-
-        dark: {
-          primary: '#1e3a8a',
-          backGround: '#1f2937',
+        // Github section colors
+        github: {
+          dark: '#0d1116',
+          light: '#fff',
+          muted: '#3d444d',
+          secondary: '#919895',
+          accent: '#4493f8',
         },
       },
       fontFamily: {
+        // Mona-sans
         "monasans-bold": ["monasans-bold", "sans-sarif"],
         "monasans-med": ["monasans-med", "sans-sarif"],
+        // Firacode
         "firacode": ["firacode", "sans-sarif"],
+        // Montserrat (Primary)
         "mont-light": ["montserrat-light", "sans-sarif"],
         "mont-med": ["montserrat-med", "sans-sarif"],
         "mont-semibold": ["montserrat-semibold", "sans-sarif"],
