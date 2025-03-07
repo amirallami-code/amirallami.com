@@ -1536,12 +1536,12 @@ body::-webkit-scrollbar-thumb {
   height: 2rem;
 }
 
-.h-12 {
-  height: 3rem;
+.h-10 {
+  height: 2.5rem;
 }
 
-.h-20 {
-  height: 5rem;
+.h-12 {
+  height: 3rem;
 }
 
 .h-3 {
@@ -1576,10 +1576,6 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .max-h-12 {
   max-height: 3rem;
 }
@@ -1596,6 +1592,10 @@ body::-webkit-scrollbar-thumb {
   min-height: 3.7em;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .w-12 {
   width: 3rem;
 }
@@ -1610,10 +1610,6 @@ body::-webkit-scrollbar-thumb {
 
 .w-3 {
   width: 0.75rem;
-}
-
-.w-32 {
-  width: 8rem;
 }
 
 .w-4 {
@@ -1638,10 +1634,6 @@ body::-webkit-scrollbar-thumb {
 
 .w-full {
   width: 100%;
-}
-
-.w-10 {
-  width: 2.5rem;
 }
 
 .min-w-64 {
@@ -2540,18 +2532,6 @@ body::-webkit-scrollbar-thumb {
 
   .md\:min-h-36 {
     min-height: 9rem;
-  }
-
-  .md\:w-44 {
-    width: 11rem;
-  }
-
-  .md\:min-w-44 {
-    min-width: 11rem;
-  }
-
-  .md\:min-w-96 {
-    min-width: 24rem;
   }
 
   .md\:basis-1\/2 {
