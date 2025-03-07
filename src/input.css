@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dancing Script font faces */
+@font-face {
+  font-family: dancing;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("fonts/dancingscript/DancingScript-Bold.ttf") format("truetype");
+}
 /* Mona Sans font faces */
 @font-face {
   font-family: monasans-bold;
@@ -83,7 +91,7 @@
   }
 
   body {
-    @apply flex flex-col items-center justify-center font-mont-med bg-brand-primary text-brand-light select-none transition;
+    @apply min-w-80 overflow-auto flex flex-col items-center justify-center font-mont-med bg-brand-primary text-brand-light select-none transition;
   }
 
   main {
@@ -121,7 +129,11 @@
 
   .section-title::after {
     content: attr(data-title);
-    @apply absolute h-[1em] text-5xl md:text-6xl text-transparent -z-10 opacity-5 dark:text-opacity-15 text-stroke dark:text-stroke-none;
+    @apply absolute h-[1em] text-[125%] text-brand-primary -z-10 opacity-10 font-dancing;
+  }
+
+  .title-github::after {
+    @apply text-[160%] h-auto;
   }
 
   .title-about::after {

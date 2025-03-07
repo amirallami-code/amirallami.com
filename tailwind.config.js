@@ -34,16 +34,18 @@ module.exports = {
       },
       fontFamily: {
         // Mona-sans
-        "monasans-bold": ["monasans-bold", "sans-sarif"],
-        "monasans-med": ["monasans-med", "sans-sarif"],
+        "monasans-bold": ["monasans-bold", "sans-serif"],
+        "monasans-med": ["monasans-med", "sans-serif"],
         // Firacode
-        "firacode": ["firacode", "sans-sarif"],
+        "firacode": ["firacode", "sans-serif"],
         // Montserrat (Primary)
-        "mont-light": ["montserrat-light", "sans-sarif"],
-        "mont-med": ["montserrat-med", "sans-sarif"],
-        "mont-semibold": ["montserrat-semibold", "sans-sarif"],
-        "mont-bold": ["montserrat-bold", "sans-sarif"],
-        "mont-exbold": ["montserrat-extrabold", "sans-sarif"],
+        "mont-light": ["montserrat-light", "sans-serif"],
+        "mont-med": ["montserrat-med", "sans-serif"],
+        "mont-semibold": ["montserrat-semibold", "sans-serif"],
+        "mont-bold": ["montserrat-bold", "sans-serif"],
+        "mont-exbold": ["montserrat-extrabold", "sans-serif"],
+        // Dancing-Script
+        "dancing": ["dancing", "montserrat-med", "sans-serif"],
       },
       zIndex: {
         '1': '1',

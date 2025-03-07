@@ -89,18 +89,6 @@ function createMobileSkillCard(skill) {
   return card;
 }
 
-function createDesktopSkillHead(category) {
-  let html = `<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 rounded-md">
-                    <tr>
-                    <th scope="col" class="px-6 py-3">${category.name}</th>
-                    <th scope="col" class="px-6 py-3">Proficiency</th>
-                    <th scope="col" class="px-6 py-3">Key Features</th>
-                    <th scope="col" class="px-6 py-3">Projects</th>
-                    </tr>
-                </thead>`
-
-  return html;
-}
 
 function createDesktopSkillRow(skill) {
   const row = document.createElement('tr');
@@ -116,7 +104,7 @@ function createDesktopSkillRow(skill) {
         ${skill.proficiency}
       </span>
     </td>
-    <td class="px-6 py-4">
+    <td class="px-6 py-4 text-left">
       <ul class="list-disc list-inside">
         ${skill.features.map(feature => `<li>${feature}</li>`).join('')}
       </ul>
@@ -138,6 +126,20 @@ function createDesktopSkillRow(skill) {
 
   return row;
 }
+
+function createDesktopSkillHead(category) {
+  let html = `<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 rounded-md">
+                    <tr>
+                    <th scope="col" class="px-6 py-3">${category.name}</th>
+                    <th scope="col" class="px-6 py-3">Proficiency</th>
+                    <th scope="col" class="px-6 py-3">Key Features</th>
+                    <th scope="col" class="px-6 py-3">Projects</th>
+                    </tr>
+                </thead>`
+
+  return html;
+}
+
 
 // Certificate Generator Functions
 function renderCertificates() {

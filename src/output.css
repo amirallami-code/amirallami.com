@@ -598,15 +598,17 @@ header {
 
 body {
   display: flex;
+  min-width: 20rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: auto;
   --tw-bg-opacity: 1;
   background-color: rgb(80 125 187 / var(--tw-bg-opacity, 1));
-  font-family: montserrat-med, sans-sarif;
+  font-family: montserrat-med, sans-serif;
   --tw-text-opacity: 1;
   color: rgb(244 244 245 / var(--tw-text-opacity, 1));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
@@ -629,7 +631,7 @@ footer {
 }
 
 b {
-  font-family: montserrat-bold, sans-sarif;
+  font-family: montserrat-bold, sans-serif;
 }
 
 /* Main scroll-bar */
@@ -707,7 +709,7 @@ body::-webkit-scrollbar-thumb {
 .title {
   position: relative;
   z-index: 1;
-  font-family: montserrat-extrabold, sans-sarif;
+  font-family: montserrat-extrabold, sans-serif;
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
@@ -724,25 +726,16 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   z-index: -10;
   height: 1em;
-  font-size: 3rem;
-  line-height: 1;
-  color: transparent;
-  opacity: 0.05;
-  -webkit-text-stroke: 1px #0f172a;
-  text-stroke: 1px #0f172a;
+  font-family: dancing, montserrat-med, sans-serif;
+  font-size: 125%;
+  --tw-text-opacity: 1;
+  color: rgb(80 125 187 / var(--tw-text-opacity, 1));
+  opacity: 0.1;
 }
 
-.section-title:is(.dark *)::after {
-  --tw-text-opacity: 0.15;
-  -webkit-text-stroke: 1px #507dbb;
-  text-stroke: 1px #507dbb;
-}
-
-@media (min-width: 768px) {
-  .section-title::after {
-    font-size: 3.75rem;
-    line-height: 1;
-  }
+.title-github::after {
+  height: auto;
+  font-size: 160%;
 }
 
 .title-about::after {
@@ -802,7 +795,7 @@ body::-webkit-scrollbar-thumb {
   padding-right: 1.25rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-family: montserrat-bold, sans-sarif;
+  font-family: montserrat-bold, sans-serif;
   --tw-shadow: -5px 4px 0px 0px #241c15;
   --tw-shadow-colored: -5px 4px 0px 0px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -975,7 +968,7 @@ body::-webkit-scrollbar-thumb {
 @media (min-width: 1024px) {
   .active {
     background-color: transparent;
-    font-family: montserrat-extrabold, sans-sarif;
+    font-family: montserrat-extrabold, sans-serif;
   }
 
   .active:hover {
@@ -1250,7 +1243,7 @@ body::-webkit-scrollbar-thumb {
   --tw-bg-opacity: 1;
   background-color: rgb(236 236 236 / var(--tw-bg-opacity, 1));
   padding: 6px 12px;
-  font-family: montserrat-med, sans-sarif;
+  font-family: montserrat-med, sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-text-opacity: 1;
@@ -2056,27 +2049,27 @@ body::-webkit-scrollbar-thumb {
 }
 
 .font-firacode {
-  font-family: firacode, sans-sarif;
+  font-family: firacode, sans-serif;
 }
 
 .font-monasans-bold {
-  font-family: monasans-bold, sans-sarif;
+  font-family: monasans-bold, sans-serif;
 }
 
 .font-monasans-med {
-  font-family: monasans-med, sans-sarif;
+  font-family: monasans-med, sans-serif;
 }
 
 .font-mont-bold {
-  font-family: montserrat-bold, sans-sarif;
+  font-family: montserrat-bold, sans-serif;
 }
 
 .font-mont-exbold {
-  font-family: montserrat-extrabold, sans-sarif;
+  font-family: montserrat-extrabold, sans-serif;
 }
 
 .font-mont-med {
-  font-family: montserrat-med, sans-sarif;
+  font-family: montserrat-med, sans-serif;
 }
 
 .font-serif {
@@ -2274,6 +2267,20 @@ body::-webkit-scrollbar-thumb {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+/* Dancing Script font faces */
+
+@font-face {
+  font-family: dancing;
+
+  font-style: normal;
+
+  font-weight: 900;
+
+  font-display: swap;
+
+  src: url("fonts/dancingscript/DancingScript-Bold.ttf") format("truetype");
 }
 
 /* Mona Sans font faces */
@@ -2540,6 +2547,10 @@ body::-webkit-scrollbar-thumb {
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
   }
 
   .md\:gap-12 {
