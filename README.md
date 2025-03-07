@@ -2,11 +2,11 @@
   
 # Amirhossein Allami | Personal Portfolio
   
-![GitHub stars](https://img.shields.io/github/stars/amirallami-code/amirallami.com?style=for-the-badge&color=507dbb)
-![GitHub forks](https://img.shields.io/github/forks/amirallami-code/amirallami.com?style=for-the-badge&color=507dbb)
+![GitHub stars](https://img.shields.io/github/stars/amirallami-code/amirallami.com?style=for-the-badge&color=yellow)
+![GitHub releases](https://img.shields.io/github/release/amirallami-code/amirallami.com?style=for-the-badge&color=507dbb)
 ![GitHub last commit](https://img.shields.io/github/last-commit/amirallami-code/amirallami.com?style=for-the-badge&color=507dbb)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&color=507dbb)
-![Website Status](https://img.shields.io/website?url=https%3A%2F%2Famirallami.com&style=for-the-badge&color=green)
+![Website Status](https://img.shields.io/website?url=https%3A%2F%2Famirallami.com&style=for-the-badge&color=34b233)
 
 <br>
 
