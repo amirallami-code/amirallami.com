@@ -85,23 +85,23 @@ A meticulously crafted professional portfolio website showcasing my journey and 
   </tr>
 </table>
 
-## 🔍 File Structure
+## 🗂️ File Structure
 
 ```
-amirallami.com/
-├── images/                 # Image assets
-│   ├── github/            # GitHub section assets
-│   ├── favicon.png        # Site favicon
-│   └── ...                # Other image assets
-├── js/
-│   ├── app.js             # Main application logic
-│   ├── data.js            # Data management
-│   ├── generator.js       # Dynamic content generation
-│   ├── github-card.js     # GitHub API integration
-│   ├── loader.js          # Page loading optimization
-│   └── theme.js           # Theme management
-├── output.css             # Compiled Tailwind CSS
-├── index.html             # Main entry point
+├── src/
+│   ├── index.html         # Main HTML structure
+│   ├── output.css         # Compiled Tailwind CSS
+│   ├── images/            # Image assets
+│   ├── js/
+│   │   ├── app.js         # Main application logic
+│   │   ├── data.js        # Content data
+│   │   ├── generator.js   # Dynamic content generation
+│   │   ├── github.js      # GitHub API integration
+│   │   ├── loader.js      # Loading animations
+│   │   └── theme.js       # Theme switching functionality
+│   ├── robots.txt         # Search engine directives
+│   └── sitemap.xml        # Site structure for crawlers
+├── tailwind.config.js     # Tailwind configuration
 └── README.md              # Project documentation
 ```
 
