@@ -2158,8 +2158,8 @@ body::-webkit-scrollbar-thumb {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-.text-\[1\.55em\] {
-  font-size: 1.55em;
+.text-\[1\.6em\] {
+  font-size: 1.6em;
 }
 
 .text-lg {
@@ -2180,6 +2180,22 @@ body::-webkit-scrollbar-thumb {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[1\.7em\] {
+  font-size: 1.7em;
+}
+
+.text-\[1\.65em\] {
+  font-size: 1.65em;
+}
+
+.text-\[1\.5em\] {
+  font-size: 1.5em;
+}
+
+.text-\[1\.55em\] {
+  font-size: 1.55em;
 }
 
 .text-2xl {
@@ -2205,10 +2221,6 @@ body::-webkit-scrollbar-thumb {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-\[1\.7em\] {
-  font-size: 1.7em;
 }
 
 .font-medium {
@@ -2651,6 +2663,11 @@ body::-webkit-scrollbar-thumb {
     font-size: 3rem;
     line-height: 1;
   }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -2696,6 +2713,26 @@ body::-webkit-scrollbar-thumb {
 
   .md\:gap-8 {
     gap: 2rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
