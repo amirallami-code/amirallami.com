@@ -1659,6 +1659,10 @@ body::-webkit-scrollbar-thumb {
   min-height: 3.7em;
 }
 
+.min-h-\[5em\] {
+  min-height: 5em;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -2182,6 +2186,10 @@ body::-webkit-scrollbar-thumb {
   line-height: 1rem;
 }
 
+.text-\[1\.6em\] {
+  font-size: 1.6em;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -2600,6 +2608,18 @@ body::-webkit-scrollbar-thumb {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+@media (max-width: 320px) {
+  .max-\[320px\]\:min-h-\[5em\] {
+    min-height: 5em;
+  }
+}
+
+@media (min-width: 320px) {
+  .min-\[320px\]\:min-h-\[5em\] {
+    min-height: 5em;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:flex {
     display: flex;
@@ -2616,6 +2636,11 @@ body::-webkit-scrollbar-thumb {
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
@@ -2662,6 +2687,36 @@ body::-webkit-scrollbar-thumb {
 
   .md\:gap-8 {
     gap: 2rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
