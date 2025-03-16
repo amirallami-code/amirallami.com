@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Extract initial role
-    const titleElement = document.querySelector('.title');
+    const titleElement = document.querySelector('.title-home');
     const initialText = titleElement.textContent.trim();
     const rolePart = initialText.split("I'm a ")[1] || "Front-end developer";
 

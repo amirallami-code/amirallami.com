@@ -316,6 +316,14 @@
     <link rel="preload" href="./output.css" as="style" />
     <link rel="stylesheet" href="./output.css" />
 
+    <!-- animate.css -->
+    <link
+      rel="preload"
+      href="../node_modules/animate.css/animate.min.css"
+      as="style"
+    />
+    <link rel="stylesheet" href="../node_modules/animate.css/animate.min.css" />
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.add("content-loaded");
@@ -325,9 +333,9 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
-    <!-- vanilla loazyload CDN -->
+    <!-- vanilla loazyload -->
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.8.8/lazyload.min.js"
+      src="../node_modules/vanilla-lazyload/dist/lazyload.iife.min.js"
       defer
     ></script>
 
@@ -350,6 +358,12 @@
           gtag("config", "G-MF91X9QV0M");
         };
       });
+    </script>
+
+    <!-- wow.js -->
+    <script src="../node_modules/wow.js/dist/wow.min.js"></script>
+    <script>
+      new WOW().init();
     </script>
   </head>
   <body>
@@ -380,7 +394,7 @@
     <header class="header">
       <!-- Menu -->
       <nav
-        class="navbar fixed w-full h-auto z-20 top-0 start-0 bg-gradient-to-b from-brand-primary/100 via-brand-primary/60 to-brand-primary/40 backdrop-blur-md"
+        class="animate__animated animate__slideInDown navbar fixed w-full h-auto z-20 top-0 start-0 bg-gradient-to-b from-brand-primary/100 via-brand-primary/60 to-brand-primary/40 backdrop-blur-md"
       >
         <div
           class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -437,6 +451,7 @@
               class="inline-flex items-center p-2 w-12 h-12 justify-center text-sm text-[#1e3a8a] rounded-lg lg:hidden hover:bg-brand-primary hover:bg-opacity-30"
               aria-controls="navbar-sticky"
               aria-expanded="false"
+              aria-label="Menu"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -503,17 +518,30 @@
       <section id="home" class="section container gap-8 mt-12">
         <div class="home-info flex flex-col w-full max-w-[38rem] gap-4">
           <h1
-            class="title h-full min-h-[3.7em] sm:min-h-[2.5em] leading-tight text-brand-light"
+            class="wow animate__animated animate__fadeInDown title title-home h-full min-h-[3.7em] sm:min-h-[2.5em] leading-tight text-brand-light"
           >
-            Hi, My name is Amir. I'm a Web developer
+            Hi 👋, <br />
+            My name is Amir. I'm a Web developer
           </h1>
           <div class="buttons-wrapper flex flex-row flex-wrap gap-4">
-            <a href="#about"><button class="button">Who I am !?</button></a>
-            <a href="#touch"><button class="button">Connect</button></a>
+            <a href="#about"
+              ><button
+                class="wow animate__animated animate__rotateInDownLeft button"
+              >
+                Who am I !?
+              </button></a
+            >
+            <a href="#touch"
+              ><button
+                class="wow animate__animated animate__rotateInUpRight button"
+              >
+                Connect
+              </button></a
+            >
           </div>
         </div>
         <div
-          class="home-graphic max-w-[38rem] h-auto font-firacode bg-[#282c34] text-[#d4d4d4] rounded-xl overflow-hidden"
+          class="wow animate__animated animate__slideInUp home-graphic max-w-[38rem] h-auto font-firacode bg-[#282c34] text-[#d4d4d4] rounded-xl overflow-hidden"
         >
           <div class="code-editor w-full h-auto shadow-lg">
             <div class="editor-header flex items-center gap-3">
@@ -580,7 +608,7 @@
         Hi, My name is Amir. I'm a <span id="role-code-text"></span>
     &lt;/<span class="tag">h1</span>&gt;
     &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="string">"buttons-wrapper flex flex-row flex-wrap gap-4"</span>&gt;
-      &lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="string">"button"</span>&gt;&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="string">"#about"</span>&gt;Who I am !?&lt;/<span class="tag">a</span>&gt;&lt;/<span class="tag">button</span>&gt;
+      &lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="string">"button"</span>&gt;&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="string">"#about"</span>&gt;Who am I !?&lt;/<span class="tag">a</span>&gt;&lt;/<span class="tag">button</span>&gt;
       &lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="string">"button"</span>&gt;&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="string">"#touch"</span>&gt;Connect&lt;/<span class="tag">a</span>&gt;&lt;/<span class="tag">button</span>&gt;
     &lt;/<span class="tag">div</span>&gt;
   &lt;/<span class="tag">div</span>&gt;
@@ -597,7 +625,9 @@
         class="section bg-brand-light dark:bg-brand-background gap-8 mt-40"
       >
         <div class="divider divider-top"></div>
-        <div class="about-graphic min-w-64 max-w-xl">
+        <div
+          class="wow animate__animated animate__fadeInUp about-graphic min-w-64 max-w-xl"
+        >
           <div class="animation-placeholder" id="creattie-container"></div>
           <script>
             // Load animation only after page is fully loaded
@@ -626,7 +656,7 @@
           </script>
         </div>
         <div
-          class="about-content flex flex-col gap-4 text-justify w-full max-w-2xl md:basis-1/2 text-brand-secondary z-1"
+          class="wow animate__animated animate__fadeInUp about-content flex flex-col gap-4 text-justify w-full max-w-2xl md:basis-1/2 text-brand-secondary z-1"
         >
           <h2
             class="title section-title title-about text-brand-primary"
@@ -687,16 +717,18 @@
       >
         <div class="tech-content max-w-6xl mx-auto">
           <h2
-            class="title section-title title-cer w-full flex flex-row items-center justify-center overflow-hidden text-center text-brand-primary h-12 mb-8"
+            class="wow animate__animated animate__fadeInUp title section-title title-cer w-full flex flex-row items-center justify-center overflow-hidden text-center text-brand-primary h-12 mb-3 md:mb-8"
             data-title="TECH STACK"
           >
             Tech Stack
           </h2>
           <!-- Mobile card view (visible on small screens) -->
-          <div class="block md:hidden space-y-6"></div>
+          <div
+            class="block md:hidden space-y-6 wow animate__animated animate__fadeInUp"
+          ></div>
           <!-- Desktop table view (visible on medium screens and up) -->
           <div
-            class="hidden md:block overflow-hidden rounded-2xl shadow dark:shadow-none dark:border dark:border-gray-700"
+            class="wow animate__animated animate__fadeInUp hidden md:block overflow-hidden rounded-2xl shadow dark:shadow-none dark:border dark:border-gray-700"
           >
             <table
               id="tech-desktop-table"
@@ -742,16 +774,16 @@
         class="section bg-brand-light dark:bg-brand-background py-16"
       >
         <div
-          class="certificates-content flex flex-col justify-center items-center gap-8"
+          class="certificates-content flex flex-col justify-center items-center gap-3 md:gap-8"
         >
           <h2
-            class="title section-title title-cer w-full flex flex-row items-center justify-center overflow-hidden text-center text-brand-primary h-12"
+            class="wow animate__animated animate__fadeInUp title section-title title-cer w-full flex flex-row items-center justify-center overflow-hidden text-center text-brand-primary h-12"
             data-title="CERTIFICATES"
           >
             Certificates
           </h2>
           <div
-            class="certificates-cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-2"
+            class="wow animate__animated animate__fadeInUp certificates-cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-2"
           ></div>
         </div>
         <div class="divider divider-bottom"></div>
@@ -767,7 +799,7 @@
           class="github-content flex w-full h-[28rem] md:h-[30rem] lg:h-auto items-center justify-center flex-wrap gap-4"
         >
           <div
-            class="github-context container flex flex-col max-w-lg lg:max-w-auto items-center justify-center gap-4 text-github-dark dark:text-github-light z-10 -mb-[35%] lg:mb-0 px-4"
+            class="wow animate__animated animate__fadeInUp github-context container flex flex-col max-w-lg lg:max-w-auto items-center justify-center gap-4 text-github-dark dark:text-github-light z-10 -mb-[35%] lg:mb-0 px-4"
           >
             <h2
               class="title section-title title-github w-full flex items-center justify-center md:justify-start"
@@ -825,7 +857,7 @@
             </div>
           </div>
           <div
-            class="github-graphic flex items-center justify-center overflow-hidden"
+            class="wow animate__animated animate__fadeInUp github-graphic flex items-center justify-center overflow-hidden"
           >
             <!-- Desktop -->
             <img
@@ -856,7 +888,7 @@
           class="flex flex-row items-start justify-center flex-wrap lg:flex-nowrap gap-4"
         >
           <div
-            class="touch-graphic animation-placeholder min-w-64 max-w-md"
+            class="wow animate__animated animate__fadeInUp touch-graphic animation-placeholder min-w-64 max-w-md"
             id="creattie-container2"
           >
             <script>
@@ -887,9 +919,15 @@
           <div
             class="touch-context w-full flex flex-col gap-6 md:gap-12 text-brand-secondary dark:text-brand-primary"
           >
-            <h2 class="title text-brand-primary">Stay in touch</h2>
+            <h2
+              class="wow animate__animated animate__fadeInUp title text-brand-primary"
+            >
+              Stay in touch
+            </h2>
             <ul class="touch-listWrapper flex flex-col gap-8">
-              <li class="touch-listItem flex flex-col gap-2">
+              <li
+                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
+              >
                 <b class="touch-listItem__title relative pl-5 text-xl">EMAIL</b>
                 <a
                   target="_blank"
@@ -899,7 +937,9 @@
                   >amirallami.dev@gmail.com</a
                 >
               </li>
-              <li class="touch-listItem flex flex-col gap-2">
+              <li
+                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
+              >
                 <b class="touch-listItem__title relative pl-5 text-xl"
                   >GITHUB</b
                 >
@@ -911,7 +951,9 @@
                   >@amirallami-code</a
                 >
               </li>
-              <li class="touch-listItem flex flex-col gap-2">
+              <li
+                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
+              >
                 <b class="touch-listItem__title relative pl-5 text-xl"
                   >TELEGRAM</b
                 >
@@ -923,7 +965,9 @@
                   >t.me/@amirhosseinallami</a
                 >
               </li>
-              <li class="touch-listItem flex flex-col gap-2">
+              <li
+                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
+              >
                 <b class="touch-listItem__title relative pl-5 text-xl"
                   >LINKEDIN</b
                 >

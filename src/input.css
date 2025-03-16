@@ -127,10 +127,10 @@
     @apply relative font-mont-exbold text-3xl md:text-5xl z-1;
   }
 
-  .section-title::after {
+  /* .section-title::after {
     content: attr(data-title);
     @apply absolute h-[1em] text-[125%] text-brand-primary -z-10 opacity-10 font-dancing;
-  }
+  } */
 
   .title-github::after {
     @apply text-[160%] h-auto;

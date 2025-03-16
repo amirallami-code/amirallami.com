@@ -62,6 +62,8 @@ A meticulously crafted professional portfolio website showcasing my journey and 
     <td>
       <img src="https://img.shields.io/badge/Custom_CSS_Animations-FF9E0F?style=flat-square&logo=css3&logoColor=white" alt="Custom CSS">
       <img src="https://img.shields.io/badge/Creattie-0081CB?style=flat-square&logo=material-ui&logoColor=white" alt="Creattie">
+      <img src="https://img.shields.io/badge/WOW.js-2088FF?style=flat-square&logo=javascript&logoColor=white" alt="WOW.js">
+      <img src="https://img.shields.io/badge/Animate.css-563D7C?style=flat-square&logo=css3&logoColor=white" alt="Animate.css">
     </td>
   </tr>
   <tr>
@@ -178,8 +180,8 @@ Project Link: [https://github.com/amirallami-code/amirallami.com](https://github
 
 <div align="center">
   
- **If you found this project helpful, please consider giving it a star!** 
+ **If you found this project helpful, please consider giving it a star!**
 
 Made with ❤️ by [Amirhossein Allami](https://github.com/amirallami-code)
-  
+
 </div>
