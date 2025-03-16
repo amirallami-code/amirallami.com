@@ -42,7 +42,6 @@ toggleButton.addEventListener('click', (event) => {
     toggleTheme();
 });
 
-// Optional: Sync the checkbox state with the theme
 toggleCheckbox.addEventListener('change', () => {
     toggleTheme();
 });

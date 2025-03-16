@@ -511,33 +511,22 @@
     </header>
     <main class="main">
       <!-- Home -->
-      <section id="home" class="section container gap-8 mt-12">
+      <section id="home" class="section container gap-10 mt-12">
         <div class="home-info flex flex-col w-full max-w-[38rem] gap-4">
           <h1
-            class="wow animate__animated animate__fadeInDown title title-home h-full min-h-[3.7em] sm:min-h-[2.5em] leading-tight text-brand-light"
+            class="wow animate__animated animate__fadeIn title title-home h-full min-h-[3.7em] sm:min-h-[2.5em] leading-tight text-brand-light"
           >
-            Hi 👋, <br />
-            My name is Amir. I'm a Web developer
+            Hi 👋,<br />
+            My name is Amir. <br />
+            I'm a Web developer
           </h1>
           <div class="buttons-wrapper flex flex-row flex-wrap gap-4">
-            <a href="#about"
-              ><button
-                class="wow animate__animated animate__slideInDown button"
-              >
-                Who am I !?
-              </button></a
-            >
-            <a href="#touch"
-              ><button
-                class="wow animate__animated animate__slideInDown button"
-              >
-                Connect
-              </button></a
-            >
+            <a href="#about"><button class="button">Who am I !?</button></a>
+            <a href="#touch"><button class="button">Connect</button></a>
           </div>
         </div>
         <div
-          class="wow animate__animated animate__slideInUp home-graphic max-w-[38rem] h-auto font-firacode bg-[#282c34] text-[#d4d4d4] rounded-xl overflow-hidden"
+          class="wow animate__animated animate__zoomIn home-graphic max-w-lg h-auto font-firacode bg-[#282c34] text-[#d4d4d4] rounded-xl overflow-hidden"
         >
           <div class="code-editor w-full h-auto shadow-lg">
             <div class="editor-header flex items-center gap-3">
@@ -622,7 +611,7 @@
       >
         <div class="divider divider-top"></div>
         <div
-          class="wow animate__animated animate__fadeInUp about-graphic min-w-64 max-w-xl"
+          class="wow animate__animated animate__fadeInLeft about-graphic min-w-64 max-w-xl"
         >
           <div class="animation-placeholder" id="creattie-container"></div>
           <script>
@@ -652,15 +641,18 @@
           </script>
         </div>
         <div
-          class="wow animate__animated animate__fadeInUp about-content flex flex-col gap-4 text-justify w-full max-w-2xl md:basis-1/2 text-brand-secondary z-1"
+          class="about-content flex flex-col gap-4 text-justify w-full max-w-2xl md:basis-1/2 text-brand-secondary z-1"
         >
           <h2
-            class="title section-title title-about text-brand-primary"
+            class="wow animate__animated animate__fadeInUp title section-title title-about text-brand-primary"
             data-title="ABOUT ME"
           >
             About me
           </h2>
-          <p class="about-text">
+          <p
+            class="wow animate__animated animate__fadeIn about-text"
+            data-wow-duration="2s"
+          >
             Hi! I'm Amirhossein Allami, a front-end developer and designer based
             in Shiraz, Iran. My tech journey began at age 12 with Photoshop,
             sparking a passion that evolved into web development. I'm currently
@@ -669,23 +661,32 @@
             collaboration with NeuroTRACT creating visual content – I bring a
             unique perspective to web development.
           </p>
-          <span class="font-mont-exbold text-brand-primary text-lg"
+          <span
+            class="wow animate__animated animate__fadeInRight font-mont-exbold text-brand-primary text-lg"
             >My Toolkit & Interests</span
           >
           <ul class="flex flex-col gap-2 text-left">
-            <li class="about-interests">
+            <li
+              class="wow animate__animated animate__fadeInRight about-interests"
+            >
               <b>Front-End Development:</b> Building responsive interfaces with
               React, focusing on clean code and modern best practices
             </li>
-            <li class="about-interests">
+            <li
+              class="wow animate__animated animate__fadeInRight about-interests"
+            >
               <b>Design Experience:</b> Professional background in poster design
               and video editing at NeuroTRACT (2018-present)
             </li>
-            <li class="about-interests">
+            <li
+              class="wow animate__animated animate__fadeInRight about-interests"
+            >
               <b>Technical Exploration:</b> Diving deep into algorithms and
               Linux, while exploring AI's role in modern web development
             </li>
-            <li class="about-interests">
+            <li
+              class="wow animate__animated animate__fadeInRight about-interests"
+            >
               <b>Current Projects:</b> Working on personal portfolio projects to
               apply my growing front-end skills (
               <a
@@ -856,6 +857,7 @@
           </div>
           <div
             class="wow animate__animated animate__fadeInUp github-graphic flex items-center justify-center overflow-hidden"
+            data-wow-duration="2s"
           >
             <!-- Desktop -->
             <img
@@ -886,7 +888,7 @@
           class="flex flex-row items-start justify-center flex-wrap lg:flex-nowrap gap-4"
         >
           <div
-            class="wow animate__animated animate__fadeInUp touch-graphic animation-placeholder min-w-64 max-w-md"
+            class="wow animate__animated animate__fadeInLeft touch-graphic animation-placeholder min-w-64 max-w-md"
             id="creattie-container2"
           >
             <script>
@@ -924,7 +926,7 @@
             </h2>
             <ul class="touch-listWrapper flex flex-col gap-8">
               <li
-                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
+                class="wow animate__animated animate__fadeInRight touch-listItem flex flex-col gap-2"
               >
                 <b class="touch-listItem__title relative pl-5 text-xl">EMAIL</b>
                 <a
@@ -936,7 +938,7 @@
                 >
               </li>
               <li
-                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
+                class="wow animate__animated animate__fadeInRight touch-listItem flex flex-col gap-2"
               >
                 <b class="touch-listItem__title relative pl-5 text-xl"
                   >GITHUB</b
@@ -950,7 +952,7 @@
                 >
               </li>
               <li
-                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
+                class="wow animate__animated animate__fadeInRight touch-listItem flex flex-col gap-2"
               >
                 <b class="touch-listItem__title relative pl-5 text-xl"
                   >TELEGRAM</b
@@ -964,7 +966,7 @@
                 >
               </li>
               <li
-                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
+                class="wow animate__animated animate__fadeInRight touch-listItem flex flex-col gap-2"
               >
                 <b class="touch-listItem__title relative pl-5 text-xl"
                   >LINKEDIN</b
