@@ -1655,14 +1655,6 @@ body::-webkit-scrollbar-thumb {
   min-height: 8rem;
 }
 
-.min-h-\[3\.7em\] {
-  min-height: 3.7em;
-}
-
-.min-h-\[5em\] {
-  min-height: 5em;
-}
-
 .w-10 {
   width: 2.5rem;
 }
@@ -2166,6 +2158,10 @@ body::-webkit-scrollbar-thumb {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
+.text-\[1\.6em\] {
+  font-size: 1.6em;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2186,8 +2182,20 @@ body::-webkit-scrollbar-thumb {
   line-height: 1rem;
 }
 
-.text-\[1\.6em\] {
-  font-size: 1.6em;
+.text-\[1\.7em\] {
+  font-size: 1.7em;
+}
+
+.text-\[1\.65em\] {
+  font-size: 1.65em;
+}
+
+.text-\[1\.5em\] {
+  font-size: 1.5em;
+}
+
+.text-\[1\.55em\] {
+  font-size: 1.55em;
 }
 
 .font-medium {
@@ -2608,18 +2616,6 @@ body::-webkit-scrollbar-thumb {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-@media (max-width: 320px) {
-  .max-\[320px\]\:min-h-\[5em\] {
-    min-height: 5em;
-  }
-}
-
-@media (min-width: 320px) {
-  .min-\[320px\]\:min-h-\[5em\] {
-    min-height: 5em;
-  }
-}
-
 @media (min-width: 640px) {
   .sm\:flex {
     display: flex;
@@ -2641,6 +2637,11 @@ body::-webkit-scrollbar-thumb {
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -2689,19 +2690,9 @@ body::-webkit-scrollbar-thumb {
     gap: 2rem;
   }
 
-  .md\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
-  }
-
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 
   .md\:text-3xl {
