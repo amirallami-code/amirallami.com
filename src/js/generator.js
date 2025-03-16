@@ -19,7 +19,7 @@ function renderTechStack() {
       const categoryHeading = document.createElement('div');
       categoryHeading.className = 'mb-8';
       categoryHeading.innerHTML = `
-        <h3 class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 px-4 py-3 mb-3 rounded-t-lg">
+        <h3 class="wow animate__animated animate__fadeInUp text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 px-4 py-3 mb-3 rounded-t-lg">
           ${category.name}
         </h3>
       `;
@@ -50,7 +50,7 @@ function renderTechStack() {
 
 function createMobileSkillCard(skill) {
   const card = document.createElement('div');
-  card.className = 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg mb-4 overflow-hidden shadow-sm';
+  card.className = 'wow animate__animated animate__fadeInUp bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg mb-4 overflow-hidden shadow-sm';
 
   card.innerHTML = `
     <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
@@ -92,7 +92,7 @@ function createMobileSkillCard(skill) {
 
 function createDesktopSkillRow(skill) {
   const row = document.createElement('tr');
-  row.className = 'bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200';
+  row.className = 'wow animate__animated animate__fadeInLeft bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200';
 
   row.innerHTML = `
     <th scope="row" class="flex flex-row items-center gap-3 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">

@@ -721,17 +721,10 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-.section-title::after {
-  content: attr(data-title);
-  position: absolute;
-  z-index: -10;
-  height: 1em;
-  font-family: dancing, montserrat-med, sans-serif;
-  font-size: 125%;
-  --tw-text-opacity: 1;
-  color: rgb(80 125 187 / var(--tw-text-opacity, 1));
-  opacity: 0.1;
-}
+/* .section-title::after {
+    content: attr(data-title);
+    @apply absolute h-[1em] text-[125%] text-brand-primary -z-10 opacity-10 font-dancing;
+  } */
 
 .title-github::after {
   height: auto;
@@ -1775,6 +1768,10 @@ body::-webkit-scrollbar-thumb {
   gap: 2rem;
 }
 
+.gap-5 {
+  gap: 1.25rem;
+}
+
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -2521,6 +2518,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 768px) {
+  .md\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -2555,6 +2556,10 @@ body::-webkit-scrollbar-thumb {
 
   .md\:gap-12 {
     gap: 3rem;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
   }
 }
 
