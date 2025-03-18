@@ -157,7 +157,7 @@ function renderCertificates() {
 
 function createCertificateCard(cert) {
   const card = document.createElement('div');
-  card.className = 'certificates-card flex flex-col justify-between items-center gap-3 bg-brand-primary p-5 border-2 border-brand-neutral rounded-3xl shadow-btn max-w-80';
+  card.className = 'certificates-card flex flex-col justify-between items-center gap-3 bg-brand-primary p-4 rounded-3xl button-shadow max-w-80';
 
   card.innerHTML = `
     <div class="cer-picture w-full h-full">

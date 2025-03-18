@@ -79,6 +79,9 @@
     -webkit-text-stroke: 1px theme("colors.brand.primary");
     text-stroke: 1px theme("colors.brand.primary");
   }
+  .button-shadow {
+    @apply border-2 border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe];
+  }
 }
 
 @layer base {
@@ -91,7 +94,7 @@
   }
 
   body {
-    @apply min-w-80 overflow-auto flex flex-col items-center justify-center font-mont-med bg-brand-primary text-brand-light select-none transition overflow-x-hidden;
+    @apply min-w-80 overflow-auto flex flex-col items-center justify-center font-mont-med bg-brand-primary text-brand-light select-none transition;
   }
 
   main {
@@ -166,7 +169,7 @@
   }
 
   .button {
-    @apply px-6 py-[5px] rounded-xl bg-brand-secondary border-2 border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe] hover:shadow-none transition-all;
+    @apply px-6 py-[5px] rounded-xl bg-brand-secondary transition-all button-shadow;
   }
 
   /* section divider */
