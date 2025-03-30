@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -511,9 +511,10 @@
     </header>
     <main class="main">
       <!-- Home -->
-      <section id="home" class="section container gap-10 mt-12">
+      <section id="home" class="section container gap-10 mt-12" dir="ltr">
         <div class="home-info flex flex-col w-full max-w-[38rem] gap-4">
           <h1
+            translate="no"
             class="wow animate__animated animate__fadeIn title title-home h-full text-[1.55em] sm:text-5xl sm:min-h-[2.5em] leading-tight text-brand-light"
           >
             Hi 👋,<br />
@@ -526,7 +527,7 @@
           </div>
         </div>
         <div
-          class="wow animate__animated animate__zoomIn home-graphic max-w-lg h-auto font-firacode bg-[#282c34] text-[#d4d4d4] rounded-xl overflow-hidden"
+          class="home-graphic max-w-lg h-auto font-firacode bg-[#282c34] text-[#d4d4d4] rounded-xl overflow-hidden"
         >
           <div class="code-editor w-full h-auto shadow-lg">
             <div class="editor-header flex items-center gap-3">
@@ -642,6 +643,7 @@
         </div>
         <div
           class="about-content flex flex-col gap-4 text-justify w-full max-w-2xl md:basis-1/2 text-brand-secondary z-1"
+          style="text-align: initial"
         >
           <h2
             class="wow animate__animated animate__fadeInUp title section-title title-about text-brand-primary"
@@ -649,10 +651,7 @@
           >
             About me
           </h2>
-          <p
-            class="wow animate__animated animate__fadeIn about-text"
-            data-wow-duration="2s"
-          >
+          <p class="about-text" data-wow-duration="2s">
             Hi! I'm Amirhossein Allami, a front-end developer and designer based
             in Shiraz, Iran. My tech journey began at age 12 with Photoshop,
             sparking a passion that evolved into web development. I'm currently
@@ -661,24 +660,23 @@
             collaboration with NeuroTRACT creating visual content – I bring a
             unique perspective to web development.
           </p>
-          <span
-            class="wow animate__animated animate__fadeInUp font-mont-exbold text-brand-primary text-lg"
+          <span class="font-mont-exbold text-brand-primary text-lg"
             >My Toolkit & Interests</span
           >
-          <ul class="flex flex-col gap-2 text-left">
-            <li class="wow animate__animated animate__fadeInUp about-interests">
-              <b>Front-End Development:</b> Building responsive interfaces with
+          <ul class="flex flex-col gap-2">
+            <li class="about-interests">
+              <b>Front end Development:</b> Building responsive interfaces with
               React, focusing on clean code and modern best practices
             </li>
-            <li class="wow animate__animated animate__fadeInUp about-interests">
+            <li class="about-interests">
               <b>Design Experience:</b> Professional background in poster design
               and video editing at NeuroTRACT (2018-present)
             </li>
-            <li class="wow animate__animated animate__fadeInUp about-interests">
+            <li class="about-interests">
               <b>Technical Exploration:</b> Diving deep into algorithms and
               Linux, while exploring AI's role in modern web development
             </li>
-            <li class="wow animate__animated animate__fadeInUp about-interests">
+            <li class="about-interests">
               <b>Current Projects:</b> Working on personal portfolio projects to
               apply my growing front-end skills (
               <a
@@ -717,7 +715,7 @@
           ></div>
           <!-- Desktop table view (visible on medium screens and up) -->
           <div
-            class="wow animate__animated animate__fadeInUp hidden md:block overflow-hidden rounded-2xl shadow dark:shadow-none dark:border dark:border-gray-700"
+            class="hidden md:block overflow-hidden rounded-2xl shadow dark:shadow-none dark:border dark:border-gray-700"
           >
             <table
               id="tech-desktop-table"
@@ -734,9 +732,7 @@
             </table>
           </div>
           <!-- Skill level legend -->
-          <div
-            class="wow animate__animated animate__fadeInUp mt-6 flex flex-col gap-4 justify-start text-xs"
-          >
+          <div class="mt-6 flex flex-col gap-4 justify-start text-xs">
             <div class="flex items-center gap-2">
               <span class="w-3 h-3 rounded-full bg-green-500"></span>
               <span class="text-gray-700 dark:text-gray-300"
@@ -917,9 +913,7 @@
               Stay in touch
             </h2>
             <ul class="touch-listWrapper flex flex-col gap-8">
-              <li
-                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
-              >
+              <li class="touch-listItem flex flex-col gap-2">
                 <b class="touch-listItem__title relative pl-5 text-xl">EMAIL</b>
                 <a
                   target="_blank"
@@ -929,9 +923,7 @@
                   >amirallami.dev@gmail.com</a
                 >
               </li>
-              <li
-                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
-              >
+              <li class="touch-listItem flex flex-col gap-2">
                 <b class="touch-listItem__title relative pl-5 text-xl"
                   >GITHUB</b
                 >
@@ -943,9 +935,7 @@
                   >@amirallami-code</a
                 >
               </li>
-              <li
-                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
-              >
+              <li class="touch-listItem flex flex-col gap-2">
                 <b class="touch-listItem__title relative pl-5 text-xl"
                   >TELEGRAM</b
                 >
@@ -957,9 +947,7 @@
                   >t.me/@amirhosseinallami</a
                 >
               </li>
-              <li
-                class="wow animate__animated animate__fadeInUp touch-listItem flex flex-col gap-2"
-              >
+              <li class="touch-listItem flex flex-col gap-2">
                 <b class="touch-listItem__title relative pl-5 text-xl"
                   >LINKEDIN</b
                 >
@@ -973,7 +961,7 @@
               </li>
             </ul>
             <div
-              class="wow animate__animated animate__fadeInUp touch-end w-full flex flex-col justify-center items-end gap-3"
+              class="touch-end w-full flex flex-col justify-center items-end gap-3"
             >
               <p class="font-serif">Sincerely, Amirhossein Allami.</p>
               <img
