@@ -182,6 +182,6 @@ Project Link: [https://github.com/amirallami-code/amirallami.com](https://github
   
  **If you found this project helpful, please consider giving it a star!**
 
-Made with ❤️ by [Amirhossein Allami](https://github.com/amirallami-code)
+Made by [Amirhossein Allami](https://github.com/amirallami-code)
 
 </div>
