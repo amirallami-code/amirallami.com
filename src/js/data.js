@@ -78,6 +78,20 @@ const techStackData = {
                     ]
                 },
                 {
+                    name: "React",
+                    fullName: "ReactJS",
+                    icon: "https://skillicons.dev/icons?i=react",
+                    proficiency: "Beginner",
+                    proficiencyColor: "yellow",
+                    features: [
+                        "Component-Based Architecture",
+                        "Virtual DOM",
+                        "React Hooks"
+                    ],
+                    projects: [
+                    ]
+                },
+                {
                     name: "Tailwind CSS",
                     fullName: "Tailwind",
                     icon: "https://skillicons.dev/icons?i=tailwind",
@@ -115,6 +129,10 @@ const techStackData = {
                         {
                             name: "License Guide",
                             url: "https://github.com/amirallami-code/license-guide"
+                        },
+                        {
+                            name: "Personal Portfolio Website",
+                            url: "https://github.com/amirallami-code/amirallami.com"
                         },
                     ]
                 },
