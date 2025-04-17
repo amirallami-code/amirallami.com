@@ -89,12 +89,15 @@
     @apply scroll-smooth;
   }
 
-  header {
-    @apply container h-20;
+  body {
+    @apply min-w-80 overflow-auto flex flex-col items-center justify-center font-mont-med bg-brand-primary text-brand-light select-none transition invisible opacity-0;
+  }
+  body.content-loaded {
+    @apply opacity-100 visible;
   }
 
-  body {
-    @apply min-w-80 overflow-auto flex flex-col items-center justify-center font-mont-med bg-brand-primary text-brand-light select-none transition;
+  header {
+    @apply container h-20;
   }
 
   main {
@@ -122,6 +125,9 @@
 }
 
 @layer components {
+  .loader {
+    @apply relative w-16 h-24;
+  }
   .section {
     @apply relative flex flex-row flex-wrap w-full h-full min-h-min justify-center items-center px-4 md:p-0;
   }

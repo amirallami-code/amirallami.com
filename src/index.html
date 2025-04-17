@@ -53,266 +53,6 @@
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.png" type="image/x-icon" />
 
-    <style>
-      body {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease;
-        background-color: #507dbb;
-      }
-
-      body.content-loaded {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      /* Loader */
-      .loader {
-        position: relative;
-        width: 75px;
-        height: 100px;
-      }
-
-      .loader__bar {
-        position: absolute;
-        bottom: 0;
-        width: 10px;
-        height: 50%;
-        background-color: rgb(31, 41, 55);
-        transform-origin: center bottom;
-        box-shadow: 1px 1px 0 rgba(31, 41, 55, 0.2);
-      }
-
-      .loader__ball {
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        width: 10px;
-        height: 10px;
-        background-color: rgb(244, 244, 245);
-        border-radius: 9999px;
-        animation: ball624 4s infinite;
-      }
-
-      .loader__bar:nth-child(1) {
-        left: 0px;
-        transform: scale(1, 0.2);
-        animation: barUp1 4s infinite;
-      }
-
-      .loader__bar:nth-child(2) {
-        left: 15px;
-        transform: scale(1, 0.4);
-        animation: barUp2 4s infinite;
-      }
-
-      .loader__bar:nth-child(3) {
-        left: 30px;
-        transform: scale(1, 0.6);
-        animation: barUp3 4s infinite;
-      }
-
-      .loader__bar:nth-child(4) {
-        left: 45px;
-        transform: scale(1, 0.8);
-        animation: barUp4 4s infinite;
-      }
-
-      .loader__bar:nth-child(5) {
-        left: 60px;
-        transform: scale(1, 1);
-        animation: barUp5 4s infinite;
-      }
-
-      @keyframes ball624 {
-        0% {
-          transform: translate(0, 0);
-        }
-
-        5% {
-          transform: translate(8px, -14px);
-        }
-
-        10% {
-          transform: translate(15px, -10px);
-        }
-
-        17% {
-          transform: translate(23px, -24px);
-        }
-
-        20% {
-          transform: translate(30px, -20px);
-        }
-
-        27% {
-          transform: translate(38px, -34px);
-        }
-
-        30% {
-          transform: translate(45px, -30px);
-        }
-
-        37% {
-          transform: translate(53px, -44px);
-        }
-
-        40% {
-          transform: translate(60px, -40px);
-        }
-
-        50% {
-          transform: translate(60px, 0);
-        }
-
-        57% {
-          transform: translate(53px, -14px);
-        }
-
-        60% {
-          transform: translate(45px, -10px);
-        }
-
-        67% {
-          transform: translate(37px, -24px);
-        }
-
-        70% {
-          transform: translate(30px, -20px);
-        }
-
-        77% {
-          transform: translate(22px, -34px);
-        }
-
-        80% {
-          transform: translate(15px, -30px);
-        }
-
-        87% {
-          transform: translate(7px, -44px);
-        }
-
-        90% {
-          transform: translate(0, -40px);
-        }
-
-        100% {
-          transform: translate(0, 0);
-        }
-      }
-
-      @keyframes barUp1 {
-        0% {
-          transform: scale(1, 0.2);
-        }
-
-        40% {
-          transform: scale(1, 0.2);
-        }
-
-        50% {
-          transform: scale(1, 1);
-        }
-
-        90% {
-          transform: scale(1, 1);
-        }
-
-        100% {
-          transform: scale(1, 0.2);
-        }
-      }
-
-      @keyframes barUp2 {
-        0% {
-          transform: scale(1, 0.4);
-        }
-
-        40% {
-          transform: scale(1, 0.4);
-        }
-
-        50% {
-          transform: scale(1, 0.8);
-        }
-
-        90% {
-          transform: scale(1, 0.8);
-        }
-
-        100% {
-          transform: scale(1, 0.4);
-        }
-      }
-
-      @keyframes barUp3 {
-        0% {
-          transform: scale(1, 0.6);
-        }
-
-        100% {
-          transform: scale(1, 0.6);
-        }
-      }
-
-      @keyframes barUp4 {
-        0% {
-          transform: scale(1, 0.8);
-        }
-
-        40% {
-          transform: scale(1, 0.8);
-        }
-
-        50% {
-          transform: scale(1, 0.4);
-        }
-
-        90% {
-          transform: scale(1, 0.4);
-        }
-
-        100% {
-          transform: scale(1, 0.8);
-        }
-      }
-
-      @keyframes barUp5 {
-        0% {
-          transform: scale(1, 1);
-        }
-
-        40% {
-          transform: scale(1, 1);
-        }
-
-        50% {
-          transform: scale(1, 0.2);
-        }
-
-        90% {
-          transform: scale(1, 0.2);
-        }
-
-        100% {
-          transform: scale(1, 1);
-        }
-      }
-
-      .main {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    </style>
-
     <link rel="preload" href="./output.css" as="style" />
     <link rel="stylesheet" href="./output.css" />
 
@@ -337,22 +77,23 @@
 
     <!-- Google analytics -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      // Load GA after page load
       window.addEventListener("load", function () {
-        const script = document.createElement("script");
-        script.src = "https://www.googletagmanager.com/gtag/js?id=G-MF91X9QV0M";
-        script.async = true;
-        document.head.appendChild(script);
+        setTimeout(function () {
+          const script = document.createElement("script");
+          script.src =
+            "https://www.googletagmanager.com/gtag/js?id=G-MF91X9QV0M";
+          script.async = true;
+          document.head.appendChild(script);
 
-        script.onload = function () {
-          gtag("js", new Date());
-          gtag("config", "G-MF91X9QV0M");
-        };
+          script.onload = function () {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-MF91X9QV0M");
+          };
+        }, 3000); // Delay analytics load to prioritize core content
       });
     </script>
 
@@ -363,28 +104,28 @@
     </script>
   </head>
   <body>
+    <!-- Loader -->
     <div
       id="initial-loader"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #507dbb;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-      "
+      class="fixed inset-0 bg-brand-primary flex justify-center items-center z-[9999]"
     >
-      <div class="loader">
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__bar"></div>
-        <div class="loader__ball"></div>
+      <div class="spinner flex justify-center items-center">
+        <div role="status">
+          <svg
+            class="inline w-8 h-8 text-white/60 animate-spin fill-white"
+            viewBox="0 0 100 101"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+              fill="currentColor"
+            />
+            <path
+              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+              fill="currentFill"
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <header class="header">
@@ -401,8 +142,14 @@
           >
             <img
               src="images/signature/default.webp"
+              srcset="
+                images/signature/default-small.webp 300w,
+                images/signature/default.webp       600w
+              "
+              sizes="(max-width: 768px) 300px, 600px"
               alt="Signature"
               class="w-auto h-7 md:h-10"
+              loading="lazy"
             />
           </a>
           <div
@@ -844,22 +591,33 @@
             </div>
           </div>
           <div
-            class="wow animate__animated animate__fadeInUp github-graphic flex items-center justify-center overflow-hidden"
-            data-wow-duration="2s"
+            class="github-graphic flex items-center justify-center overflow-hidden"
           >
             <!-- Desktop -->
             <img
-              class="github-desktop hidden lg:block max-w-xl"
               src="images/github/desktop.webp"
+              srcset="
+                images/github/desktop-small.webp 300w,
+                images/github/desktop.webp       600w
+              "
+              sizes="(max-width: 768px) 300px, 600px"
               alt="Github Section's Background"
+              class="github-desktop hidden lg:block max-w-xl"
               loading="lazy"
             />
+
             <!-- Mobile -->
             <img
-              class="github-mobile lg:hidden min-w-[175%]"
               src="images/github/mobile.webp"
+              srcset="
+                images/github/mobile-small.webp 300w,
+                images/github/mobile.webp       600w
+              "
+              sizes="(max-width: 768px) 300px, 600px"
               alt="Github Section's Background"
+              class="wow animate__animated animate__fadeInUp github-mobile lg:hidden min-w-[175%]"
               loading="lazy"
+              data-wow-duration="1.5s"
             />
           </div>
         </div>
@@ -966,8 +724,14 @@
               <p class="font-serif">Sincerely, Amirhossein Allami.</p>
               <img
                 src="images/signature/blue.webp"
-                alt="Signature"
+                srcset="
+                  images/signature/blue-small.webp 300w,
+                  images/signature/blue.webp       600w
+                "
+                sizes="(max-width: 768px) 300px, 600px"
+                alt="Sincerely Signature"
                 class="w-40 h-auto"
+                loading="lazy"
               />
             </div>
           </div>

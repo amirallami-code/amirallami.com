@@ -558,6 +558,35 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  visibility: hidden;
+  display: flex;
+  min-width: 20rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  --tw-bg-opacity: 1;
+  background-color: rgb(80 125 187 / var(--tw-bg-opacity, 1));
+  font-family: montserrat-med, sans-serif;
+  --tw-text-opacity: 1;
+  color: rgb(244 244 245 / var(--tw-text-opacity, 1));
+  opacity: 0;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+body.content-loaded {
+  visibility: visible;
+  opacity: 1;
+}
+
 header {
   width: 100%;
 }
@@ -594,28 +623,6 @@ header {
 
 header {
   height: 5rem;
-}
-
-body {
-  display: flex;
-  min-width: 20rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: auto;
-  --tw-bg-opacity: 1;
-  background-color: rgb(80 125 187 / var(--tw-bg-opacity, 1));
-  font-family: montserrat-med, sans-serif;
-  --tw-text-opacity: 1;
-  color: rgb(244 244 245 / var(--tw-text-opacity, 1));
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
 }
 
 main {
@@ -707,6 +714,12 @@ body::-webkit-scrollbar-thumb {
   .container {
     max-width: 1536px;
   }
+}
+
+.loader {
+  position: relative;
+  height: 6rem;
+  width: 4rem;
 }
 
 .section {
@@ -1461,6 +1474,10 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 
+.inset-0 {
+  inset: 0px;
+}
+
 .start-0 {
   inset-inline-start: 0px;
 }
@@ -1479,6 +1496,10 @@ body::-webkit-scrollbar-thumb {
 
 .z-20 {
   z-index: 20;
+}
+
+.z-\[9999\] {
+  z-index: 9999;
 }
 
 .mx-auto {
@@ -1742,10 +1763,6 @@ body::-webkit-scrollbar-thumb {
 
 .flex-grow {
   flex-grow: 1;
-}
-
-.basis-1\/2 {
-  flex-basis: 50%;
 }
 
 .transform {
