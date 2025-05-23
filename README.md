@@ -2,11 +2,11 @@
   
 # Amirhossein Allami | Personal Portfolio
   
-![GitHub stars](https://img.shields.io/github/stars/amirallami-code/amirallami.com?style=for-the-badge&color=yellow)
-![GitHub releases](https://img.shields.io/github/release/amirallami-code/amirallami.com?style=for-the-badge&color=507dbb)
-![GitHub last commit](https://img.shields.io/github/last-commit/amirallami-code/amirallami.com?style=for-the-badge&color=507dbb)
-![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&color=507dbb)
-![Website Status](https://img.shields.io/website?url=https%3A%2F%2Famirallami.com&style=for-the-badge&color=34b233)
+![GitHub stars](https://img.shields.io/github/stars/amirallami-code/amirallami.com?style=default&color=yellow)
+![GitHub releases](https://img.shields.io/github/release/amirallami-code/amirallami.com?style=default&color=507dbb)
+![GitHub last commit](https://img.shields.io/github/last-commit/amirallami-code/amirallami.com?style=default&color=507dbb)
+![License](https://img.shields.io/badge/license-MIT-blue?style=default&color=507dbb)
+![Website Status](https://img.shields.io/website?url=https%3A%2F%2Famirallami.com&style=default&color=34b233)
 
 <br>
 
@@ -18,7 +18,7 @@
 
 ## 📋 Overview
 
-A meticulously crafted professional portfolio website showcasing my journey and expertise as a **Front-end Developer** and **Designer**. Built with performance and user experience at its core, the site features responsive design, dynamic content integration with GitHub API, and thoughtfully implemented animations.
+A modern portfolio website that highlights my work as a **Front-end Developer** and **Designer**. It’s built for speed, easy use, and looks great on any device, with live GitHub data and smooth animations.
 
 ## ✨ Key Features
 
@@ -182,6 +182,6 @@ Project Link: [https://github.com/amirallami-code/amirallami.com](https://github
   
  **If you found this project helpful, please consider giving it a star!**
 
-Made by [Amirhossein Allami](https://github.com/amirallami-code)
+Made by [Amir](https://github.com/amirallami-code)
 
 </div>
