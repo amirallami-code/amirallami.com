@@ -12,7 +12,7 @@
 
 **Modern | Responsive | Performance-Optimized**
 
-[View Live Site](https://amirallami.com) · [Report Bug](https://github.com/amirallami-code/amirallami.com/issues) · [Request Feature](https://github.com/amirallami-code/amirallami.com/issues)
+[View Live Site](https://amirallami.com) · [Report Bug](https://github.com/amirallami-code/amirallami.com/issues) · [Ask a question](https://github.com/amirallami-code/amirallami.com/issues)
 
 </div>
 
@@ -24,7 +24,6 @@ A modern portfolio website that highlights my work as a **Front-end Developer** 
 
 - **Interactive Code Editor UI** - Engaging hero section with animated code display
 - **Dynamic GitHub Integration** - Real-time repository data using GitHub API
-- **Bilingual Support** - Content in both English and Persian
 - **Performance Optimization** - Lazy loading, deferred scripts, and optimized assets
 - **Dark/Light Mode** - System-preference and user-toggleable theme
 - **Responsive Design** - Seamless experience across all devices
@@ -90,21 +89,18 @@ A modern portfolio website that highlights my work as a **Front-end Developer** 
 ## 🗂️ File Structure
 
 ```
-├── src/
-│   ├── index.html         # Main HTML structure
-│   ├── output.css         # Compiled Tailwind CSS
-│   ├── images/            # Image assets
-│   ├── js/
-│   │   ├── app.js         # Main application logic
-│   │   ├── data.js        # Content data
-│   │   ├── generator.js   # Dynamic content generation
-│   │   ├── github.js      # GitHub API integration
-│   │   ├── loader.js      # Loading animations
-│   │   └── theme.js       # Theme switching functionality
-│   ├── robots.txt         # Search engine directives
-│   └── sitemap.xml        # Site structure for crawlers
-├── tailwind.config.js     # Tailwind configuration
-└── README.md              # Project documentation
+src/
+  index.html         # Main HTML
+  input.css          # Tailwind source
+  output.css         # Compiled CSS
+  js/                # App logic (app.js, github.js, etc.)
+  images/            # Assets (certificates, signature, github, etc.)
+  fonts/             # Custom fonts
+  libs/              # Animation & lazyload libraries
+  robots.txt
+  sitemap.xml
+tailwind.config.js   # Tailwind config
+package.json         # Dependencies & scripts
 ```
 
 ## 🚀 Performance Optimizations
