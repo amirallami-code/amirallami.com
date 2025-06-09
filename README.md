@@ -74,7 +74,7 @@ A modern portfolio website that highlights my work as a **Front-end Developer** 
   <tr>
     <td align="center"><strong>Deployment</strong></td>
     <td>
-      <img src="https://img.shields.io/badge/GitHub_Pages-181717?style=flat-square&logo=github&logoColor=white" alt="Github">
+      <img src="https://img.shields.io/badge/vercel-181717?style=flat-square&logo=vercel&logoColor=white" alt="vercel">
     </td>
   </tr>
   <tr>
