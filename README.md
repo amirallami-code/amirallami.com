@@ -175,9 +175,5 @@ Project Link: [https://github.com/amirallami-code/amirallami.com](https://github
 ---
 
 <div align="center">
-  
- **If you found this project helpful, please consider giving it a star!**
-
-Made by [Amir](https://github.com/amirallami-code)
-
+  Made by [Amir](https://github.com/amirallami-code)
 </div>
