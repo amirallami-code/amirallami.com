@@ -193,6 +193,17 @@ const certificatesData = [
         imageAlt: "Coursera Certificate - Version Control",
         providerLogo: "images/certificates/provider/meta-logo.webp"
     },
+    {
+        title: "React Basics",
+        provider: "Meta",
+        platform: "Coursera",
+        earnedOn: "Jul 20, 2025",
+        verifyLink: "https://www.coursera.org/account/accomplishments/verify/PNL7SL4GUPPR",
+        downloadPath: "images/certificates/pdf/cer-RB.pdf",
+        imagePath: "images/certificates/png/cer-RB.png",
+        imageAlt: "Coursera Certificate - React Basics",
+        providerLogo: "images/certificates/provider/meta-logo.webp"
+    },
 ];
 
 // Export the data for use in other files
