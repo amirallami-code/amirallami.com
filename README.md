@@ -10,6 +10,10 @@
 
 <br>
 
+<p align="center">
+  <img src="src/images/screenshot.png" alt="A Screenshot of the Project">
+<p/>
+
 **Modern | Responsive | Performance-Optimized**
 
 [View Live Site](https://amirallami.com) · [Report Bug](https://github.com/amirallami-code/amirallami.com/issues) · [Ask a question](https://github.com/amirallami-code/amirallami.com/issues)
