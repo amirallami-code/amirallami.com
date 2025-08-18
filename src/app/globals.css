@@ -39,7 +39,7 @@
     --font-sans: Montserrat;
     --font-serif: serif;
     --font-mono: monospace;
-    --radius: 0.5rem;
+    --radius: 0.60rem;
     --shadow-2xs: 0px 2px 4px 0px hsl(0 0% 0% / 0.05);
     --shadow-xs: 0px 2px 4px 0px hsl(0 0% 0% / 0.05);
     --shadow-sm: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 0% / 0.10);
@@ -88,7 +88,7 @@
     --font-sans: Montserrat;
     --font-serif: serif;
     --font-mono: monospace;
-    --radius: 0.5rem;
+    --radius: 0.60rem;
     --shadow-2xs: 0px 2px 4px 0px hsl(0 0% 0% / 0.05);
     --shadow-xs: 0px 2px 4px 0px hsl(0 0% 0% / 0.05);
     --shadow-sm: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 0% / 0.10);
@@ -435,5 +435,30 @@
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
+    }
+}
+
+@layer navbar {
+    .mobile-menu-item {
+        @apply flex items-center justify-start gap-3 p-2 text-foreground;
+    }
+    .mobile-menu-item a {
+        @apply w-full py-1 text-sm;
+    }
+    .mobile-menu-icon-wrapper {
+        @apply p-2 bg-gray-500/10 rounded-lg;
+    }
+    .mobile-menu-icon {
+        @apply w-4 h-4 text-foreground/70;
+    }
+
+    .active {
+        @apply bg-primary/10 rounded-xl text-primary font-semibold;
+    }
+    .active span {
+        @apply bg-primary/10;
+    }
+    .active span svg {
+        @apply text-primary;
     }
 }

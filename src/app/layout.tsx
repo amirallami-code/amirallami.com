@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import clsx from "clsx";
+import { ThemeProvider } from '@/components/ThemeProvider';
 
-const montserrat = Montserrat({
-    subsets: ["latin"],
-    variable: "--font-montserrat",
-    weight: ["300", "400", "500", "600", "700", "800"],
-    display: "swap",
-});
+const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Amirhossein Allami | Front-End Developer & UI Designer",
@@ -16,10 +13,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
     return (
-        <html lang="en" className="dark">
-            <body className={`${montserrat.variable} antialiased font-sans`}>
-                {children}
-            </body>
+        <html lang="en" suppressHydrationWarning>
+        <body className={clsx(dmSans.className, "antialiased bg-background")}>
+        <ThemeProvider>
+            {children}
+        </ThemeProvider>
+        </body>
         </html>
     );
 }
