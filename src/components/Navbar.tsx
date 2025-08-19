@@ -1,7 +1,7 @@
 "use client";
 
 import Image from 'next/image';
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import {
     Sheet,
     SheetContent, SheetDescription, SheetFooter,
@@ -13,6 +13,17 @@ import { Menu, House, User, Code, CircleStar, Github, Mail } from 'lucide-react'
 import signature from '@/../public/signature/default.webp';
 import { useThemeContext } from '@/components/ThemeProvider';
 import {Button} from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+// Navigation items configuration
+const navigationItems = [
+    { id: 'hero', label: 'Hero', icon: House },
+    { id: 'about', label: 'About me', icon: User },
+    { id: 'tech-stack', label: 'Tech Stack', icon: Code },
+    { id: 'certificates', label: 'Certificates', icon: CircleStar },
+    { id: 'github', label: 'Github', icon: Github },
+    { id: 'contact', label: 'Stay in touch', icon: Mail },
+];
 
 const ThemeSwitcher = () => {
     const { theme, toggleTheme, mounted } = useThemeContext();
@@ -95,55 +106,129 @@ const ThemeSwitcher = () => {
     );
 }
 
+// Hook for scroll spy functionality
+const useScrollSpy = (sectionIds: string[], offset: number = 100) => {
+    const [activeSection, setActiveSection] = useState<string>('');
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + offset;
+
+            for (const id of sectionIds) {
+                const element = document.getElementById(id);
+                if (element) {
+                    const { offsetTop, offsetHeight } = element;
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        setActiveSection(id);
+                        break;
+                    }
+                }
+            }
+        };
+
+        // Initial check
+        handleScroll();
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [sectionIds, offset]);
+
+    return activeSection;
+};
+
+// Smooth scroll function
+const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        const offsetTop = element.offsetTop - 80;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    }
+};
+
 const Navbar = () => {
+    const [isSheetOpen, setIsSheetOpen] = useState(false);
+
+    const sectionIds = navigationItems.map(item => item.id);
+    const activeSection = useScrollSpy(sectionIds, 120);
+
+    const handleNavClick = (sectionId: string) => {
+        scrollToSection(sectionId);
+        setIsSheetOpen(false);
+    };
+
     return (
-        <nav className="fixed w-full h-20 z-20 top-0 start-0 bg-gradient-to-b from-primary/60 via-primary/50 to-primary/20 backdrop-blur-md">
-            <div className="container h-full">
+        <nav className="fixed w-full h-20 z-20 top-0 start-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/40 backdrop-blur-md">
+            <div className="container h-full pr-0 lg:pr-5">
                 <div className="h-full flex items-center justify-between">
                     <div className="h-full flex items-center justify-center">
-                        <Link href="/">
+                        <button
+                            onClick={() => scrollToSection('home')}
+                            className="cursor-pointer"
+                        >
                             <Image src={signature} alt="Signature" className="h-7 w-auto min-w-fit"/>
-                        </Link>
+                        </button>
                     </div>
 
-                    <div className="flex items-center justify-center gap-5">
+                    <div className="hidden lg:flex items-center gap-6">
+                        {navigationItems.map((item) => (
+                            <button
+                                key={item.id}
+                                onClick={() => handleNavClick(item.id)}
+                                className={cn(
+                                    "text-primary-foreground transition-all cursor-pointer",
+                                    activeSection === item.id
+                                        ? "font-black"
+                                        : ""
+                                )}
+                            >
+                                {item.label}
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className="flex items-center justify-center h-full w-auto">
                         <ThemeSwitcher />
-                        <div className="flex md:hidden">
-                            <Sheet>
-                                <SheetTrigger>
-                                    <Menu className="text-sidebar-accent"/>
+                        <div className="flex lg:hidden h-full w-16">
+                            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+                                <SheetTrigger className="relative h-full w-full flex items-center justify-center">
+                                    <span className="absolute w-full h-full "></span>
+                                    <Menu className="text-background/80 w-6 h-6"/>
                                 </SheetTrigger>
                                 <SheetContent side={"bottom"} className="rounded-t-3xl gap-1 pb-3 border-none">
                                     <SheetHeader className="pt-8 pb-0">
                                         <SheetTitle className="px-1 text-md">Navigation</SheetTitle>
                                     </SheetHeader>
 
-                                    <div className="">
+                                    <div>
                                         <ul className="flex flex-col gap-1 px-3 py-2">
-                                            <li className="mobile-menu-item">
-                                                <span className="mobile-menu-icon-wrapper"><House className="mobile-menu-icon"/></span>
-                                                <Link href="/#home">Home</Link>
-                                            </li>
-                                            <li className="mobile-menu-item active">
-                                                <span className="mobile-menu-icon-wrapper"><User className="mobile-menu-icon"/></span>
-                                                <Link href="/#home">About me</Link>
-                                            </li>
-                                            <li className="mobile-menu-item">
-                                                <span className="mobile-menu-icon-wrapper"><Code className="mobile-menu-icon"/></span>
-                                                <Link href="/#home">Tech Stack</Link>
-                                            </li>
-                                            <li className="mobile-menu-item">
-                                                <span className="mobile-menu-icon-wrapper"><CircleStar className="mobile-menu-icon"/></span>
-                                                <Link href="/#home">Certificates</Link>
-                                            </li>
-                                            <li className="mobile-menu-item">
-                                                <span className="mobile-menu-icon-wrapper"><Github className="mobile-menu-icon"/></span>
-                                                <Link href="/#home">Github</Link>
-                                            </li>
-                                            <li className="mobile-menu-item">
-                                                <span className="mobile-menu-icon-wrapper"><Mail className="mobile-menu-icon"/></span>
-                                                <Link href="/#home">Stay in touch</Link>
-                                            </li>
+                                            {navigationItems.map((item) => {
+                                                const Icon = item.icon;
+                                                const isActive = activeSection === item.id;
+                                                return (
+                                                    <li key={item.id}
+                                                        className={cn(
+                                                            "mobile-menu-item transition-colors",
+                                                            isActive && "active bg-primary/20 text-primary"
+                                                        )}
+                                                    >
+                                                        <span className="mobile-menu-icon-wrapper">
+                                                            <Icon className={cn(
+                                                                "mobile-menu-icon",
+                                                                isActive && "text-primary"
+                                                            )}/>
+                                                        </span>
+                                                        <button
+                                                            onClick={() => handleNavClick(item.id)}
+                                                            className="flex-1 text-left"
+                                                        >
+                                                            {item.label}
+                                                        </button>
+                                                    </li>
+                                                );
+                                            })}
                                         </ul>
                                     </div>
 
@@ -155,10 +240,12 @@ const Navbar = () => {
                                         </SheetHeader>
                                         <SheetDescription className="flex items-center justify-center gap-2">
                                             <Button variant="default" className="flex-1">Download CV</Button>
-                                            <Button variant="ghost" className="flex-1">
-                                                <Link href="/#contact">
-                                                    Contact Me
-                                                </Link>
+                                            <Button
+                                                variant="ghost"
+                                                className="flex-1"
+                                                onClick={() => handleNavClick('contact')}
+                                            >
+                                                Contact Me
                                             </Button>
                                         </SheetDescription>
                                     </SheetFooter>
