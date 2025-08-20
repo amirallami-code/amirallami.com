@@ -168,7 +168,7 @@ const Navbar = () => {
                             onClick={() => scrollToSection('home')}
                             className="cursor-pointer"
                         >
-                            <Image src={signature} alt="Signature" className="h-7 w-auto min-w-fit"/>
+                            <Image src={signature} alt="Signature" className="h-7 md:h-9 w-auto min-w-fit"/>
                         </button>
                     </div>
 
@@ -180,7 +180,7 @@ const Navbar = () => {
                                 className={cn(
                                     "text-primary-foreground transition-all cursor-pointer",
                                     activeSection === item.id
-                                        ? "font-black"
+                                        ? "font-bold tracking-wide"
                                         : ""
                                 )}
                             >

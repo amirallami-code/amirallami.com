@@ -100,6 +100,10 @@
 }
 
 @theme inline {
+    /* Custom Breakpoints */
+    --breakpoint-xs: 30rem;
+
+    /* Custom Colors */
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --color-card: var(--card);
@@ -159,8 +163,6 @@
     --tracking-widest: calc(var(--tracking-normal) + 0.1em);
 }
 
-
-
 @layer base {
     * {
         @apply border-border outline-ring/50;
@@ -184,6 +186,13 @@
 
     .container {
         @apply !max-w-screen-xl mx-auto px-5;
+    }
+
+    .reverse-section {
+        @apply bg-primary text-background;
+    }
+    .primary-button {
+        @apply px-4 py-1.5 font-semibold text-white tracking-wide rounded-xl bg-secondary transition-all border-2 !border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe];
     }
 }
 
@@ -482,5 +491,92 @@
             transform: translateX(0);
             opacity: 1;
         }
+    }
+}
+
+@layer code-block {
+    .code-block {
+        @apply max-w-lg min-w-0 h-full w-full;
+    }
+
+    .code-block * {
+        @apply [&::-webkit-scrollbar]:w-2
+        [&::-webkit-scrollbar]:h-2
+        [&::-webkit-scrollbar-thumb]:rounded-[2px]
+        [&::-webkit-scrollbar-track]:bg-transparent
+        [&::-webkit-scrollbar-thumb]:bg-muted-foreground/10;
+    }
+
+    .code-block > div {
+        @apply max-h-[448px] flex flex-col gap-3 p-2 bg-background rounded-xl;
+    }
+
+    .code-block > div > div:nth-child(1) {
+        @apply relative border-b-2 border-gray-500/20;
+    }
+
+    .code-block button {
+        @apply hover:text-foreground/80 rounded-t-md;
+    }
+    .code-block button:after {
+        @apply absolute hidden xs:block content-[''] w-3 h-3 rounded-full top-2 right-3 my-auto;
+    }
+
+    .code-block > div > div:nth-child(1) button:nth-child(1):after {
+        @apply bg-[#22c55e];
+    }
+    .code-block > div > div:nth-child(1) button:nth-child(2):after {
+        @apply bg-[#eab308] mr-5;
+    }
+    .code-block > div > div:nth-child(1) button:nth-child(3):after {
+        @apply bg-[#ef4444] mr-10;
+    }
+
+    .code-block button.text-white {
+        @apply text-foreground bg-gray-500/10 border-b-2 border-b-primary;
+    }
+
+    .code-block pre::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    .code-block pre::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+
+    .code-block pre::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+    }
+
+    .code-block pre::-webkit-scrollbar-thumb:hover {
+        @apply bg-gray-400 dark:bg-gray-500;
+    }
+
+    /* Firefox scrollbar */
+    .code-block pre {
+        scrollbar-width: thin;
+        scrollbar-color: rgb(209 213 219) transparent;
+    }
+
+    .dark .code-block pre {
+        scrollbar-color: rgb(75 85 99) transparent;
+    }
+
+    /* Line number styling improvements */
+    .code-block .linenumber {
+        @apply select-none opacity-50;
+    }
+
+    /* Token highlighting improvements */
+    .code-block .token.comment,
+    .code-block .token.prolog,
+    .code-block .token.doctype,
+    .code-block .token.cdata {
+        @apply italic;
+    }
+
+    .code-block .token.keyword {
+        @apply font-semibold;
     }
 }

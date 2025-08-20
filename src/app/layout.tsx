@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import { ThemeProvider } from '@/components/ThemeProvider';
 
-const dmSans = DM_Sans({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Amirhossein Allami | Front-End Developer & UI Designer",
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-        <body className={clsx(dmSans.className, "antialiased bg-background")}>
-        <ThemeProvider>
-            {children}
-        </ThemeProvider>
-        </body>
+            <body className={clsx(montserrat.className, "antialiased bg-background")}>
+                <ThemeProvider>
+                    {children}
+                </ThemeProvider>
+            </body>
         </html>
     );
 }
