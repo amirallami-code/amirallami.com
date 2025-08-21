@@ -461,7 +461,7 @@
 
 @layer navbar {
     .mobile-menu-item {
-        @apply flex items-center justify-start gap-3 p-2 text-foreground;
+        @apply relative flex items-center justify-start gap-3 p-2 text-foreground;
     }
     .mobile-menu-item a {
         @apply w-full py-1 text-sm;
@@ -471,6 +471,9 @@
     }
     .mobile-menu-icon {
         @apply w-4 h-4 text-foreground/70;
+    }
+    .mobile-menu-item button:after {
+        @apply absolute content-[''] w-full h-full bg-transparent inset-0 rounded-lg;
     }
 
     .active {
@@ -499,7 +502,7 @@
 
 @layer code-block {
     .code-block {
-        @apply relative max-w-lg min-w-0 h-full w-full;
+        @apply relative max-w-lg min-w-0 h-full w-full z-10;
     }
 
     .code-block * {
@@ -511,11 +514,15 @@
     }
 
     .code-block > div {
-        @apply max-h-96 flex flex-col gap-3 p-2 rounded-xl bg-background/95 backdrop-blur-md;
+        @apply h-[350px] flex flex-col gap-3 p-2 rounded-xl bg-background/95 backdrop-blur-md;
     }
 
     .code-block > div > div:nth-child(1) {
         @apply relative border-b-2 border-gray-500/20;
+    }
+
+    .code-block code {
+        @apply h-full;
     }
 
     .code-block button {
@@ -607,7 +614,7 @@
 
     .char-animate {
         display: inline-block;
-        animation: scale-bounce 5s ease forwards;
+        animation: scale-bounce 10s ease forwards;
         transform: scale(0);
         opacity: 0;
     }
