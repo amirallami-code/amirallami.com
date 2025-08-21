@@ -159,8 +159,10 @@ const Navbar = () => {
         setIsSheetOpen(false);
     };
 
+
+    // bg-gradient-to-b from-primary/80 via-primary/60 to-primary/40 backdrop-blur-md
     return (
-        <nav className="fixed w-full h-20 z-20 top-0 start-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/40 backdrop-blur-md">
+        <nav className="fixed w-full h-20 z-20 top-0 start-0">
             <div className="container h-full pr-0 lg:pr-5">
                 <div className="h-full flex items-center justify-between">
                     <div className="h-full flex items-center justify-center">

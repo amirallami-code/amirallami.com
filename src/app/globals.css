@@ -103,6 +103,9 @@
     /* Custom Breakpoints */
     --breakpoint-xs: 30rem;
 
+    /* Custom Font Sizes */
+    --text-tiny: 0.625rem;
+
     /* Custom Colors */
     --color-background: var(--background);
     --color-foreground: var(--foreground);
@@ -189,10 +192,10 @@
     }
 
     .reverse-section {
-        @apply bg-primary text-background;
+        @apply bg-gradient-to-br from-primary to-secondary text-background;
     }
     .primary-button {
-        @apply px-4 py-1.5 font-semibold text-white tracking-wide rounded-xl bg-secondary transition-all border-2 !border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe];
+        @apply px-4 py-1.5 tracking-wide text-sm text-white rounded-xl bg-secondary transition-all border-2 !border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe];
     }
 }
 
@@ -496,7 +499,7 @@
 
 @layer code-block {
     .code-block {
-        @apply max-w-lg min-w-0 h-full w-full;
+        @apply relative max-w-lg min-w-0 h-full w-full;
     }
 
     .code-block * {
@@ -508,7 +511,7 @@
     }
 
     .code-block > div {
-        @apply max-h-[448px] flex flex-col gap-3 p-2 bg-background rounded-xl;
+        @apply max-h-96 flex flex-col gap-3 p-2 rounded-xl bg-background/95 backdrop-blur-md;
     }
 
     .code-block > div > div:nth-child(1) {
@@ -536,39 +539,31 @@
         @apply text-foreground bg-gray-500/10 border-b-2 border-b-primary;
     }
 
-    .code-block pre::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-    }
-
-    .code-block pre::-webkit-scrollbar-track {
-        @apply bg-transparent;
-    }
-
-    .code-block pre::-webkit-scrollbar-thumb {
-        @apply bg-gray-300 dark:bg-gray-600 rounded-full;
-    }
-
-    .code-block pre::-webkit-scrollbar-thumb:hover {
-        @apply bg-gray-400 dark:bg-gray-500;
-    }
-
-    /* Firefox scrollbar */
     .code-block pre {
         scrollbar-width: thin;
         scrollbar-color: rgb(209 213 219) transparent;
     }
-
     .dark .code-block pre {
         scrollbar-color: rgb(75 85 99) transparent;
     }
+    .code-block pre::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    .code-block pre::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+    .code-block pre::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+    }
+    .code-block pre::-webkit-scrollbar-thumb:hover {
+        @apply bg-gray-400 dark:bg-gray-500;
+    }
 
-    /* Line number styling improvements */
     .code-block .linenumber {
         @apply select-none opacity-50;
     }
 
-    /* Token highlighting improvements */
     .code-block .token.comment,
     .code-block .token.prolog,
     .code-block .token.doctype,
@@ -578,5 +573,48 @@
 
     .code-block .token.keyword {
         @apply font-semibold;
+    }
+
+    @keyframes scale-bounce {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+        60% {
+            transform: scale(1.08);
+            opacity: 0.95;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes char-delete {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        60% {
+            transform: scale(0.9);
+            opacity: 0.6;
+        }
+        100% {
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+
+    .char-animate {
+        display: inline-block;
+        animation: scale-bounce 5s ease forwards;
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    .char-delete {
+        display: inline-block;
+        animation: char-delete 2s ease-out forwards;
+        opacity: 100;
     }
 }
