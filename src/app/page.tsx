@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import About from '@/components/About';
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
           </header>
           <main>
               <Hero />
-              <section id="about" className="w-full h-[1500px]"></section>
+              <About />
               <section id="tech-stack" className="w-full h-[1500px]"></section>
               <section id="certificates" className="w-full h-[1500px]"></section>
               <section id="github" className="w-full h-[1500px]"></section>

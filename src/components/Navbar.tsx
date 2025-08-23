@@ -147,7 +147,7 @@ const Navbar = () => {
 
     // watch scroll for background change
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
+        const handleScroll = () => setScrolled(window.scrollY > 10);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -155,8 +155,8 @@ const Navbar = () => {
     return (
         <nav
             className={twMerge(
-                "fixed w-full h-20 z-20 top-0 start-0 transition-all duration-300",
-                scrolled && "bg-gradient-to-b from-primary/80 via-primary/60 to-primary/40 backdrop-blur-md"
+                "fixed w-full h-20 z-20 top-0 start-0 transition-all duration-100",
+                scrolled && "bg-gradient-to-b from-primary/90 via-primary/70 to-primary/50 backdrop-blur-md"
             )}
         >
             <div className="container h-full pr-0 lg:pr-5">

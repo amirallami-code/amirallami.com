@@ -15,6 +15,7 @@
     "@types/react-syntax-highlighter": "^15.5.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.540.0",
     "motion": "^12.23.12",
     "next": "15.4.6",

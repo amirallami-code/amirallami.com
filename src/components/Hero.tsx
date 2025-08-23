@@ -331,8 +331,8 @@ const nextConfig: NextConfig = {
 export default nextConfig;`;
 
     return (
-        <section id="hero" className="relative reverse-section min-h-[90dvh]">
-            <div className="container relative h-full w-full flex flex-col lg:flex-row items-center justify-center gap-8 pt-28 pb-10 z-10">
+        <section id="hero" className="relative reverse-section">
+            <div className="container relative h-full w-full flex flex-col lg:flex-row items-center justify-center gap-8 pt-28 md:pt-32 pb-10 md:pb-24 z-10">
                 <div className="w-full flex-[55%] flex flex-col items-start justify-start gap-6 md:gap-8">
                     <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white tracking-wide md:leading-14">
                         Hi 👋,<br />

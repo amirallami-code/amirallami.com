@@ -167,24 +167,24 @@
 }
 
 @layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
     html {
-        scroll-behavior: smooth;
+        @apply scroll-smooth bg-primary;
     }
-    @media (min-width: 768px) {
-        .nav-item-active {
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-    }
+
     body {
-        @apply bg-background text-foreground;
-        letter-spacing: var(--tracking-normal);
+        @apply bg-background text-foreground tracking-normal transition-colors duration-100;
     }
+
+    b {
+        @apply font-bold;
+    }
+
     nav li {
         @apply list-none;
+    }
+
+    .section-padding {
+        @apply py-10 md:py-20;
     }
 
     .container {
@@ -194,8 +194,13 @@
     .reverse-section {
         @apply bg-gradient-to-br from-primary to-secondary text-background;
     }
+
     .primary-button {
         @apply px-4 py-1.5 tracking-wide text-sm text-white rounded-xl bg-secondary transition-all border-2 !border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe];
+    }
+
+    .section-title {
+        @apply text-primary text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide;
     }
 }
 
@@ -623,5 +628,19 @@
         display: inline-block;
         animation: char-delete 2s ease-out forwards;
         opacity: 100;
+    }
+}
+
+@layer about {
+    .toolkit-list {
+        @apply flex flex-col items-center justify-start gap-3;
+    }
+
+    .toolkit-list li {
+        @apply list-disc ms-4;
+    }
+
+    .toolkit-list b {
+        @apply me-2;
     }
 }
