@@ -17,6 +17,7 @@ import { useThemeContext } from '@/components/ThemeProvider';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {twMerge} from "tailwind-merge";
+import Link from "next/link";
 
 // Navigation items configuration
 const navigationItems = [
@@ -37,7 +38,7 @@ const ThemeSwitcher = () => {
                 <input
                     type="checkbox"
                     className="theme-switch__checkbox hidden"
-                    checked={false}
+                    checked={true}
                     readOnly
                 />
                 <div className="theme-switch__container">
@@ -187,16 +188,17 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    <div className="flex items-center justify-center h-full w-auto">
+                    <div className="flex items-center justify-center h-full w-auto gap-1">
                         <ThemeSwitcher />
-                        <div className="flex lg:hidden h-full w-16">
+                        <div className="flex lg:hidden h-full w-16 rounded-2xl">
                             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                                 <SheetTrigger className="relative h-full w-full flex items-center justify-center">
                                     <span className="absolute w-full h-full "></span>
                                     <Menu className="text-background/80 w-6 h-6"/>
                                 </SheetTrigger>
                                 <SheetContent side={"bottom"} className="rounded-t-3xl gap-1 pb-3 border-none">
-                                    <SheetHeader className="pt-8 pb-0">
+                                    <SheetHeader className="relative pt-8 pb-0">
+                                        <span className="absolute w-12 h-1 top-0 right-0 left-0 m-auto mt-2.5 bg-gray-500/50 rounded-full"></span>
                                         <SheetTitle className="px-1 text-md">Navigation</SheetTitle>
                                     </SheetHeader>
 
@@ -220,7 +222,7 @@ const Navbar = () => {
                                                         </span>
                                                         <button
                                                             onClick={() => handleNavClick(item.id)}
-                                                            className="flex-1 text-left"
+                                                            className="flex-1 text-left absolute inset-0 w-full h-full ps-12 rounded-2xl"
                                                         >
                                                             {item.label}
                                                         </button>
@@ -232,12 +234,15 @@ const Navbar = () => {
 
                                     <div className="divider w-10/12 h-[1px] mx-auto bg-gray-400/30 my-2"></div>
 
-                                    <SheetFooter className="px-3 py-2 gap-3">
+                                    <SheetFooter className="px-5 py-2 gap-3">
                                         <SheetHeader className="py-0 px-3">
                                             <p className="opacity-50 text-sm px-0">Quick Actions</p>
                                         </SheetHeader>
                                         <SheetDescription className="flex items-center justify-center gap-2">
-                                            <Button variant="default" className="flex-1">Download CV</Button>
+                                            <Link href="/" className="flex-1 flex items-center justify-center primary-button !rounded-lg">
+                                                Download CV
+                                            </Link>
+
                                             <Button
                                                 variant="ghost"
                                                 className="flex-1"

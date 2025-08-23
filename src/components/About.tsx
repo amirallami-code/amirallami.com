@@ -4,54 +4,39 @@ const About = () => {
     return (
         <section id="about" className="section">
             <div className="container section-padding flex flex-col md:flex-row items-start justify-center gap-10">
-                <div className="flex-1 md:sticky md:top-0 w-full h-full">
+                <div className="flex-1 w-full h-full md:-mt-18">
                     <CreattieAbout
                         autoplay={true}
                         loop={true}
                         speed={0.75}
                     />
                 </div>
-                <div className="flex-1 flex flex-col items-start justify-center gap-4 text-primary leading-7 font-medium">
-                    <h2 className="section-title">About me</h2>
-                    <p>
-                        Hi! I&#39;m Amirhossein Allami, a front-end developer and designer based
-                        in Shiraz, Iran. My tech journey began at age 12 with Photoshop,
-                        sparking a passion that evolved into web development. I&#39;m currently
-                        pursuing Computer Science while building my skills in JavaScript and
-                        React. With a background in design – including 5 years of
-                        collaboration with NeuroTRACT creating visual content – I bring a
-                        unique perspective to web development.
-                    </p>
-                    <div className="flex flex-col items-start justify-center gap-3">
-                        <b className="text-xl">My Toolkit & Interests</b>
-                        <ul className="toolkit-list">
-                            <li>
-                                <b>Front end Development:</b>
-                                Building responsive interfaces with
-                                React, focusing on clean code and modern best practices
-                            </li>
-                            <li>
-                                <b>Front end Development:</b>
-                                Building responsive interfaces with
-                                React, focusing on clean code and modern best practices
-                            </li>
-                            <li>
-                                <b>Front end Development:</b>
-                                Building responsive interfaces with
-                                React, focusing on clean code and modern best practices
-                            </li>
-                            <li>
-                                <b>Front end Development:</b>
-                                Building responsive interfaces with
-                                React, focusing on clean code and modern best practices
-                            </li>
-                        </ul>
+
+                <div className="flex-1 flex flex-col items-start justify-center gap-6 text-ring leading-7 font-medium">
+                    <div className="about-wrapper md:!gap-3">
+                        <h2 className="section-title">About me</h2>
+                        <p>
+                            I'm Amirhossein Allami, a front-end developer from Shiraz, Iran, currently open to work. I combine design expertise with modern web development skills to create exceptional digital experiences that users love and businesses need.
+                        </p>
                     </div>
-                    <p>
-                        While I&#39;m currently focused on learning rather than job hunting, I&#39;m
-                        always excited to connect with fellow developers and designers.
-                        Let&#39;s chat about code, design, or the latest tech trends!
-                    </p>
+
+                    <div className="about-wrapper">
+                        <b className="text-xl">Current Focus</b>
+                        <p>
+                            Mastering TypeScript and Next.js development while improving my English proficiency for global opportunities. I'm completing advanced frontend courses on Coursera and building portfolio projects that demonstrate clean code, responsive design, and modern development practices.
+                        </p>
+                    </div>
+
+                    <div className="about-wrapper">
+                        <b className="text-xl">Background</b>
+                        <p>
+                            Started with design at age 12, evolved into web development while pursuing my Computer Science degree (completing 2028). My professional experience at NeuroTRACT gives me a unique perspective on building user-focused interfaces.
+                        </p>
+                    </div>
+
+                    <b>
+                        Ready to contribute to your next project – let's connect!
+                    </b>
                 </div>
             </div>
         </section>

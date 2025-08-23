@@ -353,7 +353,7 @@ export default nextConfig;`;
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 80, opacity: 0 }}
                                 transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                                className="absolute bottom-4 left-4 sm:left-1/5 lg:left-8 z-10 flex flex-row items-center gap-2
+                                className="absolute bottom-4 left-4 sm:left-1/5 lg:left-8 right-4 2xs:right-auto z-10 flex flex-row items-center gap-2
                                               bg-background/25 dark:bg-sidebar/25 border border-gray-700/20 text-accent-foreground
                                               font-medium px-2.5 py-1.5 rounded-xl shadow-xl shadow-black/10 backdrop-blur-sm
                                               min-w-[200px] max-w-sm pointer-events-none"

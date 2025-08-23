@@ -102,6 +102,7 @@
 @theme inline {
     /* Custom Breakpoints */
     --breakpoint-xs: 30rem;
+    --breakpoint-2xs: 17rem;
 
     /* Custom Font Sizes */
     --text-tiny: 0.625rem;
@@ -168,7 +169,7 @@
 
 @layer base {
     html {
-        @apply scroll-smooth bg-primary;
+        @apply bg-primary;
     }
 
     body {
@@ -477,7 +478,7 @@
     .mobile-menu-icon {
         @apply w-4 h-4 text-foreground/70;
     }
-    .mobile-menu-item button:after {
+    .mobile-menu-item > button:after {
         @apply absolute content-[''] w-full h-full bg-transparent inset-0 rounded-lg;
     }
 
@@ -519,7 +520,7 @@
     }
 
     .code-block > div {
-        @apply h-[350px] flex flex-col gap-3 p-2 rounded-xl bg-background/95 backdrop-blur-md;
+        @apply h-[350px] flex flex-col gap-3 p-2 rounded-xl bg-background/95 backdrop-blur-md transition-all duration-200;
     }
 
     .code-block > div > div:nth-child(1) {
@@ -632,15 +633,7 @@
 }
 
 @layer about {
-    .toolkit-list {
-        @apply flex flex-col items-center justify-start gap-3;
-    }
-
-    .toolkit-list li {
-        @apply list-disc ms-4;
-    }
-
-    .toolkit-list b {
-        @apply me-2;
+    .about-wrapper {
+        @apply flex flex-col items-start justify-center gap-1;
     }
 }

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth" className="dark">
             <body className={clsx(montserrat.className, "antialiased bg-background")}>
                 <ThemeProvider>
                     {children}
