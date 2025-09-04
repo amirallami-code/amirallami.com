@@ -3,8 +3,14 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { WebVitalsReporter } from '@/components/WebVitalsReporter';
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({
+    subsets: ["latin"],
+    display: 'swap',
+    preload: true,
+    weight: ['500', '600', '700', '800'],
+});
 
 export const metadata: Metadata = {
     title: "Amirhossein Allami | Front-End Developer & UI Designer",
@@ -13,10 +19,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
     return (
-        <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth" className="dark">
-            <body className={clsx(montserrat.className, "antialiased bg-background")}>
+        <html
+            lang="en"
+            suppressHydrationWarning
+            data-scroll-behavior="smooth"
+            className="dark"
+        >
+            <head>
+                <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+            </head>
+            <body className={clsx(
+                montserrat.className,
+                "antialiased bg-background"
+            )}>
                 <ThemeProvider>
                     {children}
+                    <WebVitalsReporter />
                 </ThemeProvider>
             </body>
         </html>

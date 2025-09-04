@@ -12,30 +12,30 @@ const About = () => {
                     />
                 </div>
 
-                <div className="flex-1 flex flex-col items-start justify-center gap-6 text-ring leading-7 font-medium">
+                <div className="flex-1 flex flex-col items-start justify-center gap-6 text-ring leading-7">
                     <div className="about-wrapper md:!gap-3">
                         <h2 className="section-title">About me</h2>
                         <p>
-                            I'm Amirhossein Allami, a front-end developer from Shiraz, Iran, currently open to work. I combine design expertise with modern web development skills to create exceptional digital experiences that users love and businesses need.
+                            I&#39;m Amirhossein Allami, a front-end developer from Shiraz, Iran, currently open to work. I combine design expertise with modern web development skills to create exceptional digital experiences that users love and businesses need.
                         </p>
                     </div>
 
                     <div className="about-wrapper">
                         <b className="text-xl">Current Focus</b>
                         <p>
-                            Mastering TypeScript and Next.js development while improving my English proficiency for global opportunities. I'm completing advanced frontend courses on Coursera and building portfolio projects that demonstrate clean code, responsive design, and modern development practices.
+                            Mastering TypeScript and Next.js development while improving my English proficiency for global opportunities. I&#39;m completing advanced frontend courses on Coursera and building portfolio projects that demonstrate clean code, responsive design, and modern development practices.
                         </p>
                     </div>
 
                     <div className="about-wrapper">
                         <b className="text-xl">Background</b>
                         <p>
-                            Started with design at age 12, evolved into web development while pursuing my Computer Science degree (completing 2028). My professional experience at NeuroTRACT gives me a unique perspective on building user-focused interfaces.
+                            Started with design at age 12, evolved into web development while pursuing my Computer Science degree (completing 2029). My professional experience at NeuroTRACT gives me a unique perspective on building user-focused interfaces.
                         </p>
                     </div>
 
                     <b>
-                        Ready to contribute to your next project – let's connect!
+                        Ready to contribute to your next project – let&#39;s connect!
                     </b>
                 </div>
             </div>

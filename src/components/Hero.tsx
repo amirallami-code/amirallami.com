@@ -1,32 +1,45 @@
 'use client';
 
-import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Check, Copy } from 'lucide-react';
-import { useThemeContext } from '@/components/ThemeProvider';
 import { AnimatePresence, motion } from 'motion/react';
 
-// Toast + typing timing configuration
-const TIMING_CONFIG = {
-    codeTypingSpeed: 30,
-    codeDeletionSpeed: 30,
-    codeDeleteToTypeDelay: 100,
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
 
-    mainTypingSpeed: 110,
-    mainDeletionSpeed: 15,
+import { Check, Copy } from 'lucide-react';
+import { useThemeContext } from '@/components/ThemeProvider';
+
+const SyntaxHighlighter = dynamic(
+    () => import('react-syntax-highlighter').then(mod => mod.Prism),
+    {
+        ssr: false,
+        loading: () => <div className="animate-pulse bg-gray-600/50 h-full rounded-lg" />
+    }
+);
+
+const { oneDark, oneLight } = await import('react-syntax-highlighter/dist/esm/styles/prism');
+
+
+// timing configurations
+const TIMING_CONFIG = {
+    codeTypingSpeed: 60,
+    codeDeletionSpeed: 50,
+    codeDeleteToTypeDelay: 200,
+
+    mainTypingSpeed: 150,
+    mainDeletionSpeed: 30,
     mainDeleteToTypeDelay: 1,
 
     toastShowDelay: 100,
     toastDuration: 1750,
     toastHideDelay: 300,
 
-    professionDisplayTime: 2500,
-    cycleStartDelay: 300,
-    initialCycleDelay: 500,
-    charAppearDuration: 250,
-    charDeleteDuration: 150,
+    professionDisplayTime: 3000,
+    cycleStartDelay: 500,
+    initialCycleDelay: 700,
+
+    charAppearDuration: 150,
+    charDeleteDuration: 300,
 };
 
 type CodeBlockProps = {
@@ -221,11 +234,11 @@ const Hero = () => {
         });
 
     const getCodeForRole = (role: string) => `...
-<div className="w-full flex-[55%] flex flex-col items-start justify-start gap-6 md:gap-8">
+<div className="w-full flex-1/2 flex flex-col items-start justify-start gap-6 md:gap-8">
   <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white tracking-wide md:leading-14">
     Hi 👋,<br/>
     My name is Amir. <br/>
-    I'm a <span>${role}</span>
+    I'm a ${role}
   </h1>
   <div className="flex flex-wrap gap-3">
     <Link href="/#about" className="primary-button">Who Am I ?!</Link>
@@ -263,23 +276,25 @@ const Hero = () => {
 
     const renderTypedText = () => (
         <span className="relative">
-      {displayedProfession.split('').map((char, i) => (
-          <span
-              key={`${currentRoleIndex}-${i}`}
-              className={`${char === ' ' ? 'inline-block w-[0.25em]' : 'inline-block'}`}
-              style={{
-                  animation:
-                      isTyping && i === displayedProfession.length - 1
-                          ? `scale-bounce ${TIMING_CONFIG.charAppearDuration}ms ease-out forwards`
-                          : isDeleting
-                              ? `char-delete ${TIMING_CONFIG.charDeleteDuration}ms ease-out forwards`
-                              : 'none',
-              }}
-          >
-          {char === ' ' ? '\u00A0' : char}
+            {displayedProfession.split('').map((char, i) => (
+                <span
+                    key={`${currentRoleIndex}-${i}`}
+                    className={`${char === ' ' ? 'inline-block w-[0.25em]' : 'inline-block'}`}
+                    style={{
+                        animation:
+                            isTyping && i === displayedProfession.length - 1
+                                ? `char-appear ${TIMING_CONFIG.charAppearDuration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`
+                                : isDeleting
+                                    ? `char-delete ${TIMING_CONFIG.charDeleteDuration}ms cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards`
+                                    : 'none',
+                        transform: 'translateZ(0)', // Hardware acceleration
+                        willChange: isTyping || isDeleting ? 'opacity, transform' : 'auto',
+                    }}
+                >
+                    {char === ' ' ? '\u00A0' : char}
+                </span>
+            ))}
         </span>
-      ))}
-    </span>
     );
 
     const packageJsonFile = `{
@@ -352,25 +367,24 @@ export default nextConfig;`;
                                 initial={{ y: 80, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 80, opacity: 0 }}
+                                className="absolute bottom-4 left-4 sm:left-1/5 lg:left-8 right-4 2xs:right-auto z-10 flex flex-row items-center gap-6
+                                           bg-background/25 dark:bg-sidebar/25 border border-gray-700/20 text-accent-foreground
+                                           px-3 py-2.5 rounded-xl shadow-xl shadow-black/10 backdrop-blur-sm
+                                           min-w-[200px] max-w-sm pointer-events-none"
                                 transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                                className="absolute bottom-4 left-4 sm:left-1/5 lg:left-8 right-4 2xs:right-auto z-10 flex flex-row items-center gap-2
-                                              bg-background/25 dark:bg-sidebar/25 border border-gray-700/20 text-accent-foreground
-                                              font-medium px-2.5 py-1.5 rounded-xl shadow-xl shadow-black/10 backdrop-blur-sm
-                                              min-w-[200px] max-w-sm pointer-events-none"
                             >
-                                <div className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center">
-                                    <Check className="w-4 h-4 text-green-600" />
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                    <p className="text-xs font-semibold text-foreground truncate">Document saved</p>
-                                    <p className="text-[11px] flex text-muted-foreground/70 tracking-wide mt-0.5 max-w-[150px]">
-                                        Changes have been saved successfully
-                                    </p>
+                                <div className="shrink-0 flex flex-row items-center gap-2 justify-start">
+                                    <div className="w-5 h-5 rounded-full flex items-center justify-center">
+                                        <Check className="w-4 h-4 text-green-600" />
+                                    </div>
+                                    <div className="min-w-0">
+                                        <p className="text-xs font-semibold text-foreground truncate">Document saved</p>
+                                    </div>
                                 </div>
                                 <div className="flex-shrink-0 flex items-center gap-1 text-[11px] text-foreground">
-                                    <kbd className="px-2 py-1 bg-background/10 backdrop-blur-md border border-gray-700/30 rounded font-mono shadow-sm">Ctrl</kbd>
+                                    <kbd className="px-1.5 py-0.5 bg-background/10 backdrop-blur-md border border-gray-700/30 rounded font-mono shadow-sm">Ctrl</kbd>
                                     <span className="text-gray-300">+</span>
-                                    <kbd className="px-2 py-1 bg-background/10 backdrop-blur-md border border-gray-700/30 rounded font-mono shadow-sm">S</kbd>
+                                    <kbd className="px-1 py-0.5 bg-background/10 backdrop-blur-md border border-gray-700/30 rounded font-mono shadow-sm">S</kbd>
                                 </div>
                             </motion.div>
                         )}

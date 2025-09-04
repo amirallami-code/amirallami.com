@@ -11,10 +11,6 @@ export default function Home() {
           <main>
               <Hero />
               <About />
-              <section id="tech-stack" className="w-full h-[1500px]"></section>
-              <section id="certificates" className="w-full h-[1500px]"></section>
-              <section id="github" className="w-full h-[1500px]"></section>
-              <section id="contact" className="w-full h-[1500px]"></section>
           </main>
       </>
   );

@@ -168,8 +168,14 @@
 }
 
 @layer base {
+    * {
+        box-sizing: border-box;
+    }
+
     html {
-        @apply bg-primary;
+        font-feature-settings: 'kern' 1;
+        text-rendering: optimizeSpeed;
+        scroll-behavior: smooth;
     }
 
     body {
@@ -190,6 +196,7 @@
 
     .container {
         @apply !max-w-screen-xl mx-auto px-5;
+        contain: layout style;
     }
 
     .reverse-section {
@@ -206,7 +213,7 @@
 }
 
 @layer theme-switcher {
-    /* Theme Switch */
+
     .theme-switch {
         --toggle-size: 15px;
         --container-width: 4.75em;
@@ -473,7 +480,7 @@
         @apply w-full py-1 text-sm;
     }
     .mobile-menu-icon-wrapper {
-        @apply p-2 bg-gray-500/10 rounded-lg;
+        @apply p-2 bg-gray-500/5 rounded-lg;
     }
     .mobile-menu-icon {
         @apply w-4 h-4 text-foreground/70;
@@ -556,9 +563,11 @@
         scrollbar-width: thin;
         scrollbar-color: rgb(209 213 219) transparent;
     }
+
     .dark .code-block pre {
         scrollbar-color: rgb(75 85 99) transparent;
     }
+
     .code-block pre::-webkit-scrollbar {
         width: 6px;
         height: 6px;
@@ -588,6 +597,19 @@
         @apply font-semibold;
     }
 
+    .char-animate {
+        display: inline-block;
+        animation: scale-bounce 10s ease forwards;
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    .char-delete {
+        display: inline-block;
+        animation: char-delete 2s ease-out forwards;
+        opacity: 100;
+    }
+
     @keyframes scale-bounce {
         0% {
             transform: scale(0);
@@ -603,32 +625,26 @@
         }
     }
 
-    @keyframes char-delete {
+    @keyframes char-appear {
         0% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        60% {
-            transform: scale(0.9);
-            opacity: 0.6;
+            opacity: 0;
+            transform: translateY(8px);
         }
         100% {
-            transform: scale(0);
-            opacity: 0;
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 
-    .char-animate {
-        display: inline-block;
-        animation: scale-bounce 10s ease forwards;
-        transform: scale(0);
-        opacity: 0;
-    }
-
-    .char-delete {
-        display: inline-block;
-        animation: char-delete 2s ease-out forwards;
-        opacity: 100;
+    @keyframes char-delete {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0.95);
+        }
     }
 }
 

@@ -12,44 +12,72 @@ interface CreattieAboutProps {
     speed?: number;
 }
 
-const CreattieAbout: React.FC<CreattieAboutProps> = ({className = '', width = '100%', height = '100%', autoplay = true, loop = true, speed = 1
+const CreattieAbout: React.FC<CreattieAboutProps> = ({
+                                                         className = '',
+                                                         width = '100%',
+                                                         height = '100%',
+                                                         autoplay = true,
+                                                         loop = true,
+                                                         speed = 1
                                                      }) => {
     const [animationData, setAnimationData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [isVisible, setIsVisible] = useState(false);
     const lottieRef = useRef<LottieRefCurrentProps>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
 
+    // Intersection Observer for lazy loading
     useEffect(() => {
-        // Fetch animation data from public folder
-        fetch('/animations/creattie-about.json')
-            .then(response => response.json())
-            .then(data => {
-                setAnimationData(data);
-                // Add a small delay to make the transition more noticeable
-                setTimeout(() => {
-                    setLoading(false);
-                    // Trigger fade-in after loading is complete
-                    setTimeout(() => setIsVisible(true), 50);
-                }, 300);
-            })
-            .catch(error => {
-                console.error('Error loading animation:', error);
-                setLoading(false);
-            });
-    }, []);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const [entry] = entries;
+                if (entry.isIntersecting && !animationData) {
+                    // Only load when visible
+                    setIsVisible(true);
+                    loadAnimation();
+                }
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '100px' // Start loading 100px before visible
+            }
+        );
 
-    // Set animation speed when data loads or speed changes
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, [animationData]);
+
+    const loadAnimation = async () => {
+        try {
+            const response = await fetch('/animations/creattie-about.json');
+            const data = await response.json();
+            setAnimationData(data);
+            setLoading(false);
+        } catch (error) {
+            console.error('Error loading animation:', error);
+            setLoading(false);
+        }
+    };
+
+    // Set animation speed when data loads
     useEffect(() => {
         if (lottieRef.current && animationData) {
             lottieRef.current.setSpeed(speed);
         }
     }, [speed, animationData]);
 
-    if (loading) {
+    if (!isVisible || loading) {
         return (
             <div
-                className={`${className} bg-gray-600/50 w-full min-h-[50dvh] md:min-h-[75dvh] h-auto 
-                rounded-2xl animate-pulse flex items-center justify-center transition-all duration-1000`}>
+                ref={containerRef}
+                className={`${className} w-full min-h-[50dvh] md:min-h-[75dvh] h-auto 
+                rounded-2xl flex items-center justify-center`}
+                style={{ width, height }}
+            >
+                <div className="text-gray-400">Loading animation...</div>
             </div>
         );
     }
@@ -57,6 +85,7 @@ const CreattieAbout: React.FC<CreattieAboutProps> = ({className = '', width = '1
     if (!animationData) {
         return (
             <div
+                ref={containerRef}
                 className={`${className} bg-gray-200 rounded-lg flex items-center justify-center`}
                 style={{ width, height }}
             >
@@ -67,7 +96,8 @@ const CreattieAbout: React.FC<CreattieAboutProps> = ({className = '', width = '1
 
     return (
         <div
-            className={`${className}`}
+            ref={containerRef}
+            className={className}
             style={{ width, height }}
         >
             <Lottie
@@ -78,6 +108,10 @@ const CreattieAbout: React.FC<CreattieAboutProps> = ({className = '', width = '1
                 style={{
                     width: '100%',
                     height: '100%'
+                }}
+                rendererSettings={{
+                    preserveAspectRatio: 'xMidYMid slice',
+                    progressiveLoad: true
                 }}
             />
         </div>
