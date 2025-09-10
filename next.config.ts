@@ -6,10 +6,17 @@ const nextConfig: NextConfig = {
             enabled: true,
         },
     }),
-    // Other optimizations
     swcMinify: true,
     images: {
         formats: ['image/avif', 'image/webp'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'skillicons.dev',
+                port: '',
+                pathname: '/icons**',
+            },
+        ],
     },
 };
 

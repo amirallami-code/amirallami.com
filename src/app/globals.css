@@ -653,3 +653,13 @@
         @apply flex flex-col items-start justify-center gap-1;
     }
 }
+
+@layer tech-stack {
+    .skill {
+        @apply flex flex-col items-start justify-center gap-3 bg-white dark:bg-gray-800 border border-muted-foreground/20 rounded-lg mb-4 shadow-xs;
+    }
+
+    .skill > div {
+        @apply px-4;
+    }
+}
