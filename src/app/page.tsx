@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import TechStack from '@/components/TechStack';
+import Certificates from "@/components/Certificates";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
               <Hero />
               <About />
               <TechStack />
+              <Certificates />
           </main>
       </>
   );

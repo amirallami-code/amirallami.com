@@ -134,9 +134,9 @@ const TechStack = () => {
                     <div className="absolute bottom-0 left-0 w-full h-72 bg-gradient-to-t from-background via-background/90 to-transparent flex justify-center items-end pb-6">
                         <button
                             onClick={() => setExpanded(true)}
-                            className="px-4 py-1.5 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-primary/90 transition cursor-pointer"
+                            className="px-4 py-1.5 text-sm bg-primary text-white font-semibold rounded-lg shadow-sm hover:bg-primary/90 transition cursor-pointer"
                         >
-                            Show More
+                            Show Full List
                         </button>
                     </div>
                 )}

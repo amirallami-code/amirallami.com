@@ -188,7 +188,8 @@ const Navbar = () => {
                                 className="h-7 md:h-9 w-auto min-w-fit"
                                 priority
                                 width={120}
-                                height={36}
+                                height={"auto"}
+                                aria-hidden={true}
                             />
                         </button>
                     </div>
@@ -209,12 +210,12 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    <div className="flex items-center justify-center h-full w-auto gap-1">
+                    <div className="flex items-center justify-center h-full w-auto gap-2">
                         <ThemeSwitcher />
                         <div className="flex lg:hidden h-full w-16 rounded-2xl">
                             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-                                <SheetTrigger className="relative h-full w-full flex items-center justify-center">
-                                    <span className="absolute w-full h-full"></span>
+                                <SheetTrigger className="relative h-3/4 m-auto me-2 w-full flex items-center justify-center rounded-2xl">
+                                    <span className="absolute"></span>
                                     <Menu className="text-background/80 w-6 h-6"/>
                                 </SheetTrigger>
                                 <SheetContent side={"bottom"} className="rounded-t-3xl gap-1 pb-3 border-none">

@@ -663,3 +663,9 @@
         @apply px-4;
     }
 }
+
+@layer certificates {
+    .certificates-card {
+        @apply m-auto h-full w-full max-w-80 flex flex-col justify-between gap-3 bg-primary p-4 rounded-3xl border-2 border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe];
+    }
+}
