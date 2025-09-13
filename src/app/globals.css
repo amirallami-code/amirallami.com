@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -50,6 +51,17 @@
     --shadow-2xl: 0px 2px 4px 0px hsl(0 0% 0% / 0.25);
     --tracking-normal: 0rem;
     --spacing: 0.25rem;
+
+    /*  Github section  */
+    --font-github-sans: "Mona Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+    --github-background: oklch(0.978 0.003 247.858);
+    --github-border: oklch(0.887 0.012 239.924);
+    --github-text: oklch(0.254 0.011 254.038);
+    --github-muted: oklch(0.663 0.014 251.619);
+
+    --github-accent: oklch(0.626 0.157 255.63);
+    --github-hover: oklch(0.93 0.01 264);
 }
 
 .dark {
@@ -97,6 +109,15 @@
     --shadow-lg: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 4px 6px -1px hsl(0 0% 0% / 0.10);
     --shadow-xl: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 8px 10px -1px hsl(0 0% 0% / 0.10);
     --shadow-2xl: 0px 2px 4px 0px hsl(0 0% 0% / 0.25);
+
+    /*  Github section  */
+    --github-background: oklch(0.274 0.018 251.918);
+    --github-border: oklch(0.376 0.018 254.748);
+    --github-text: oklch(0.877 0.014 258.348);
+    --github-muted: oklch(0.528 0.015 251.671);
+
+    --github-accent: oklch(0.65 0.15 264);
+    --github-hover: oklch(0.18 0.02 264);
 }
 
 @theme inline {
@@ -165,6 +186,16 @@
     --tracking-wide: calc(var(--tracking-normal) + 0.025em);
     --tracking-wider: calc(var(--tracking-normal) + 0.05em);
     --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+
+    /* Github section */
+    --font-github-sans: var(--font-github-sans);
+
+    --color-github-background: var(--github-background);
+    --color-github-border: var(--github-border);
+    --color-github-text: var(--github-text);
+    --color-github-muted: var(--github-muted);
+    --color-github-accent: var(--github-accent);
+    --color-github-hover: var(--github-hover);
 }
 
 @layer base {
@@ -667,5 +698,27 @@
 @layer certificates {
     .certificates-card {
         @apply m-auto h-full w-full max-w-80 flex flex-col justify-between gap-3 bg-primary p-4 rounded-3xl border-2 border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe];
+    }
+}
+
+@layer my-github {
+    .github-section {
+        @apply bg-github-background text-github-text border-t-2 border-b-2 border-github-border;
+    }
+
+    .github-repos {
+        @apply relative flex flex-col gap-2 items-start justify-start ml-5;
+    }
+
+    .github-repos::before {
+        @apply content-[''] absolute left-0 -top-2.5 w-2 h-10/15 border-l-2 border-github-border;
+    }
+
+    .github-repo {
+        @apply relative w-full max-w-6/7 md:max-w-4/6 flex flex-col gap-2 border-2 border-github-border p-3 ms-[18px] rounded-2xl;
+    }
+
+    .github-repo::before {
+        @apply content-[''] absolute -left-5 top-2 w-5 h-5 rounded-bl-2xl border-b-2 border-l-2 border-github-border;
     }
 }
