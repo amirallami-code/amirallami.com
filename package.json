@@ -12,6 +12,8 @@
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.2.8",
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.3.0",
     "@tabler/icons-react": "^3.34.1",
     "@types/react-syntax-highlighter": "^15.5.13",
     "class-variance-authority": "^0.7.1",
@@ -25,6 +27,8 @@
     "react-dom": "19.1.0",
     "react-syntax-highlighter": "^15.6.1",
     "tailwind-merge": "^3.3.1",
+    "three": "^0.180.0",
+    "three-globe": "^2.44.0",
     "web-vitals": "^5.1.0"
   },
   "devDependencies": {

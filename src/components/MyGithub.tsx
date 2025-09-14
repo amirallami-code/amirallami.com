@@ -3,6 +3,16 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { BookMarked, Star } from 'lucide-react';
+import dynamic from 'next/dynamic';
+
+const GithubGlobeContainer = dynamic(() => import('./ui/github-globe'), {
+    ssr: false,
+    loading: () => (
+        <div className="flex items-center justify-center h-[400px] lg:h-[500px]">
+            <div className="animate-pulse text-gray-500">Loading Globe...</div>
+        </div>
+    )
+});
 
 interface GitHubUser {
     login: string;
@@ -112,7 +122,7 @@ export const MyGithub: React.FC = () => {
                         </div>
                     </div>
                     <div className="flex-1 w-full">
-                        {/*Github Globe*/}
+                        <GithubGlobeContainer />
                     </div>
                 </div>
             </section>
@@ -120,8 +130,8 @@ export const MyGithub: React.FC = () => {
     }
 
     return (
-        <section id="github" className="section github-section">
-            <div className="container section-padding flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5">
+        <section id="github" className="section github-section relative overflow-hidden max-w-screen">
+            <div className="container section-padding relative flex flex-col lg:flex-row flex-wrap items-center justify-start">
                 <div className="flex-1 flex flex-col gap-5">
                     <h2 className="section-title text-github-text">My Github</h2>
 
@@ -183,8 +193,8 @@ export const MyGithub: React.FC = () => {
                                                 {repo.name}
                                             </Link>
                                             <span className="text-tiny opacity-75 bg-slate-100 dark:bg-slate-800/10 border border-github-border px-1.5 py-0.5 rounded-full">
-                                                {repo.private ? 'Private' : 'Public'}
-                                            </span>
+                                            {repo.private ? 'Private' : 'Public'}
+                                        </span>
                                         </div>
                                         <p className="text-xs opacity-75 line-clamp-2">
                                             {repo.description || "No description available"}
@@ -197,16 +207,16 @@ export const MyGithub: React.FC = () => {
                                                         style={{ backgroundColor: getLanguageColor(repo.language) }}
                                                     ></div>
                                                     <span className="text-tiny md:text-xs opacity-75 tracking-wide">
-                                                        {repo.language}
-                                                    </span>
+                                                    {repo.language}
+                                                </span>
                                                 </div>
                                             )}
                                             {repo.stargazers_count > 0 && (
                                                 <div className="h-full flex flex-row items-center justify-center gap-1">
-                                                        <Star width={15} height={15} className="text-github-muted" />
+                                                    <Star width={15} height={15} className="text-github-muted" />
                                                     <span className="h-full text-xs opacity-75 my-auto">
-                                                    {repo.stargazers_count}
-                                                </span>
+                                                {repo.stargazers_count}
+                                            </span>
                                                 </div>
                                             )}
                                         </div>
@@ -217,8 +227,10 @@ export const MyGithub: React.FC = () => {
                     ) : null}
                 </div>
 
-                <div className="flex-1 w-full">
-                    {/*Github Globe*/}
+                <div className="flex-1 relative w-full h-full overflow-hidden -mx-5 select-none">
+                    <div className="w-[90vw] md:w-[650px] h-[100vw] md:h-[500px] relative m-auto">
+                        <GithubGlobeContainer />
+                    </div>
                 </div>
             </div>
         </section>
