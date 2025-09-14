@@ -188,7 +188,6 @@ const Navbar = () => {
                                 className="h-7 md:h-9 w-auto min-w-fit"
                                 priority
                                 width={120}
-                                height={"auto"}
                                 aria-hidden={true}
                             />
                         </button>

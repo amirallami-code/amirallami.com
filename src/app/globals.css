@@ -707,11 +707,7 @@
     }
 
     .github-repos {
-        @apply relative flex flex-col gap-2 items-start justify-start ml-5;
-    }
-
-    .github-repos::before {
-        @apply content-[''] absolute left-0 -top-2.5 w-2 h-10/15 border-l-2 border-github-border;
+        @apply flex flex-col gap-2 items-start justify-start ml-5 pt-3 overflow-hidden;
     }
 
     .github-repo {
@@ -719,6 +715,6 @@
     }
 
     .github-repo::before {
-        @apply content-[''] absolute -left-5 top-2 w-5 h-5 rounded-bl-2xl border-b-2 border-l-2 border-github-border;
+        @apply content-[''] absolute -left-5 -top-30 w-5 h-36 rounded-bl-2xl border-b-2 border-l-2 border-github-border;
     }
 }

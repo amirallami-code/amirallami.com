@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea05838d-c2d0-4bdd-963d-8b7808a6a4b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/MyGithub.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/skeleton.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Certificates.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Certificates.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyGithub.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyGithub.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +143,9 @@
       <workItem from="1757468146538" duration="13001000" />
       <workItem from="1757554063727" duration="9166000" />
       <workItem from="1757563326735" duration="12000" />
-      <workItem from="1757740742793" duration="12888000" />
+      <workItem from="1757740742793" duration="12951000" />
+      <workItem from="1757768236857" duration="959000" />
+      <workItem from="1757871578269" duration="4177000" />
     </task>
     <servers />
   </component>

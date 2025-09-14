@@ -41,7 +41,7 @@ const Certificates = () => {
                                     </p>
 
                                     <div className="flex flex-wrap flex-row gap-2">
-                                        <Badge variant={"default"} className="bg-white flex items-center justify-center max-h-[19px]">
+                                        <Badge variant={"default"} className="bg-white flex items-center justify-center max-h-[19px] !px-0.5">
                                             <Image
                                                 src={certificate.providerLogo}
                                                 alt={`${certificate.provider} Logo`}
@@ -66,7 +66,7 @@ const Certificates = () => {
                                         href={certificate.verifyLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="font-extrabold text-sm hover:underline underline-offset-4 under"
+                                        className="font-extrabold text-sm tracking-wide hover:underline underline-offset-4"
                                     >
                                         {certificate.title}
                                     </Link>
