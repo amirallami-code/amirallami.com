@@ -12,20 +12,20 @@ export const techStackData: TechStackData = {
                     icon: "https://skillicons.dev/icons?i=html",
                     proficiency: 3,
                     features: [
-                        "Semantic HTML5 Elements",
-                        "Web Accessibility (WCAG, ARIA)",
+                        "Semantic HTML5",
+                        "WCAG Accessibility",
                         "SEO Optimization"
                     ],
                     projects: [
                         {
                             name: "Personal Portfolio Website",
                             url: "https://github.com/amirallami-code/amirallami.com",
-                            description: "Responsive portfolio showcasing projects and skills"
+                            description: "Responsive portfolio with semantic HTML structure"
                         },
                         {
                             name: "Framer Landing Page",
                             url: "https://github.com/amirallami-code/framer-landing-page",
-                            description: "A modern, responsive SaaS landing page built with Next.js 15, TypeScript, and Tailwind CSS"
+                            description: "Modern SaaS landing with optimized markup"
                         }
                     ]
                 },
@@ -35,20 +35,20 @@ export const techStackData: TechStackData = {
                     icon: "https://skillicons.dev/icons?i=css",
                     proficiency: 3,
                     features: [
-                        "CSS Grid & Flexbox Layout",
-                        "Responsive Design Principles",
-                        "CSS Animations & Transitions"
+                        "CSS Grid & Flexbox",
+                        "Responsive Design",
+                        "CSS Animations"
                     ],
                     projects: [
                         {
                             name: "AI Resume Analyzer",
                             url: "https://github.com/amirallami-code/ai-resume-analyzer",
-                            description: "AI-powered Resume Analyzer built with React & Puter.js. Includes seamless auth, upload and store resumes, and match candidates to jobs using smart AI evaluations. All wrapped in a clean, reusable UI"
+                            description: "AI-powered resume analyzer with custom animations"
                         },
                         {
                             name: "Rock Paper Scissors Game",
                             url: "https://github.com/amirallami-code/rock-paper-scissors-game",
-                            description: "Interactive game with smooth animations"
+                            description: "Interactive game with smooth CSS animations"
                         }
                     ]
                 },
@@ -58,35 +58,35 @@ export const techStackData: TechStackData = {
                     icon: "https://skillicons.dev/icons?i=js",
                     proficiency: 2,
                     features: [
-                        "DOM Manipulation & Events",
-                        "ES6+ Modern Features",
-                        "Async/Await & Promises"
+                        "DOM Manipulation",
+                        "ES6+ Features",
+                        "Async/Await"
                     ],
                     projects: [
                         {
                             name: "AI Resume Analyzer",
                             url: "https://github.com/amirallami-code/ai-resume-analyzer",
-                            description: "AI-powered Resume Analyzer built with React & Puter.js. Includes seamless auth, upload and store resumes, and match candidates to jobs using smart AI evaluations. All wrapped in a clean, reusable UI"
+                            description: "Complex JavaScript app with AI integration"
                         },
                         {
                             name: "Binary Search Algorithm",
                             url: "https://github.com/amirallami-code/binary-search-algorithm",
-                            description: "Binary search is a highly efficient method for locating an item in a sorted list by systematically dividing the search…"
+                            description: "Interactive algorithm visualization with step tracking"
                         },
                         {
                             name: "Selection Sorting Algorithm",
                             url: "https://github.com/amirallami-code/selection-sorting-algorithm",
-                            description: "This project provides a visual and interactive implementation of the Selection Sort algorithm, designed to help users understand how this sorting method works in practice"
+                            description: "Visual sorting demo with real-time animation"
                         },
                         {
                             name: "Rock Paper Scissors Game",
                             url: "https://github.com/amirallami-code/rock-paper-scissors-game",
-                            description: "Interactive game with smooth animations"
+                            description: "Game logic with score tracking"
                         },
                         {
                             name: "Language Translator",
                             url: "https://github.com/amirallami-code/language-translator",
-                            description: "a user-friendly interface for translating text between multiple languages. It leverages the Google Translate API to deliver accurate translations while maintaining a clean, intuitive user experience."
+                            description: "Translation app with API integration"
                         }
                     ]
                 },
@@ -96,19 +96,19 @@ export const techStackData: TechStackData = {
                     icon: "https://skillicons.dev/icons?i=ts",
                     proficiency: 1,
                     features: [
-                        "Static Type Checking",
-                        "Interface & Type Definitions"
+                        "Static Typing",
+                        "Interface Definitions"
                     ],
                     projects: [
                         {
                             name: "Framer Landing Page",
                             url: "https://github.com/amirallami-code/framer-landing-page",
-                            description: "A modern, responsive SaaS landing page built with Next.js 15, TypeScript, and Tailwind CSS"
+                            description: "Type-safe Next.js app with strict checking"
                         },
                         {
                             name: "AI Resume Analyzer",
                             url: "https://github.com/amirallami-code/ai-resume-analyzer",
-                            description: "AI-powered Resume Analyzer built with React & Puter.js. Includes seamless auth, upload and store resumes, and match candidates to jobs using smart AI evaluations. All wrapped in a clean, reusable UI"
+                            description: "TypeScript React app with strong typing"
                         }
                     ]
                 },
@@ -118,14 +118,14 @@ export const techStackData: TechStackData = {
                     icon: "https://skillicons.dev/icons?i=react",
                     proficiency: 2,
                     features: [
-                        "Component-Based Architecture",
-                        "React Hooks (useState, useEffect)"
+                        "Component Architecture",
+                        "React Hooks"
                     ],
                     projects: [
                         {
                             name: "AI Resume Analyzer",
                             url: "https://github.com/amirallami-code/ai-resume-analyzer",
-                            description: "AI-powered Resume Analyzer built with React & Puter.js. Includes seamless auth, upload and store resumes, and match candidates to jobs using smart AI evaluations. All wrapped in a clean, reusable UI"
+                            description: "Feature-rich React app with state management"
                         }
                     ]
                 },
@@ -135,19 +135,19 @@ export const techStackData: TechStackData = {
                     icon: "https://skillicons.dev/icons?i=nextjs",
                     proficiency: 1,
                     features: [
-                        "Server-Side Rendering (SSR)",
-                        "Static Site Generation (SSG)"
+                        "Server-Side Rendering",
+                        "Static Site Generation"
                     ],
                     projects: [
                         {
                             name: "Personal Portfolio Website",
                             url: "https://github.com/amirallami-code/amirallami.com",
-                            description: "Responsive portfolio showcasing projects and skills"
+                            description: "High-performance portfolio with SSG optimization"
                         },
                         {
                             name: "Framer Landing Page",
                             url: "https://github.com/amirallami-code/framer-landing-page",
-                            description: "A modern, responsive SaaS landing page built with Next.js 15, TypeScript, and Tailwind CSS"
+                            description: "Modern SaaS landing with Next.js 15"
                         }
                     ]
                 },
@@ -157,24 +157,24 @@ export const techStackData: TechStackData = {
                     icon: "https://skillicons.dev/icons?i=tailwind",
                     proficiency: 2,
                     features: [
-                        "Utility-First CSS Framework",
-                        "Responsive Design System"
+                        "Utility-First CSS",
+                        "Responsive Design"
                     ],
                     projects: [
                         {
                             name: "Personal Portfolio Website",
                             url: "https://github.com/amirallami-code/amirallami.com",
-                            description: "Responsive portfolio showcasing projects and skills"
+                            description: "Elegant portfolio with custom Tailwind config"
                         },
                         {
                             name: "Framer Landing Page",
                             url: "https://github.com/amirallami-code/framer-landing-page",
-                            description: "A modern, responsive SaaS landing page built with Next.js 15, TypeScript, and Tailwind CSS"
+                            description: "Premium SaaS landing with custom theme"
                         },
                         {
                             name: "AI Resume Analyzer",
                             url: "https://github.com/amirallami-code/ai-resume-analyzer",
-                            description: "AI-powered Resume Analyzer built with React & Puter.js. Includes seamless auth, upload and store resumes, and match candidates to jobs using smart AI evaluations. All wrapped in a clean, reusable UI"
+                            description: "Modern UI with Tailwind utility classes"
                         }
                     ]
                 }
@@ -190,20 +190,20 @@ export const techStackData: TechStackData = {
                     icon: "https://skillicons.dev/icons?i=git",
                     proficiency: 2,
                     features: [
-                        "Branching & Merging Strategies",
-                        "Commit History Management",
+                        "Branching Strategies",
+                        "Commit Management",
                         "Conflict Resolution"
                     ],
                     projects: [
                         {
                             name: "License Guide",
                             url: "https://github.com/amirallami-code/license-guide",
-                            description: "Comprehensive guide for choosing open-source licenses"
+                            description: "Open-source guide with detailed commit history"
                         },
                         {
                             name: "Personal Portfolio Website",
                             url: "https://github.com/amirallami-code/amirallami.com",
-                            description: "Version-controlled portfolio development"
+                            description: "Portfolio with organized Git workflow"
                         }
                     ]
                 },
@@ -214,16 +214,28 @@ export const techStackData: TechStackData = {
                     proficiency: 2,
                     features: [
                         "Repository Management",
-                        "Pull Request Workflows",
-                        "Issue Tracking & Project Management"
+                        "Pull Requests",
+                        "Issue Tracking"
                     ],
                     projects: [
                         {
                             name: "GitHub Profile",
                             url: "https://github.com/amirallami-code/",
-                            description: "Active GitHub profile with multiple open-source projects"
+                            description: "Active open-source contributor with documentation"
                         }
                     ]
+                },
+                {
+                    name: "Gitlab",
+                    fullName: "Gitlab",
+                    icon: "https://skillicons.dev/icons?i=gitlab",
+                    proficiency: 1,
+                    features: [
+                        "Repository Management",
+                        "CI/CD Pipelines",
+                        "Issue Tracking"
+                    ],
+                    projects: []
                 }
             ]
         },
@@ -247,11 +259,23 @@ export const techStackData: TechStackData = {
                     name: "WebStorm",
                     fullName: "WebStorm IDE",
                     icon: "https://skillicons.dev/icons?i=webstorm",
-                    proficiency: 2,
+                    proficiency: 3,
                     features: [
                         "Smart Code Completion",
-                        "Built-in Refactoring Tools",
-                        "Seamless TypeScript Support"
+                        "Refactoring Tools",
+                        "TypeScript Support"
+                    ],
+                    projects: []
+                },
+                {
+                    name: "Notepad 😁",
+                    fullName: "Notepad 😁",
+                    icon: "https://skillicons.dev/icons?i=styledcomponents",
+                    proficiency: 3,
+                    features: [
+                        "Minimalist Coding",
+                        "Raw Text Editing",
+                        "Back-to-Basics"
                     ],
                     projects: []
                 },

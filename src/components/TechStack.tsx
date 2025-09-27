@@ -12,6 +12,7 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {Button} from "@/components/ui/button";
 
 const ProficiencyBadge = ({ level }: { level: number }) => {
     const proficiencyConfig = {
@@ -132,12 +133,13 @@ const TechStack = () => {
 
                 {!expanded && (
                     <div className="absolute bottom-0 left-0 w-full h-72 bg-gradient-to-t from-background via-background/90 to-transparent flex justify-center items-end pb-6">
-                        <button
+                        <Button
+                            variant={"ghost"}
                             onClick={() => setExpanded(true)}
-                            className="px-4 py-1.5 text-sm bg-primary text-white font-semibold rounded-lg shadow-sm hover:bg-primary/90 transition cursor-pointer"
+                            className="px-4 py-1.5 text-primary hover:text-primary font-semibold hover:bg-primary/5 transition cursor-pointer"
                         >
                             Show Full List
-                        </button>
+                        </Button>
                     </div>
                 )}
             </div>

@@ -26,10 +26,9 @@ const navigationItems = [
     { id: 'tech-stack', label: 'Tech Stack', icon: Code },
     { id: 'certificates', label: 'Certificates', icon: CircleStar },
     { id: 'github', label: 'Github', icon: Github },
-    { id: 'contact', label: 'Stay in touch', icon: Mail },
+    { id: 'stay-in-touch', label: 'Stay in touch', icon: Mail },
 ] as const;
 
-// Optimized ThemeSwitcher with reduced re-renders
 const ThemeSwitcher = () => {
     const { theme, toggleTheme, mounted } = useThemeContext();
 
@@ -87,7 +86,6 @@ const ThemeSwitcher = () => {
     );
 };
 
-// Optimized scroll spy hook with throttling
 const useScrollSpy = (sectionIds: readonly string[], offset: number = 100) => {
     const [activeSection, setActiveSection] = useState<string>('');
 
@@ -125,7 +123,6 @@ const useScrollSpy = (sectionIds: readonly string[], offset: number = 100) => {
     return activeSection;
 };
 
-// Optimized smooth scroll function
 const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -149,7 +146,6 @@ const Navbar = () => {
         setIsSheetOpen(false);
     }, []);
 
-    // Optimized scroll handler with throttling
     useEffect(() => {
         let ticking = false;
 

@@ -1,11 +1,12 @@
-import CreattieAbout from '../components/animation/CreattieAbout';
+import CreattieAnimation from './animation/CreattieAnimation';
 
 const About = () => {
     return (
         <section id="about" className="section">
             <div className="container section-padding flex flex-col md:flex-row items-start justify-center gap-10">
                 <div className="flex-1 w-full h-full md:-mt-18">
-                    <CreattieAbout
+                    <CreattieAnimation
+                        animationURL='/animations/creattie-about.json'
                         autoplay={true}
                         loop={true}
                         speed={0.75}

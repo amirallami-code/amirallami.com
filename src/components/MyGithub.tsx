@@ -42,7 +42,7 @@ interface GitHubData {
     totalRepos: number;
 }
 
-export const MyGithub: React.FC = () => {
+const MyGithub: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [githubData, setGithubData] = useState<GitHubData | null>(null);
     const [error, setError] = useState<string | null>(null);
@@ -117,7 +117,7 @@ export const MyGithub: React.FC = () => {
                 <div className="container section-padding flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5">
                     <div className="flex-1 flex flex-col gap-5">
                         <h2 className="section-title text-github-text">My Github</h2>
-                        <div className="text-red-500 p-4 border border-red-200 rounded-lg">
+                        <div className="text-red-500">
                             Error loading GitHub data: {error}
                         </div>
                     </div>
@@ -236,3 +236,5 @@ export const MyGithub: React.FC = () => {
         </section>
     );
 };
+
+export default MyGithub;

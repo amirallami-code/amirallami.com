@@ -90,7 +90,7 @@ cities.forEach((city) => {
         endLat: city.lat,
         endLng: city.lng,
         arcAlt: 0.3 + Math.random() * 0.2,
-        color: "#dfe5ea",
+        color: "#e9d3fd",
     });
 });
 
@@ -308,30 +308,31 @@ export function genRandomNumbers(min: number, max: number, count: number) {
 }
 
 export default function GithubGlobeContainer() {
-    const globeConfig: GlobeConfig = {
-        pointSize: 0.3,
-        globeColor: "#f7f8ff",
+    const globeConfig = {
+        pointSize: 2,
+        globeColor: "#670cb6",
         showAtmosphere: true,
-        atmosphereColor: "#6b70ff",
-        atmosphereAltitude: 0.15,
-        emissive: "#5a6fff",
+        atmosphereColor: "#952fee",
+        atmosphereAltitude: 0.1,
+        emissive: "#952fee",
         emissiveIntensity: 0.4,
-        shininess: 1.1,
-        polygonColor: "#637affcc",
-        ambientLight: "#2e2e38",
-        directionalLeftLight: "#8d95ff",
-        directionalTopLight: "#a6b1ff",
-        pointLight: "#6b70ff",
-        arcTime: 1200,
-        arcLength: 0.85,
-        rings: 2,
-        maxRings: 4,
-        initialPosition: { lat: 35.6895, lng: 139.6917 },
-        autoRotate: false,
+        shininess: 0.9,
+        polygonColor: "#2a014c",
+        ambientLight: "#0e1533",
+        directionalLeftLight: "#ffffff",
+        directionalTopLight: "#ffffff",
+        pointLight: "#ffffff",
+        arcTime: 1000,
+        arcLength: 0.9,
+        rings: 1,
+        maxRings: 3,
+        initialPosition: { lat: 22.3193, lng: 114.1694 },
+        autoRotate: true,
+        autoRotateSpeed: 0.5,
     };
 
     return (
-        <div className="absolute inset-0 w-full h-full overflow-visible">
+        <div className="absolute max-w-[1500px] inset-0 w-full h-full overflow-visible">
             <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent to-github-background/80 z-20" />
             <World globeConfig={globeConfig} data={sampleArcs} />
         </div>

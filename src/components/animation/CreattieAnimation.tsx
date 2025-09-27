@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 
 interface CreattieAboutProps {
+    animationURL: string;
     className?: string;
     width?: number | string;
     height?: number | string;
@@ -12,14 +13,7 @@ interface CreattieAboutProps {
     speed?: number;
 }
 
-const CreattieAbout: React.FC<CreattieAboutProps> = ({
-                                                         className = '',
-                                                         width = '100%',
-                                                         height = '100%',
-                                                         autoplay = true,
-                                                         loop = true,
-                                                         speed = 1
-                                                     }) => {
+const CreattieAnimation: React.FC<CreattieAboutProps> = ({animationURL ,className = '', width = '100%', height = '100%', autoplay = true, loop = true, speed = 1}) => {
     const [animationData, setAnimationData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [isVisible, setIsVisible] = useState(false);
@@ -52,7 +46,7 @@ const CreattieAbout: React.FC<CreattieAboutProps> = ({
 
     const loadAnimation = async () => {
         try {
-            const response = await fetch('/animations/creattie-about.json');
+            const response = await fetch(animationURL);
             const data = await response.json();
             setAnimationData(data);
             setLoading(false);
@@ -118,4 +112,4 @@ const CreattieAbout: React.FC<CreattieAboutProps> = ({
     );
 };
 
-export default CreattieAbout;
+export default CreattieAnimation;

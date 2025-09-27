@@ -718,3 +718,25 @@
         @apply content-[''] absolute -left-5 -top-30 w-5 h-36 rounded-bl-2xl border-b-2 border-l-2 border-github-border;
     }
 }
+
+@layer stay-in-touch {
+    .stay-in-touch-item-wrapper {
+        @apply flex flex-col gap-8 mt-7;
+    }
+
+    .stay-in-touch-item-wrapper li {
+        @apply w-fit flex flex-col text-secondary dark:text-primary;
+    }
+
+    .stay-in-touch-item-wrapper li b {
+        @apply relative text-xl ms-4 uppercase;
+    }
+
+    .stay-in-touch-item-wrapper li b:before {
+        @apply content-[''] absolute top-0 bottom-0 w-2 h-10/12 my-auto -ms-4 rounded-full bg-secondary/30;
+    }
+
+    .stay-in-touch-item-wrapper li a {
+        @apply inline-block text-primary hover:underline underline-offset-4;
+    }
+}
