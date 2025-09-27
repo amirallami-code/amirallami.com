@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import { ThemeProvider } from '@/components/ThemeProvider';
+import PageLoader from '@/components/PageLoader'
 import { WebVitalsReporter } from '@/components/WebVitalsReporter';
 
 const montserrat = Montserrat({
@@ -34,6 +35,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
                 "antialiased bg-background"
             )}>
                 <ThemeProvider>
+                    <PageLoader />
                     {children}
                     <WebVitalsReporter />
                 </ThemeProvider>

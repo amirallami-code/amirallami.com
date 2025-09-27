@@ -236,7 +236,7 @@ const Hero = () => {
     const getCodeForRole = (role: string) => `...
 <div className="w-full flex-1/2 flex flex-col items-start justify-start gap-6 md:gap-8">
   <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white tracking-wide md:leading-14">
-    Hi 👋,<br/>
+    Hi 👋, <br/>
     My name is Amir. <br/>
     I'm a ${role}
   </h1>

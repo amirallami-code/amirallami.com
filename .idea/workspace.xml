@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea05838d-c2d0-4bdd-963d-8b7808a6a4b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/animations/creattie-footer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PageLoader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/About.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MyGithub.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyGithub.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hero.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TechStack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TechStack.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/animation/CreattieAbout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/animation/CreattieAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/github-globe.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/github-globe.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/techStackData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/techStackData.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +59,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -155,7 +150,8 @@
       <workItem from="1757901858771" duration="210000" />
       <workItem from="1758030654196" duration="7914000" />
       <workItem from="1758046531393" duration="7000" />
-      <workItem from="1758967377758" duration="10963000" />
+      <workItem from="1758967377758" duration="11025000" />
+      <workItem from="1758999045300" duration="4472000" />
     </task>
     <servers />
   </component>
