@@ -1,7 +1,7 @@
 "use client";
 
 import Image from 'next/image';
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import {
     Sheet,
     SheetContent,
@@ -167,7 +167,7 @@ const Navbar = () => {
     return (
         <nav
             className={twMerge(
-                "fixed w-full h-20 z-20 top-0 start-0 transition-all duration-100",
+                "fixed w-full h-20 z-20 top-0 start-0 transition-all duration-200",
                 scrolled && "bg-gradient-to-b from-primary/90 via-primary/70 to-primary/50 backdrop-blur-md"
             )}
         >

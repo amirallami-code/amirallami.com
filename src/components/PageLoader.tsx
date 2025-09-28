@@ -20,14 +20,14 @@ export default function PageLoader() {
     if (!loading) return null
 
     return (
-        <div className={`bg-secondary fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300 ${
+        <div className={`bg-gradient-to-tl from-secondary to-primary fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300 ${
             fadeOut ? 'opacity-0' : 'opacity-100'
         }`}>
-            <div className="text-center">
+            <div className="flex flex-col items-center justify-center gap-1">
                 <div
                     aria-label="Orange and tan hamster running in a metal wheel"
                     role="img"
-                    className="wheel-and-hamster mx-auto mb-6"
+                    className="wheel-and-hamster m-auto"
                 >
                     <div className="wheel"></div>
                     <div className="hamster">
@@ -47,7 +47,7 @@ export default function PageLoader() {
                     <div className="spoke"></div>
                 </div>
 
-                <p className="mt-4 text-white/80">Hamster is getting things ready...</p>
+                <p className="text-sm text-white/80 tracking-wide animate-pulse">Hamster is getting things ready...</p>
             </div>
         </div>
     )

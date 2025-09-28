@@ -57,7 +57,10 @@ const Footer = () => {
 
                     <div className="w-full flex flex-col items-end justify-start gap-5 mt-10">
                         <p className="font-serif text-primary">Sincerely, Amirhossein Allami.</p>
-                        <Image src={"/signature/blue.webp"} width={150} height={250} alt="Signature"/>
+                        <Image src={"/signature/blue.webp"} alt="Signature" width="0"
+                               height="0"
+                               sizes="200px"
+                               className="w-auto h-auto"/>
                     </div>
                 </div>
             </div>

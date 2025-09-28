@@ -90,7 +90,7 @@ cities.forEach((city) => {
         endLat: city.lat,
         endLng: city.lng,
         arcAlt: 0.3 + Math.random() * 0.2,
-        color: "#e9d3fd",
+        color: "#507dbb",
     });
 });
 
@@ -310,11 +310,11 @@ export function genRandomNumbers(min: number, max: number, count: number) {
 export default function GithubGlobeContainer() {
     const globeConfig = {
         pointSize: 4,
-        globeColor: "#670cb6",
+        globeColor: "#45638b",
         showAtmosphere: true,
-        atmosphereColor: "#952fee",
+        atmosphereColor: "#507dbb",
         atmosphereAltitude: 0.1,
-        emissive: "#952fee",
+        emissive: "#507dbb",
         emissiveIntensity: 0.4,
         shininess: 0.9,
         polygonColor: "#ffffff",

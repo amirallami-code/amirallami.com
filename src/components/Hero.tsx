@@ -391,6 +391,11 @@ export default nextConfig;`;
                     </AnimatePresence>
 
                     <div className="code-block">
+                        <svg className="codeblock-buttons" width="80" height="20" viewBox="0 0 80 20" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="6" fill="#ef4444"/>
+                            <circle cx="32.5" cy="10" r="6" fill="#eab308"/>
+                            <circle cx="55" cy="10" r="6" fill="#22c55e"/>
+                        </svg>
                         <CodeBlock
                             language="jsx"
                             filename="Portfolio Components"
