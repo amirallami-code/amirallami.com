@@ -210,7 +210,7 @@ const Navbar = () => {
                         <ThemeSwitcher />
                         <div className="flex lg:hidden h-full w-16 rounded-2xl">
                             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-                                <SheetTrigger className="relative h-3/4 m-auto me-2 w-full flex items-center justify-center rounded-2xl">
+                                <SheetTrigger className="relative h-3/4 m-auto me-2 w-full flex items-center justify-center rounded-2xl" aria-label="Open navigation menu">
                                     <span className="absolute"></span>
                                     <Menu className="text-background/80 w-6 h-6"/>
                                 </SheetTrigger>

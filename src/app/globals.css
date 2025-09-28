@@ -778,6 +778,10 @@
         @apply relative bg-codeblock border-b-2 border-gray-500/20 p-2 pb-0 pr-24 rounded-t-xl;
     }
 
+    .code-block > div > div:nth-child(2) {
+        @apply m-1;
+    }
+
     .code-block code {
         @apply h-full;
     }
@@ -887,7 +891,7 @@
 
 @layer tech-stack {
     .skill {
-        @apply flex flex-col items-start justify-center gap-3 bg-white dark:bg-gray-800 border border-muted-foreground/20 rounded-lg mb-4 shadow-xs;
+        @apply flex flex-col items-start justify-center gap-3 bg-white dark:bg-gray-800 border border-muted-foreground/20 rounded-xl mb-4 shadow-xs;
     }
 
     .skill > div {
@@ -897,7 +901,7 @@
 
 @layer certificates {
     .certificates-card {
-        @apply m-auto h-full w-full max-w-80 flex flex-col justify-between gap-3 bg-primary p-4 rounded-3xl border-2 border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe];
+        @apply m-auto h-full w-full max-w-80 flex flex-col justify-between gap-3 bg-sidebar-ring p-4 rounded-3xl border-2 border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe];
     }
 }
 

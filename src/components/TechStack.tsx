@@ -41,7 +41,7 @@ const TechStack = () => {
             <div className="container section-padding relative">
                 <h2 className="section-title text-center">Tech Stack</h2>
 
-                <p className="text-center text-primary py-2 lg:py-7">
+                <p className="text-center text-primary dark:text-chart-3 py-5 lg:py-7">
                     Here&#39;s a list of technologies I work with, along with my
                     proficiency level and examples of how I&#39;ve used them.
                 </p>
@@ -57,7 +57,7 @@ const TechStack = () => {
                                 key={category.name}
                                 className={`${category.name === "Frontend Development" ? "md:col-span-2" : ""}`}
                             >
-                                <h3 className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 px-4 py-3 mb-3 rounded-t-lg">
+                                <h3 className="text-xs text-gray-700 uppercase bg-gray-200/50 dark:bg-gray-700/20 dark:text-gray-300/90 px-4 py-3 mb-3 rounded-t-lg tracking-wide">
                                     {category.name}
                                 </h3>
 
@@ -91,7 +91,7 @@ const TechStack = () => {
                                                 <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                                     Key Features:
                                                 </p>
-                                                <ul className="list-disc list-inside flex flex-col items-start justify-center gap-1 text-xs text-gray-600 dark:text-gray-400">
+                                                <ul className="list-disc list-inside flex flex-col items-start justify-center gap-1.5 text-xs text-gray-600 dark:text-gray-300/90 tracking-wide">
                                                     {skill.features.map((feature) => (
                                                         <li key={feature}>{feature}</li>
                                                     ))}
@@ -99,18 +99,18 @@ const TechStack = () => {
                                             </div>
 
                                             {skill.projects[0] ? (
-                                                <div className="w-full bg-gray-50 dark:bg-gray-700/50 py-3 rounded-b-lg">
-                                                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                                <div className="w-full bg-gray-50 dark:bg-gray-700/20 py-3 rounded-b-lg">
+                                                    <p className="text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
                                                         Projects:
                                                     </p>
 
-                                                    <ul className="space-y-2 text-sm">
+                                                    <ul className="text-sm">
                                                         {skill.projects.map((project) => (
-                                                            <li key={project.name}>
+                                                            <li key={project.name} className="py-1">
                                                                 <Tooltip>
-                                                                    <TooltipTrigger className="flex flex-row gap-1.5 items-center text-blue-500">
+                                                                    <TooltipTrigger className="w-full h-full flex flex-row gap-1.5 items-center text-blue-400">
                                                                         <ExternalLink className="w-4 h-4" />
-                                                                        <Link href={project.url}>{project.name}</Link>
+                                                                        <Link href={project.url} className="w-full h-full text-start">{project.name}</Link>
                                                                     </TooltipTrigger>
                                                                     <TooltipContent>
                                                                         <p>{project.description}</p>

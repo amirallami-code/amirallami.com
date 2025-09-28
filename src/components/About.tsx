@@ -13,7 +13,7 @@ const About = () => {
                     />
                 </div>
 
-                <div className="flex-1 flex flex-col items-start justify-center gap-6 text-ring leading-7">
+                <div className="flex-1 flex flex-col items-start justify-center gap-6 text-primary dark:text-chart-3 leading-7">
                     <div className="about-wrapper md:!gap-3">
                         <h2 className="section-title">About me</h2>
                         <p>
