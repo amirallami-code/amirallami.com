@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { BookMarked, Star } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import Image from "next/image";
 
 const GithubGlobeContainer = dynamic(() => import('./ui/github-globe'), {
     ssr: false,
@@ -153,10 +154,14 @@ const MyGithub: React.FC = () => {
                         <div className="flex flex-col items-start justify-center gap-0 font-github-sans font-medium">
                             <div className="w-fit flex flex-col gap-2 border-2 border-github-border p-3 rounded-2xl">
                                 <div className="w-full flex flex-row gap-3 items-center">
-                                    <img
-                                        id="github-profile-img"
+                                    <Image
                                         src={githubData.profile.avatar_url}
-                                        alt="Github Profile"
+                                        alt={"Github Profile"}
+                                        loading="lazy"
+                                        width={500}
+                                        height={300}
+                                        priority={false}
+                                        id="github-profile-img"
                                         className="max-w-12 max-h-12 rounded-full"
                                     />
                                     <div className="flex flex-col gap-0 h-full">

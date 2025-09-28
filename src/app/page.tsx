@@ -19,9 +19,7 @@ export default function Home() {
               <Certificates />
               <MyGithub />
           </main>
-          <footer>
-              <Footer />
-          </footer>
+          <Footer />
       </>
   );
 }

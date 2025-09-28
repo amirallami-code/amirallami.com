@@ -29,42 +29,42 @@ const Footer = () => {
     ];
 
     return (
-        <section id="stay-in-touch" className="section">
+        <footer id="stay-in-touch" className="section">
             <div className="container section-padding flex flex-col lg:flex-row gap-10">
-                <div className="flex-1 flex items-center justify-center">
-                    <CreattieAnimation
-                        animationURL={'/animations/creattie-footer.json'}
-                        className={"max-w-96"}
-                        autoplay={true}
-                        loop={true}
-                        speed={0.75}
-                    />
-                </div>
+                    <div className="flex-1 flex items-center justify-center">
+                        <CreattieAnimation
+                            animationURL={'/animations/creattie-footer.json'}
+                            className={"max-w-96"}
+                            autoplay={true}
+                            loop={true}
+                            speed={0.75}
+                        />
+                    </div>
 
-                <div className="flex-1">
-                    <h2 className='section-title'>Stay in touch</h2>
+                    <div className="flex-1">
+                        <h2 className='section-title'>Stay in touch</h2>
 
-                    <ul className="stay-in-touch-item-wrapper">
-                        {contactLinks.map((contact, index) => (
-                            <li key={index}>
-                                <b>{contact.label}</b>
-                                <Link href={contact.href} target={"_blank"}>
-                                    {contact.text}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+                        <ul className="stay-in-touch-item-wrapper">
+                            {contactLinks.map((contact, index) => (
+                                <li key={index}>
+                                    <b>{contact.label}</b>
+                                    <Link href={contact.href} target={"_blank"}>
+                                        {contact.text}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
 
-                    <div className="w-full flex flex-col items-end justify-start gap-5 mt-10">
-                        <p className="font-serif text-primary">Sincerely, Amirhossein Allami.</p>
-                        <Image src={"/signature/blue.webp"} alt="Signature" width="0"
-                               height="0"
-                               sizes="200px"
-                               className="w-auto h-auto"/>
+                        <div className="w-full flex flex-col items-end justify-start gap-5 mt-10">
+                            <p className="font-serif text-primary">Sincerely, Amirhossein Allami.</p>
+                            <Image src={"/signature/blue.webp"} alt="Signature" width="0"
+                                   height="0"
+                                   sizes="200px"
+                                   className="w-auto h-auto"/>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+        </footer>
     )
 }
 
