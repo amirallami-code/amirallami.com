@@ -4,8 +4,6 @@ import Image from 'next/image';
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge"
-
-import { Certificate, CERTIFICATE_TAGS } from '@/types/certificates';
 import { certificatesData, formatCertificateDate, getTimeAgo } from '@/data/certificatesData';
 
 const Certificates = () => {

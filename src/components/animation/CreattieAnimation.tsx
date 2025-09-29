@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 
 interface CreattieAboutProps {
@@ -44,7 +44,7 @@ const CreattieAnimation: React.FC<CreattieAboutProps> = ({animationURL ,classNam
         return () => observer.disconnect();
     }, [animationData]);
 
-    const loadAnimation = async () => {
+    const loadAnimation = useCallback(async () => {
         try {
             const response = await fetch(animationURL);
             const data = await response.json();
@@ -54,7 +54,7 @@ const CreattieAnimation: React.FC<CreattieAboutProps> = ({animationURL ,classNam
             console.error('Error loading animation:', error);
             setLoading(false);
         }
-    };
+    }, [animationURL]);
 
     // Set animation speed when data loads
     useEffect(() => {

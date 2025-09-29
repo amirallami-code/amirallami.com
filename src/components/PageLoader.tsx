@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation'
 export default function PageLoader() {
     const [loading, setLoading] = useState(true)
     const [fadeOut, setFadeOut] = useState(false)
-    const router = useRouter()
 
     useEffect(() => {
         const timer = setTimeout(() => {
