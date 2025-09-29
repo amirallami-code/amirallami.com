@@ -7,6 +7,11 @@
 ![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/amirallami-code/amirallami.com?style=flat-square&color=yellow)
+
+<p align="center">
+  <img src="https://amirallami.com/og-image.jpg" alt="Portfolio Preview" width="600">
+</p>
 
 **Modern • Performant • Type-Safe**
 
