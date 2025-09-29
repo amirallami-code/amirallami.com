@@ -1757,6 +1757,14 @@ body::-webkit-scrollbar-thumb {
   max-width: 36rem;
 }
 
+.max-w-screen-sm {
+  max-width: 640px;
+}
+
+.max-w-screen-md {
+  max-width: 768px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1944,6 +1952,10 @@ body::-webkit-scrollbar-thumb {
   border-bottom-width: 1px;
 }
 
+.border-t {
+  border-top-width: 1px;
+}
+
 .border-github-muted {
   --tw-border-opacity: 1;
   border-color: rgb(61 68 77 / var(--tw-border-opacity, 1));
@@ -1952,6 +1964,10 @@ body::-webkit-scrollbar-thumb {
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+}
+
+.border-gray-500\/50 {
+  border-color: rgb(107 114 128 / 0.5);
 }
 
 .border-t-github-dark {
@@ -2121,6 +2137,14 @@ body::-webkit-scrollbar-thumb {
 
 .pt-12 {
   padding-top: 3rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .text-left {
@@ -2296,6 +2320,10 @@ body::-webkit-scrollbar-thumb {
 .text-yellow-800 {
   --tw-text-opacity: 1;
   color: rgb(133 77 14 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-500\/90 {
+  color: rgb(107 114 128 / 0.9);
 }
 
 .underline-offset-2 {
@@ -2671,6 +2699,10 @@ body::-webkit-scrollbar-thumb {
 
   .md\:justify-start {
     justify-content: flex-start;
+  }
+
+  .md\:justify-between {
+    justify-content: space-between;
   }
 
   .md\:gap-12 {
