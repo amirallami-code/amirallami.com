@@ -133,7 +133,7 @@ const MyGithub: React.FC = () => {
     return (
         <section id="github" className="section github-section relative overflow-hidden max-w-screen">
             <div className="container section-padding relative flex flex-col lg:flex-row flex-wrap items-center justify-start">
-                <div className="flex-1 flex flex-col gap-5">
+                <div className="flex-1 min-w-1/2 flex flex-col gap-5">
                     <h2 className="section-title text-github-text">My Github</h2>
 
                     {isLoading ? (
@@ -172,19 +172,19 @@ const MyGithub: React.FC = () => {
                                             {githubData.profile.name || githubData.profile.login}
                                         </a>
 
-                                        <p className="text-github-muted text-sm">{githubData.profile.login} · he/him</p>
+                                        <p className="text-muted-foreground/90 text-sm">{githubData.profile.login} · he/him</p>
                                     </div>
                                 </div>
                                 <p>{githubData.profile.bio || "Front-end enthusiast by day, algorithm adventurer by night."}</p>
                                 <div className="flex flex-row flex-wrap gap-2 text-xs md:text-sm opacity-75">
                                     <p>
-                                        <b>{githubData.totalRepos}</b> repositories
+                                        {githubData.totalRepos} repositories
                                     </p>
                                     <p>
-                                        <b>{githubData.profile.followers}</b> followers
+                                        {githubData.profile.followers} followers
                                     </p>
                                     <p>
-                                        <b>{githubData.totalStars}</b> stars earned
+                                        {githubData.totalStars} stars earned
                                     </p>
                                 </div>
                             </div>

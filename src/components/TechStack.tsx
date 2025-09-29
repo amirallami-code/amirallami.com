@@ -13,6 +13,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip";
 import {Button} from "@/components/ui/button";
+import Image from "next/image";
 
 const ProficiencyBadge = ({ level }: { level: number }) => {
     const proficiencyConfig = {
@@ -41,7 +42,7 @@ const TechStack = () => {
             <div className="container section-padding relative">
                 <h2 className="section-title text-center">Tech Stack</h2>
 
-                <p className="text-center text-primary dark:text-chart-3 py-5 lg:py-7">
+                <p className="text-center text-secondary dark:text-chart-3 py-5 lg:py-7">
                     Here&#39;s a list of technologies I work with, along with my
                     proficiency level and examples of how I&#39;ve used them.
                 </p>
@@ -71,11 +72,14 @@ const TechStack = () => {
                                     {category.skills.map((skill) => (
                                         <div key={skill.name} className="skill break-inside-avoid mb-4">
                                             <div className="flex items-center gap-3 p-4 pb-0">
-                                                <img
+                                                <Image
                                                     src={skill.icon}
                                                     alt={skill.name}
-                                                    loading="lazy"
-                                                    className="w-6 h-6"
+                                                    width={0}
+                                                    height={0}
+                                                    className={"w-max h-max max-w-6 max-h-6"}
+                                                    sizes={"24"}
+                                                    unoptimized={true}
                                                 />
                                                 <h4 className="text-sm">
                                                     <span className="lg:hidden">{skill.name}</span>
@@ -106,11 +110,13 @@ const TechStack = () => {
 
                                                     <ul className="text-sm">
                                                         {skill.projects.map((project) => (
-                                                            <li key={project.name} className="py-1">
+                                                            <li key={project.name}>
                                                                 <Tooltip>
-                                                                    <TooltipTrigger className="w-full h-full flex flex-row gap-1.5 items-center text-blue-400">
-                                                                        <ExternalLink className="w-4 h-4" />
-                                                                        <Link href={project.url} className="w-full h-full text-start">{project.name}</Link>
+                                                                    <TooltipTrigger className="w-full h-full">
+                                                                        <Link href={project.url} className="w-full h-full flex flex-row gap-1.5 py-1.5 text-sm items-center text-blue-700 dark:text-blue-400">
+                                                                            <ExternalLink className="w-4 h-4" />
+                                                                            {project.name}
+                                                                        </Link>
                                                                     </TooltipTrigger>
                                                                     <TooltipContent>
                                                                         <p>{project.description}</p>

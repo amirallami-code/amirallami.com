@@ -28,20 +28,20 @@ const Certificates = () => {
                             </div>
 
                             <div className="h-full w-full flex flex-col gap-2 justify-between text-white">
-                                <div className="flex flex-col gap-2">
+                                <div className="flex flex-col gap-3">
                                     <p className="flex flex-row gap-1 text-xs">
                                         Earned on
                                         <b>
                                             {formatCertificateDate(certificate.earnedOn)}
                                         </b>
                                         •
-                                        <span className="text-tiny my-auto font-semibold">
+                                        <span>
                                             {getTimeAgo(certificate.earnedOn)}
                                         </span>
                                     </p>
 
-                                    <div className="flex flex-wrap flex-row gap-2">
-                                        <Badge variant={"default"} className="bg-white flex items-center justify-center max-h-[19px] !px-0.5">
+                                    <div className="flex flex-wrap flex-row gap-1.5">
+                                        <Badge variant={"default"} className="certificates-tag bg-white flex items-center justify-center max-h-[19px] !px-0.5">
                                             <Image
                                                 src={certificate.providerLogo}
                                                 alt={`${certificate.provider} Logo`}
@@ -55,7 +55,12 @@ const Certificates = () => {
                                         {certificate.tags.map((tag, tagIndex) => (
                                             <Badge
                                                 key={`${tag.name}-${tagIndex}`}
-                                                className={`!text-tiny font-semibold cursor-default max-h-[19px] ${tag.bgColor} ${tag.textColor}`}
+                                                className="certificates-tag px-2.5 py-0.5 rounded-full text-xs font-medium"
+                                                style={{
+                                                    backgroundColor: tag.bgColor,
+                                                    color: tag.textColor,
+                                                    border: "1px solid #E5E7EB",
+                                                }}
                                             >
                                                 {tag.name}
                                             </Badge>
@@ -84,11 +89,12 @@ const Certificates = () => {
                                         </b>
                                     </p>
 
-                                    <Button variant={"secondary"} className="px-6 py-[5px] rounded-xl bg-secondary transition-all w-full mt-2 font-mont-med text-sm cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis border-2 border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe]">
+                                    <Button variant={"secondary"} className="p-0 rounded-xl bg-secondary transition-all w-full mt-2 font-mont-med text-[13px] cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis border-2 border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe]">
                                         <Link
                                             href={certificate.downloadPath}
                                             download
                                             target={"_blank"}
+                                            className="w-full h-full flex items-center justify-center"
                                         >
                                             Download Certificate
                                         </Link>

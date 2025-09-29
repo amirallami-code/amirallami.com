@@ -60,8 +60,7 @@
     --github-border: oklch(0.887 0.012 239.924);
     --github-text: oklch(0.254 0.011 254.038);
     --github-muted: oklch(0.663 0.014 251.619);
-
-    --github-accent: oklch(0.626 0.157 255.63);
+    --github-accent: oklch(48.8% 0.243 264.376);
     --github-hover: oklch(0.93 0.01 264);
 }
 
@@ -117,8 +116,7 @@
     --github-border: oklch(0.376 0.018 254.748);
     --github-text: oklch(0.877 0.014 258.348);
     --github-muted: oklch(0.528 0.015 251.671);
-
-    --github-accent: oklch(0.65 0.15 264);
+    --github-accent: oklch(70.7% 0.165 254.624);
     --github-hover: oklch(0.18 0.02 264);
 }
 
@@ -779,7 +777,7 @@
     }
 
     .code-block > div > div:nth-child(2) {
-        @apply m-1;
+        @apply m-2;
     }
 
     .code-block code {
@@ -901,7 +899,11 @@
 
 @layer certificates {
     .certificates-card {
-        @apply m-auto h-full w-full max-w-80 flex flex-col justify-between gap-3 bg-sidebar-ring p-4 rounded-3xl border-2 border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe];
+        @apply m-auto h-full w-full max-w-80 flex flex-col justify-between gap-3 bg-gradient-to-bl from-secondary to-sidebar-accent p-4 rounded-3xl border-2 border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe];
+    }
+
+    .certificates-tag {
+        @apply text-tiny font-semibold cursor-default max-h-[19px] rounded-sm;
     }
 }
 
@@ -941,6 +943,6 @@
     }
 
     .stay-in-touch-item-wrapper li a {
-        @apply inline-block text-primary hover:underline underline-offset-4;
+        @apply inline-block text-secondary dark:text-chart-3 hover:underline underline-offset-4;
     }
 }
