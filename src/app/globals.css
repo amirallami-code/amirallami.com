@@ -266,7 +266,12 @@
     }
 
     .wheel {
-        background: radial-gradient(100% 100% at center,hsla(0,0%,60%,0) 47.8%,hsl(0,0%,60%) 48%);
+        background: radial-gradient(
+                circle at center,
+                hsla(0, 0%, 60%, 0) 47.8%,
+                hsl(0, 0%, 60%) 48%,
+                hsl(0, 0%, 60%) 100%
+        );
         z-index: 2;
     }
 
@@ -400,8 +405,20 @@
 
     .spoke {
         animation: spoke var(--dur) linear infinite;
-        background: radial-gradient(100% 100% at center,hsl(0,0%,60%) 4.8%,hsla(0,0%,60%,0) 5%),
-        linear-gradient(hsla(0,0%,55%,0) 46.9%,hsl(0,0%,65%) 47% 52.9%,hsla(0,0%,65%,0) 53%) 50% 50% / 99% 99% no-repeat;
+        background:
+            radial-gradient(
+                circle at center,
+                hsl(0, 0%, 60%) 4.8%,
+                hsla(0, 0%, 60%, 0) 5%
+            ),
+            linear-gradient(
+                180deg,
+                hsla(0, 0%, 55%, 0) 46.9%,
+                hsl(0, 0%, 65%) 47%,
+                hsl(0, 0%, 65%) 52.9%,
+                hsla(0, 0%, 65%, 0) 53%
+            )
+            50% 50% / 99% 99% no-repeat;
     }
 
     @keyframes hamster {

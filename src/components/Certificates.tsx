@@ -88,14 +88,15 @@ const Certificates = () => {
                                     </p>
 
                                     <Button variant={"secondary"} className="p-0 rounded-xl bg-secondary transition-all w-full mt-2 font-mont-med text-[13px] cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis border-2 border-[#3c587d] shadow-[inset_0_-2px_2px_#3c587d,inset_0_4px_5px_-3px_#6a8ebe]">
-                                        <Link
+                                        <a
                                             href={certificate.downloadPath}
                                             download
-                                            target={"_blank"}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             className="w-full h-full flex items-center justify-center"
-                                        >
-                                            Download Certificate
-                                        </Link>
+                                            >
+                                                Download Certificate
+                                        </a>
                                     </Button>
                                 </div>
                             </div>

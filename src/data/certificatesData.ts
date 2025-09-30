@@ -5,7 +5,7 @@ export const certificatesData: Certificate[] = [
         title: "Introduction to Front-end Development",
         provider: "Meta",
         platform: "Coursera",
-        earnedOn: 20240707, // YYYYMMDD format
+        earnedOn: 20240707,
         verifyLink: "https://www.coursera.org/account/accomplishments/verify/HF7Y6KJLLGK9",
         downloadPath: "/certificates/pdf/cer-IFD.pdf",
         imagePath: "/certificates/png/cer-IFD.jpg",

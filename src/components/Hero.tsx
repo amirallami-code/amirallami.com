@@ -309,11 +309,17 @@ const Hero = () => {
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.3.0",
+    "@sentry/nextjs": "^10.15.0",
     "@tabler/icons-react": "^3.34.1",
     "@types/react-syntax-highlighter": "^15.5.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.540.0",
     "motion": "^12.23.12",
     "next": "15.4.6",
@@ -321,7 +327,11 @@ const Hero = () => {
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-syntax-highlighter": "^15.6.1",
-    "tailwind-merge": "^3.3.1"
+    "styled-components": "^6.1.19",
+    "tailwind-merge": "^3.3.1",
+    "three": "^0.180.0",
+    "three-globe": "^2.44.0",
+    "web-vitals": "^5.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -340,10 +350,29 @@ const Hero = () => {
     const nextConfigTsFile = `import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;`;
+    ...(process.env.ANALYZE === 'true' && {
+        bundleAnalyzer: {
+            enabled: true,
+        },
+    }),
+    images: {
+        formats: ['image/avif', 'image/webp'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'skillicons.dev',
+                port: '',
+                pathname: '/icons**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'avatars.githubusercontent.com',
+                port: '',
+                pathname: '/u/*',
+            }
+        ],
+    },
+};`;
 
     return (
         <section id="hero" className="relative reverse-section">

@@ -68,6 +68,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             className="dark"
         >
             <head>
+                <title>Amirhossein Allami | Front-End Developer & UI Designer</title>
                 <meta
                     name="description"
                     content="Amirhossein Allami - Front-End Developer & UI Designer. Crafting modern, user-friendly web experiences with React & TypeScript. Based in Shiraz, with 3+ years of design expertise."
