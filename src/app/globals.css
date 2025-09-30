@@ -266,12 +266,8 @@
     }
 
     .wheel {
-        background: radial-gradient(
-                circle at center,
-                hsla(0, 0%, 60%, 0) 47.8%,
-                hsl(0, 0%, 60%) 48%,
-                hsl(0, 0%, 60%) 100%
-        );
+        background: transparent;
+        border: 5px solid hsl(0, 0%, 60%);
         z-index: 2;
     }
 
