@@ -103,7 +103,7 @@ const TechStack = () => {
                                             </div>
 
                                             {skill.projects[0] ? (
-                                                <div className="w-full bg-gray-50 dark:bg-gray-700/20 py-3 rounded-b-lg">
+                                                <div className="w-full bg-gray-50 dark:bg-gray-700/20 py-3 rounded-b-xl">
                                                     <p className="text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
                                                         Projects:
                                                     </p>

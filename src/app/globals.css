@@ -82,7 +82,7 @@
     --destructive: oklch(0.4782 0.0955 21.2765);
     --destructive-foreground: oklch(0.9674 0.0013 286.3752);
     --border: oklch(0.4939 0.0737 255.8874);
-    --codeblock: oklch(0.278 0.034 257.672);
+    --codeblock: oklch(0.278 0.03 256.848);
     --input: oklch(0.4939 0.0737 255.8874);
     --ring: oklch(0.5850 0.1080 256.6706);
     --chart-1: oklch(0.5850 0.1080 256.6706);
@@ -684,7 +684,6 @@
     }
 
     /* actions */
-
     .theme-switch__checkbox:checked + .theme-switch__container {
         background-color: var(--container-night-bg);
     }

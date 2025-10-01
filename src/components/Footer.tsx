@@ -110,7 +110,7 @@ const Footer = () => {
             </div>
 
             <div className="container border-t border-github-border pt-4 pb-4">
-                <div className="flex flex-wrap justify-center md:justify-between items-center text-center gap-4 text-xs text-muted-foreground/90">
+                <div className="flex flex-wrap justify-center md:justify-between items-center text-center gap-2 text-xs text-muted-foreground/90">
                     <p>© {new Date().getFullYear()} Amirhossein Allami. All rights reserved.</p>
                     <p className="flex items-center gap-2">
                         build {version}
@@ -126,7 +126,7 @@ const Footer = () => {
                                     <p>{version} <span className="text-muted-foreground/90">(current)</span></p>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem asChild className={"!text-xs"}>
-                                    <Link href="https://v1.amirallami.com">v1.4.2</Link>
+                                    <Link href="https://v1.amirallami.com" target={"_blank"}>v1.4.2</Link>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>

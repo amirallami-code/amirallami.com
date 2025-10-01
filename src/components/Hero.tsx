@@ -408,6 +408,9 @@ const nextConfig: NextConfig = {
                                     </div>
                                     <div className="min-w-0">
                                         <p className="text-xs font-semibold text-foreground truncate">Document saved</p>
+                                        <p className="text-tiny text-muted-foreground/70 tracking-wide mt-0.5 max-w-[150px]">
+                                            Changes have been saved successfully
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="flex-shrink-0 flex items-center gap-1 text-[11px] text-foreground">

@@ -299,8 +299,8 @@ export default function GithubGlobeContainer() {
 
     return (
         <div className="absolute max-w-[1500px] inset-0 w-full h-full overflow-visible">
-            <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent to-github-background/80 z-20" />
-            <div className="absolute w-96 right-0 inset-y-0 h-full bg-gradient-to-r pointer-events-none select-none from-transparent to-github-background/80 z-20" />
+            <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b from-transparent to-github-background/50 pointer-events-none select-none z-20" />
+            <div className="absolute w-96 right-0 inset-y-0 h-full bg-gradient-to-r from-transparent to-github-background/50 pointer-events-none select-none z-20" />
             <World globeConfig={globeConfig} data={sampleArcs} />
         </div>
     );

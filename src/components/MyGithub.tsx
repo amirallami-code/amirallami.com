@@ -65,7 +65,7 @@ const MyGithub: React.FC = () => {
                 if (!reposResponse.ok) throw new Error('Failed to fetch repositories');
                 const reposData: GitHubRepo[] = await reposResponse.json();
 
-                // Calculate total stars earned (GitHub API doesn't provide this directly)
+                // Calculate total stars earned
                 const totalStars = reposData.reduce((sum: number, repo: GitHubRepo) => sum + repo.stargazers_count, 0);
 
                 // Get top 2 repositories (by stars)
@@ -233,7 +233,7 @@ const MyGithub: React.FC = () => {
                 </div>
 
                 <div className="flex-1 relative w-full h-full overflow-hidden -mx-5 select-none">
-                    <div className="w-[90vw] md:w-[650px] h-[100vw] md:h-[500px] relative m-auto">
+                    <div className="w-full max-w-[90%] md:max-w-[650px] h-[100vw] md:h-[500px] relative m-auto">
                         <GithubGlobeContainer />
                     </div>
                 </div>
