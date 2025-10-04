@@ -185,7 +185,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Version History
 
-- **v2.0.0** - Complete rebuild with Next.js 15, React 19, TypeScript
+- **v2** - Complete rebuild with Next.js 15, React 19, TypeScript
 - **[v1.4.2](https://v1.amirallami.com)** - Legacy vanilla HTML/CSS/JS version
 
 ---
