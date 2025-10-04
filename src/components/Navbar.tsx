@@ -23,7 +23,7 @@ import Link from "next/link";
 const navigationItems = [
     { id: 'hero', label: 'Hero', icon: House },
     { id: 'about', label: 'About me', icon: User },
-    { id: 'tech-stack', label: 'Tech Stack', icon: Code },
+    { id: 'tech-stack', label: 'Tech Stack & Projects', icon: Code },
     { id: 'certificates', label: 'Certificates', icon: CircleStar },
     { id: 'github', label: 'Github', icon: Github },
     { id: 'stay-in-touch', label: 'Stay in touch', icon: Mail },

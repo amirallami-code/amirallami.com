@@ -27,7 +27,7 @@ const Certificates = () => {
 
                             <div className="h-full w-full flex flex-col gap-2 justify-between text-white">
                                 <div className="flex flex-col gap-3">
-                                    <p className="flex flex-row gap-1 text-xs">
+                                    <p className="flex flex-row flex-wrap gap-1 text-xs">
                                         Earned on
                                         <b>
                                             {formatCertificateDate(certificate.earnedOn)}

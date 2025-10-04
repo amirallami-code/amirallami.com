@@ -109,7 +109,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="container border-t border-github-border pt-4 pb-4">
+            <div className="container border-t border-github-border pt-3 pb-3">
                 <div className="flex flex-wrap justify-center md:justify-between items-center text-center gap-2 text-xs text-muted-foreground/90">
                     <p>© {new Date().getFullYear()} Amirhossein Allami. All rights reserved.</p>
                     <p className="flex items-center gap-2">

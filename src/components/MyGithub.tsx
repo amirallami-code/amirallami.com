@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { BookMarked, Star } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import Image from "next/image";
+import { BookMarked, Star, GitFork } from 'lucide-react';
 
 const GithubGlobeContainer = dynamic(() => import('./ui/github-globe'), {
     ssr: false,
@@ -31,6 +31,7 @@ interface GitHubRepo {
     html_url: string;
     description: string | null;
     stargazers_count: number;
+    forks_count: number;
     language: string | null;
     private: boolean;
     fork: boolean;
@@ -70,8 +71,10 @@ const MyGithub: React.FC = () => {
 
                 // Get top 2 repositories (by stars)
                 const topRepos = reposData
-                    .filter((repo: GitHubRepo) => !repo.fork) // Exclude forked repositories
-                    .slice(0, 2);
+                    .filter((repo: GitHubRepo) => !repo.fork) // Exclude forks
+                    .sort((a, b) => b.stargazers_count - a.stargazers_count) // Sort by stars desc
+                    .slice(0, 2); // Take top 2
+
 
                 setGithubData({
                     profile: userData,
@@ -212,16 +215,24 @@ const MyGithub: React.FC = () => {
                                                         style={{ backgroundColor: getLanguageColor(repo.language) }}
                                                     ></div>
                                                     <span className="text-tiny md:text-xs opacity-75 tracking-wide">
-                                                    {repo.language}
-                                                </span>
+                                                        {repo.language}
+                                                    </span>
                                                 </div>
                                             )}
                                             {repo.stargazers_count > 0 && (
                                                 <div className="h-full flex flex-row items-center justify-center gap-1">
                                                     <Star width={15} height={15} className="text-github-muted" />
                                                     <span className="h-full text-xs opacity-75 my-auto">
-                                                {repo.stargazers_count}
-                                            </span>
+                                                        {repo.stargazers_count}
+                                                    </span>
+                                                </div>
+                                            )}
+                                            {repo.forks_count > 0 && (
+                                                <div className="h-full flex flex-row items-center justify-center gap-1">
+                                                    <GitFork width={15} height={15} className="text-github-muted" />
+                                                    <span className="h-full text-xs opacity-75 my-auto">
+                                                        {repo.forks_count}
+                                                    </span>
                                                 </div>
                                             )}
                                         </div>

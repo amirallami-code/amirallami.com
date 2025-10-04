@@ -40,7 +40,7 @@ const TechStack = () => {
     return (
         <section id="tech-stack">
             <div className="container section-padding relative">
-                <h2 className="section-title text-center">Tech Stack</h2>
+                <h2 className="section-title text-center">Tech Stack & Projects </h2>
 
                 <p className="text-center text-secondary dark:text-chart-3 py-5 lg:py-7">
                     Here&#39;s a list of technologies I work with, along with my
@@ -113,7 +113,7 @@ const TechStack = () => {
                                                             <li key={project.name}>
                                                                 <Tooltip>
                                                                     <TooltipTrigger className="w-full h-full">
-                                                                        <Link href={project.url} className="w-full h-full flex flex-row gap-1.5 py-1.5 text-sm items-center text-blue-700 dark:text-blue-400">
+                                                                        <Link href={project.url} className="w-full h-full flex flex-row gap-1.5 py-1.5 text-sm text-start items-center text-blue-700 dark:text-blue-400">
                                                                             <ExternalLink className="w-4 h-4" />
                                                                             {project.name}
                                                                         </Link>
