@@ -49,7 +49,7 @@ const TechStack = () => {
 
                 <div
                     className={`transition-all duration-1000 ease-in-out ${
-                        expanded ? "max-h-none" : "max-h-screen lg:max-h-[80vh] overflow-hidden"
+                        expanded ? "max-h-none" : "max-h-screen lg:max-h-[550px] overflow-hidden"
                     }`}
                 >
                     <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 my-2">

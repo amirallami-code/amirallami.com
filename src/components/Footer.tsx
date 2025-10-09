@@ -112,18 +112,18 @@ const Footer = () => {
             <div className="container border-t border-github-border pt-3 pb-3">
                 <div className="flex flex-wrap justify-center md:justify-between items-center text-center gap-2 text-xs text-muted-foreground/90">
                     <p>© {new Date().getFullYear()} Amirhossein Allami. All rights reserved.</p>
-                    <p className="flex items-center gap-2">
-                        build {version}
+                    <p className="flex items-center gap-2.5">
+                        Build {version.startsWith('v') ? version.slice(1) : version}
                         <span>•</span>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button variant="link" size="sm" className="text-xs !p-0 text-secondary dark:text-chart-3">
+                                <Button variant="link" size="sm" className="text-xs !p-0.5 text-secondary dark:text-chart-3">
                                     Switch version
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end" className={"border-github-border"}>
                                 <DropdownMenuItem asChild className={"!text-xs"}>
-                                    <p>{version} <span className="text-muted-foreground/90">(current)</span></p>
+                                    <p>{version}<span className="text-muted-foreground/90">(current)</span></p>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem asChild className={"!text-xs"}>
                                     <Link href="https://v1.amirallami.com" target={"_blank"}>v1.4.2</Link>
