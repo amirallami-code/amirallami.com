@@ -1,7 +1,5 @@
 "use client";
-
-import * as THREE from 'three';
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Canvas, extend } from "@react-three/fiber";
@@ -9,6 +7,11 @@ import { OrbitControls } from "@react-three/drei";
 import countries from "@/data/globe.json";
 
 declare module "@react-three/fiber" {
+    interface ThreeElements {
+        threeGlobe: ThreeElements["mesh"] & {
+            new (): ThreeGlobe;
+        };
+    }
 }
 
 extend({ ThreeGlobe: ThreeGlobe });
@@ -91,10 +94,9 @@ cities.forEach((city) => {
     });
 });
 
-
 export function Globe({ globeConfig, data }: WorldProps) {
     const globeRef = useRef<ThreeGlobe | null>(null);
-    const groupRef = useRef<THREE.Group>(null!);
+    const groupRef = useRef(1);
     const [isInitialized, setIsInitialized] = useState(false);
 
     const defaultProps = {
@@ -117,7 +119,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     useEffect(() => {
         if (!globeRef.current && groupRef.current) {
             globeRef.current = new ThreeGlobe();
-            groupRef.current.add(globeRef.current);
+            (groupRef.current as any).add(globeRef.current);
             setIsInitialized(true);
         }
     }, []);
@@ -125,7 +127,12 @@ export function Globe({ globeConfig, data }: WorldProps) {
     useEffect(() => {
         if (!globeRef.current || !isInitialized) return;
 
-        const globeMaterial = globeRef.current.globeMaterial() as THREE.MeshPhongMaterial;
+        const globeMaterial = globeRef.current.globeMaterial() as unknown as {
+            color: Color;
+            emissive: Color;
+            emissiveIntensity: number;
+            shininess: number;
+        };
         globeMaterial.color = new Color(globeConfig.globeColor);
         globeMaterial.emissive = new Color(globeConfig.emissive);
         globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity || 0.15;
@@ -181,16 +188,15 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
         globeRef.current
             .arcsData(data)
-            .arcStartLat((d) => (d as { startLat: number }).startLat)
-            .arcStartLng((d) => (d as { startLng: number }).startLng)
-            .arcEndLat((d) => (d as { endLat: number }).endLat)
-            .arcEndLng((d) => (d as { endLng: number }).endLng)
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            .arcColor((e: any) => e.color)
-            .arcAltitude((e) => (e as { arcAlt: number }).arcAlt)
+            .arcStartLat((d) => (d as { startLat: number }).startLat * 1)
+            .arcStartLng((d) => (d as { startLng: number }).startLng * 1)
+            .arcEndLat((d) => (d as { endLat: number }).endLat * 1)
+            .arcEndLng((d) => (d as { endLng: number }).endLng * 1)
+            .arcColor((e: any) => (e as { color: string }).color)
+            .arcAltitude((e) => (e as { arcAlt: number }).arcAlt * 1)
             .arcStroke(() => [0.32, 0.28, 0.3][Math.round(Math.random() * 2)])
             .arcDashLength(defaultProps.arcLength)
-            .arcDashInitialGap((e) => (e as { order: number }).order)
+            .arcDashInitialGap((e) => (e as { order: number }).order * 1)
             .arcDashGap(15)
             .arcDashAnimateTime(() => defaultProps.arcTime);
 
@@ -233,17 +239,26 @@ export function WebGLRendererConfig() {
         gl.setPixelRatio(window.devicePixelRatio);
         gl.setSize(size.width, size.height);
         gl.setClearColor(0x000000, 0);
-    }, [gl, size.height, size.width]);
+    }, [gl, size]);
 
     return null;
 }
 
 export function World(props: WorldProps) {
     const { globeConfig } = props;
+    const { gl, size, camera } = useThree();
     const scene = new Scene();
     scene.fog = new Fog(0x000000, 400, 2000);
+
+    useEffect(() => {
+        if (camera instanceof PerspectiveCamera) {
+            camera.aspect = size.width / size.height;
+            camera.updateProjectionMatrix();
+        }
+    }, [camera, size]);
+
     return (
-        <Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
+        <>
             <WebGLRendererConfig />
             <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
             <directionalLight
@@ -270,10 +285,57 @@ export function World(props: WorldProps) {
                 minPolarAngle={Math.PI / 3.5}
                 maxPolarAngle={Math.PI - Math.PI / 3}
             />
-        </Canvas>
+        </>
     );
 }
+
+export function hexToRgb(hex: string) {
+    const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    hex = hex.replace(shorthandRegex, function (m, r, g, b) {
+        return r + r + g + g + b + b;
+    });
+
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result
+        ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16),
+        }
+        : null;
+}
+
+export function genRandomNumbers(min: number, max: number, count: number) {
+    const arr = [];
+    while (arr.length < count) {
+        const r = Math.floor(Math.random() * (max - min)) + min;
+        if (arr.indexOf(r) === -1) arr.push(r);
+    }
+
+    return arr;
+}
+
 export default function GithubGlobeContainer() {
+    const [key, setKey] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const lastDimensionsRef = useRef({ width: 0, height: 0 });
+
+    useEffect(() => {
+        if (process.env.NODE_ENV === 'development') {
+            const originalWarn = console.warn;
+            console.warn = (...args) => {
+                if (args[0]?.includes?.('WebGLRenderer: Context Lost')) {
+                    return;
+                }
+                originalWarn(...args);
+            };
+            return () => {
+                console.warn = originalWarn;
+            };
+        }
+    }, []);
+
     const globeConfig = {
         pointSize: 4,
         globeColor: "#45638b",
@@ -297,11 +359,121 @@ export default function GithubGlobeContainer() {
         autoRotateSpeed: 0.5,
     };
 
+    const checkDimensionsChange = useCallback(() => {
+        if (!containerRef.current) return false;
+
+        const { width, height } = containerRef.current.getBoundingClientRect();
+        const lastWidth = lastDimensionsRef.current.width;
+        const lastHeight = lastDimensionsRef.current.height;
+
+        if (lastWidth === 0 || lastHeight === 0) {
+            lastDimensionsRef.current = { width, height };
+            return false;
+        }
+
+        const widthChange = Math.abs(width - lastWidth) / lastWidth;
+        const heightChange = Math.abs(height - lastHeight) / lastHeight;
+
+        if (widthChange > 0.1 || heightChange > 0.1) {
+            lastDimensionsRef.current = { width, height };
+            return true;
+        }
+
+        return false;
+    }, []);
+
+    const remountGlobe = useCallback(() => {
+        setIsVisible(false);
+        setTimeout(() => {
+            setKey(prev => prev + 1);
+            setIsVisible(true);
+        }, 50);
+    }, []);
+
+    useEffect(() => {
+        const handleVisibilityChange = () => {
+            if (!document.hidden) {
+                setTimeout(() => {
+                    if (checkDimensionsChange()) {
+                        remountGlobe();
+                    }
+                }, 100);
+            }
+        };
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+        return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+    }, [checkDimensionsChange, remountGlobe]);
+
+    useEffect(() => {
+        let resizeTimeout: NodeJS.Timeout;
+
+        const handleResize = () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                if (checkDimensionsChange()) {
+                    remountGlobe();
+                }
+            }, 250);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            clearTimeout(resizeTimeout);
+        };
+    }, [checkDimensionsChange, remountGlobe]);
+
+    useEffect(() => {
+        const handleOrientationChange = () => {
+            setTimeout(() => {
+                remountGlobe();
+            }, 300);
+        };
+
+        window.addEventListener('orientationchange', handleOrientationChange);
+        return () => window.removeEventListener('orientationchange', handleOrientationChange);
+    }, [remountGlobe]);
+
+    useEffect(() => {
+        const handleFocus = () => {
+            setTimeout(() => {
+                if (checkDimensionsChange()) {
+                    remountGlobe();
+                }
+            }, 100);
+        };
+
+        window.addEventListener('focus', handleFocus);
+        return () => window.removeEventListener('focus', handleFocus);
+    }, [checkDimensionsChange, remountGlobe]);
+
     return (
-        <div className="absolute max-w-[1500px] inset-0 w-full h-full overflow-visible">
-            <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b from-transparent to-github-background/50 pointer-events-none select-none z-20" />
-            <div className="absolute w-96 right-0 inset-y-0 h-full bg-gradient-to-r from-transparent to-github-background/50 pointer-events-none select-none z-20" />
-            <World globeConfig={globeConfig} data={sampleArcs} />
+        <div
+            ref={containerRef}
+            className="absolute max-w-[1500px] inset-0 w-full h-full overflow-visible"
+        >
+            <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent to-github-background/50 z-20" />
+            <div className="absolute w-96 right-0 inset-y-0 h-full bg-gradient-to-r pointer-events-none select-none from-transparent to-github-background/50 z-20" />
+            {isVisible && (
+                <div key={key} className="w-full h-full">
+                    <Canvas
+                        camera={{
+                            position: [0, 0, cameraZ],
+                            fov: 50,
+                            near: 180,
+                            far: 1800
+                        }}
+                        gl={{
+                            preserveDrawingBuffer: true,
+                            antialias: true
+                        }}
+                        style={{ width: '100%', height: '100%' }}
+                    >
+                        <World globeConfig={globeConfig} data={sampleArcs} />
+                    </Canvas>
+                </div>
+            )}
         </div>
     );
 }

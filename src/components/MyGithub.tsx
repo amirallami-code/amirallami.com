@@ -135,7 +135,7 @@ const MyGithub: React.FC = () => {
 
     return (
         <section id="github" className="section github-section relative overflow-hidden max-w-screen">
-            <div className="container section-padding relative flex flex-col lg:flex-row flex-wrap items-center justify-start">
+            <div className="container py-8 md:py-10 relative flex flex-col lg:flex-row flex-wrap items-center justify-start gap-3">
                 <div className="flex-1 min-w-1/2 flex flex-col gap-5">
                     <h2 className="section-title text-github-text">My Github</h2>
 
@@ -170,12 +170,11 @@ const MyGithub: React.FC = () => {
                                     <div className="flex flex-col gap-0 h-full">
                                         <a
                                             href={githubData.profile.html_url}
-                                            className="font-bold"
+                                            className="font-semibold"
                                         >
                                             {githubData.profile.name || githubData.profile.login}
+                                            <p className="text-muted-foreground/90 text-xs">{githubData.profile.login} · he/him</p>
                                         </a>
-
-                                        <p className="text-muted-foreground/90 text-sm">{githubData.profile.login} · he/him</p>
                                     </div>
                                 </div>
                                 <p>{githubData.profile.bio || "Front-end enthusiast by day, algorithm adventurer by night."}</p>
@@ -243,8 +242,8 @@ const MyGithub: React.FC = () => {
                     ) : null}
                 </div>
 
-                <div className="flex-1 relative w-full h-full overflow-hidden -mx-5 select-none">
-                    <div className="w-full max-w-[90%] md:max-w-[650px] h-[100vw] md:h-[500px] relative m-auto">
+                <div className="flex-1 relative w-full h-full flex items-center justify-center overflow-hidden -mx-5 select-none min-h-[400px] lg:min-h-[500px]">
+                    <div className="relative w-full h-full aspect-square max-w-[600px] mx-auto">
                         <GithubGlobeContainer />
                     </div>
                 </div>

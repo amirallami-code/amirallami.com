@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -54,7 +53,7 @@
     --spacing: 0.25rem;
 
     /*  Github section  */
-    --font-github-sans: "Mona Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-github-sans: var(--font-mona-sans), "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 
     --github-background: oklch(0.978 0.003 247.858);
     --github-border: oklch(0.887 0.012 239.924);
@@ -189,7 +188,7 @@
     --tracking-widest: calc(var(--tracking-normal) + 0.1em);
 
     /* Github section */
-    --font-github-sans: var(--font-github-sans);
+    --font-github-sans: var(--font-mona-sans), "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 
     --color-github-background: var(--github-background);
     --color-github-border: var(--github-border);
@@ -929,7 +928,7 @@
     }
 
     .github-repo {
-        @apply relative w-full max-w-6/7 md:max-w-4/6 flex flex-col gap-2 border-2 border-github-border p-3 ms-[18px] rounded-2xl;
+        @apply relative w-full max-w-6/7 sm:max-w-[400px] flex flex-col gap-2 border-2 border-github-border p-3 ms-[18px] rounded-2xl;
     }
 
     .github-repo::before {

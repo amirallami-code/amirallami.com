@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import clsx from "clsx";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -12,6 +13,34 @@ const montserrat = Montserrat({
     display: "swap",
     preload: true,
     weight: ["500", "600", "700", "800"],
+    variable: "--font-montserrat",
+});
+
+const monaSans = localFont({
+    src: [
+        {
+            path: '../../public/fonts/mona-sans/MonaSans-Regular.woff2',
+            weight: '400',
+            style: 'normal',
+        },
+        {
+            path: '../../public/fonts/mona-sans/MonaSans-Medium.woff2',
+            weight: '500',
+            style: 'normal',
+        },
+        {
+            path: '../../public/fonts/mona-sans/MonaSans-SemiBold.woff2',
+            weight: '600',
+            style: 'normal',
+        },
+        {
+            path: '../../public/fonts/mona-sans/MonaSans-Bold.woff2',
+            weight: '700',
+            style: 'normal',
+        },
+    ],
+    variable: '--font-mona-sans',
+    display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -65,22 +94,21 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             lang="en"
             suppressHydrationWarning
             data-scroll-behavior="smooth"
-            className="dark"
+            className={clsx("dark", montserrat.variable, monaSans.variable)}
         >
-            <head>
-                <title>Amirhossein Allami | Front-End Developer & UI Designer</title>
-                <meta
-                    name="description"
-                    content="Amirhossein Allami - Front-End Developer & UI Designer. Crafting modern, user-friendly web experiences with React & TypeScript. Based in Shiraz, with 3+ years of design expertise."
-                />
-            </head>
-            <body className={clsx(montserrat.className, "antialiased bg-background")}>
-                <ThemeProvider>
-                    <PageLoader />
-                    {children}
-                    <WebVitalsReporter />
-                </ThemeProvider>
-            </body>
+        <head>
+            <meta
+                name="description"
+                content="Amirhossein Allami - Front-End Developer & UI Designer. Crafting modern, user-friendly web experiences with React & TypeScript. Based in Shiraz, with 3+ years of design expertise."
+            />
+        </head>
+        <body className={clsx(montserrat.className, "antialiased bg-background")}>
+        <ThemeProvider>
+            <PageLoader />
+            {children}
+            <WebVitalsReporter />
+        </ThemeProvider>
+        </body>
         </html>
     );
 }
