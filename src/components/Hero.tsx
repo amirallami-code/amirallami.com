@@ -136,7 +136,6 @@ export const CodeBlock = ({language, filename, code, tabs = [], highlightLines =
 };
 
 const Hero = () => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     const roles = ['UI/UX Designer', 'Web Developer', 'Graphic Designer'];
     const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
     const [displayedProfession, setDisplayedProfession] = useState('');
@@ -154,7 +153,6 @@ const Hero = () => {
         timers.current.push(id);
     };
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     const typeCodeProfession = (target: string) =>
         new Promise<void>((resolve) => {
             const current = codeTypingProfession;
@@ -192,7 +190,6 @@ const Hero = () => {
             }
         });
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     const typeProfession = (target: string) =>
         new Promise<void>((resolve) => {
             const current = displayedProfession;
@@ -252,7 +249,7 @@ const Hero = () => {
 
     useEffect(() => {
         if (displayedProfession === '') setDisplayedProfession('Web Developer');
-    }, [displayedProfession]);
+    }, []);
 
     useEffect(() => {
         const cycle = async () => {
@@ -275,7 +272,7 @@ const Hero = () => {
         const id = window.setTimeout(cycle, TIMING_CONFIG.cycleStartDelay);
         timers.current.push(id);
         return () => clearTimeout(id);
-    }, [currentRoleIndex, roles, typeCodeProfession, typeProfession]);
+    }, [currentRoleIndex]);
 
     const renderTypedText = () => (
         <span className="relative">
