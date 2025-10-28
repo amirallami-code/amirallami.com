@@ -7,17 +7,11 @@ import { OrbitControls } from "@react-three/drei";
 import countries from "@/data/globe.json";
 
 declare module "@react-three/fiber" {
-    interface ThreeElements {
-        threeGlobe: ThreeElements["mesh"] & {
-            new (): ThreeGlobe;
-        };
-    }
 }
 
 extend({ ThreeGlobe: ThreeGlobe });
 
 const RING_PROPAGATION_SPEED = 3;
-const aspect = 1.2;
 const cameraZ = 300;
 
 type Position = {
@@ -119,7 +113,9 @@ export function Globe({ globeConfig, data }: WorldProps) {
     useEffect(() => {
         if (!globeRef.current && groupRef.current) {
             globeRef.current = new ThreeGlobe();
-            (groupRef.current as any).add(globeRef.current);
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
+            (groupRef.current as unknown).add(globeRef.current);
             setIsInitialized(true);
         }
     }, []);
@@ -188,15 +184,15 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
         globeRef.current
             .arcsData(data)
-            .arcStartLat((d) => (d as { startLat: number }).startLat * 1)
-            .arcStartLng((d) => (d as { startLng: number }).startLng * 1)
-            .arcEndLat((d) => (d as { endLat: number }).endLat * 1)
-            .arcEndLng((d) => (d as { endLng: number }).endLng * 1)
-            .arcColor((e: any) => (e as { color: string }).color)
-            .arcAltitude((e) => (e as { arcAlt: number }).arcAlt * 1)
+            .arcStartLat((d) => (d as { startLat: number }).startLat)
+            .arcStartLng((d) => (d as { startLng: number }).startLng)
+            .arcEndLat((d) => (d as { endLat: number }).endLat)
+            .arcEndLng((d) => (d as { endLng: number }).endLng)
+            .arcColor((e: unknown) => (e as { color: string }).color)
+            .arcAltitude((e) => (e as { arcAlt: number }).arcAlt)
             .arcStroke(() => [0.32, 0.28, 0.3][Math.round(Math.random() * 2)])
             .arcDashLength(defaultProps.arcLength)
-            .arcDashInitialGap((e) => (e as { order: number }).order * 1)
+            .arcDashInitialGap((e) => (e as { order: number }).order)
             .arcDashGap(15)
             .arcDashAnimateTime(() => defaultProps.arcTime);
 
@@ -246,7 +242,7 @@ export function WebGLRendererConfig() {
 
 export function World(props: WorldProps) {
     const { globeConfig } = props;
-    const { gl, size, camera } = useThree();
+    const { size, camera } = useThree();
     const scene = new Scene();
     scene.fog = new Fog(0x000000, 400, 2000);
 
@@ -288,33 +284,6 @@ export function World(props: WorldProps) {
         </>
     );
 }
-
-export function hexToRgb(hex: string) {
-    const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-    hex = hex.replace(shorthandRegex, function (m, r, g, b) {
-        return r + r + g + g + b + b;
-    });
-
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result
-        ? {
-            r: parseInt(result[1], 16),
-            g: parseInt(result[2], 16),
-            b: parseInt(result[3], 16),
-        }
-        : null;
-}
-
-export function genRandomNumbers(min: number, max: number, count: number) {
-    const arr = [];
-    while (arr.length < count) {
-        const r = Math.floor(Math.random() * (max - min)) + min;
-        if (arr.indexOf(r) === -1) arr.push(r);
-    }
-
-    return arr;
-}
-
 export default function GithubGlobeContainer() {
     const [key, setKey] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
