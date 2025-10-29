@@ -76,7 +76,6 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
                     content="Amirhossein Allami - Front-End Developer & UI Designer. Crafting modern, user-friendly web experiences with React & TypeScript. Based in Shiraz, with 3+ years of design expertise."
                 />
 
-                {/* Google Analytics */}
                 <Script
                     src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
                     strategy="afterInteractive"
