@@ -33,8 +33,8 @@ const Footer = () => {
         },
         {
             label: "LINKEDIN",
-            href: "https://www.linkedin.com/in/amirhosseinallami",
-            text: "in/amirhosseinallami"
+            href: "https://www.linkedin.com/in/amirallami/",
+            text: "in/amirallami"
         }
     ];
 

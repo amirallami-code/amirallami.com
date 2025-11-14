@@ -299,7 +299,7 @@ const Hero = () => {
 
     const packageJsonFile = `{
   "name": "amirallami.com",
-  "version": "2.0.0",
+  "version": "2.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -317,6 +317,8 @@ const Hero = () => {
     "@sentry/nextjs": "^10.15.0",
     "@tabler/icons-react": "^3.34.1",
     "@types/react-syntax-highlighter": "^15.5.13",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lottie-react": "^2.4.1",

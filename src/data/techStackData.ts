@@ -56,11 +56,11 @@ export const techStackData: TechStackData = {
                     name: "JavaScript",
                     fullName: "JavaScript (ES6+)",
                     icon: "https://skillicons.dev/icons?i=js",
-                    proficiency: 2,
+                    proficiency: 3,
                     features: [
-                        "DOM Manipulation",
-                        "ES6+ Features",
-                        "Async/Await"
+                        "Closures & Scope",
+                        "Promises & Async Patterns",
+                        "Functional Programming"
                     ],
                     projects: [
                         {
@@ -94,10 +94,11 @@ export const techStackData: TechStackData = {
                     name: "TypeScript",
                     fullName: "TypeScript",
                     icon: "https://skillicons.dev/icons?i=ts",
-                    proficiency: 1,
+                    proficiency: 3,
                     features: [
-                        "Static Typing",
-                        "Interface Definitions"
+                        "Advanced Generics",
+                        "Type Narrowing",
+                        "Utility Types"
                     ],
                     projects: [
                         {
@@ -118,8 +119,9 @@ export const techStackData: TechStackData = {
                     icon: "https://skillicons.dev/icons?i=react",
                     proficiency: 2,
                     features: [
-                        "Component Architecture",
-                        "React Hooks"
+                        "Custom Hooks",
+                        "Context API",
+                        "Performance Optimization"
                     ],
                     projects: [
                         {
@@ -133,10 +135,11 @@ export const techStackData: TechStackData = {
                     name: "Next.js",
                     fullName: "Next.js",
                     icon: "https://skillicons.dev/icons?i=nextjs",
-                    proficiency: 1,
+                    proficiency: 2,
                     features: [
-                        "Server-Side Rendering",
-                        "Static Site Generation"
+                        "App Router",
+                        "Server Components",
+                        "Dynamic Routing"
                     ],
                     projects: [
                         {
@@ -155,10 +158,11 @@ export const techStackData: TechStackData = {
                     name: "Tailwind CSS",
                     fullName: "Tailwind CSS",
                     icon: "https://skillicons.dev/icons?i=tailwind",
-                    proficiency: 2,
+                    proficiency: 3,
                     features: [
-                        "Utility-First CSS",
-                        "Responsive Design"
+                        "Custom Configurations",
+                        "Plugin Development",
+                        "Design System"
                     ],
                     projects: [
                         {
@@ -188,11 +192,11 @@ export const techStackData: TechStackData = {
                     name: "Git",
                     fullName: "Git Version Control",
                     icon: "https://skillicons.dev/icons?i=git",
-                    proficiency: 2,
+                    proficiency: 3,
                     features: [
-                        "Branching Strategies",
-                        "Commit Management",
-                        "Conflict Resolution"
+                        "Rebase & Cherry-pick",
+                        "Git Hooks",
+                        "Interactive Staging"
                     ],
                     projects: [
                         {
@@ -211,11 +215,11 @@ export const techStackData: TechStackData = {
                     name: "GitHub",
                     fullName: "GitHub",
                     icon: "https://skillicons.dev/icons?i=github",
-                    proficiency: 2,
+                    proficiency: 3,
                     features: [
-                        "Repository Management",
-                        "Pull Requests",
-                        "Issue Tracking"
+                        "GitHub Actions",
+                        "Code Review",
+                        "Project Management"
                     ],
                     projects: [
                         {
