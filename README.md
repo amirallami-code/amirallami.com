@@ -2,7 +2,7 @@
 
 # Amirhossein Allami | Portfolio
 
-![Version](https://img.shields.io/badge/version-2.0.0-white?style=flat-square)
+![Version](https://img.shields.io/badge/version-2.1.1-yellow?style=flat-square)
 ![Next.js](https://img.shields.io/badge/Next.js-15.4.6-black?style=flat-square&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)
