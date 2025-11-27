@@ -242,7 +242,7 @@ const Hero = () => {
   </h1>
   <div className="flex flex-wrap gap-3">
     <Link href="/#about" className="primary-button">Who Am I ?!</Link>
-    <Link href="/#contact" className="primary-button">Connect</Link>
+    <Link href="/#stay-in-touch" className="primary-button">Connect</Link>
   </div>
 </div>
 ...`;
@@ -387,7 +387,7 @@ const nextConfig: NextConfig = {
                     </h1>
                     <div className="flex flex-wrap gap-3">
                         <Link href="/#about" className="primary-button">Who Am I ?!</Link>
-                        <Link href="/#contact" className="primary-button">Connect</Link>
+                        <Link href="/#stay-in-touch" className="primary-button">Connect</Link>
                     </div>
                 </div>
 

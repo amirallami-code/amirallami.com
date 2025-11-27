@@ -264,7 +264,7 @@ const Navbar = () => {
                                             <Button
                                                 variant="ghost"
                                                 className="flex-1/2 h-10"
-                                                onClick={() => handleNavClick('contact')}
+                                                onClick={() => handleNavClick('stay-in-touch')}
                                             >
                                                 Contact Me
                                             </Button>
