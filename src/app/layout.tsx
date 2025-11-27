@@ -5,7 +5,6 @@ import clsx from "clsx";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import PageLoader from "@/components/PageLoader";
 import { WebVitalsReporter } from "@/components/WebVitalsReporter";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -19,17 +18,20 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://amirallami.com'),
-    title: "Amirhossein Allami | Front-End Developer & UI Designer",
+    title: {
+        template : "%s | amirallami.com",
+        default: "Amirhossein Allami | Front-End Developer & UI Designer,"
+    },
     description:
-        "Amirhossein Allami - Front-End Developer & UI Designer. Crafting modern, user-friendly web experiences with React & TypeScript. Based in Shiraz, with 3+ years of design expertise.",
+        "Amirhossein Allami - Front-End Developer & UI Designer. Crafting modern, user-friendly web experiences with NextJS & TypeScript. Based in Shiraz, with 3+ years of design expertise.",
     keywords: [
         "Amirhossein Allami",
         "Front-End Developer",
-        "UI Designer",
+        "Web Development",
         "React",
+        "NextJS",
         "TypeScript",
         "Portfolio",
-        "Web Development",
     ],
     authors: [{ name: "Amirhossein Allami", url: "https://amirallami.com" }],
     creator: "Amirhossein Allami",
@@ -71,29 +73,23 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             className="dark"
         >
             <head>
-                <meta
-                    name="description"
-                    content="Amirhossein Allami - Front-End Developer & UI Designer. Crafting modern, user-friendly web experiences with React & TypeScript. Based in Shiraz, with 3+ years of design expertise."
-                />
-
                 <Script
                     src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
                     strategy="afterInteractive"
                 />
                 <Script id="google-analytics" strategy="afterInteractive">
                     {`
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
-                            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-                                page_path: window.location.pathname,
-                            });
-                        `}
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                            page_path: window.location.pathname,
+                        });
+                    `}
                 </Script>
             </head>
             <body className={clsx(montserrat.className, "antialiased bg-background")}>
                 <ThemeProvider>
-                    <PageLoader />
                     {children}
                     <WebVitalsReporter />
                 </ThemeProvider>

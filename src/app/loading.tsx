@@ -1,26 +1,6 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-
 export default function PageLoader() {
-    const [loading, setLoading] = useState(true)
-    const [fadeOut, setFadeOut] = useState(false)
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setFadeOut(true)
-            setTimeout(() => setLoading(false), 100)
-        }, 200)
-
-        return () => clearTimeout(timer)
-    }, [])
-
-    if (!loading) return null
-
     return (
-        <div className={`bg-gradient-to-tl from-secondary to-primary fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300 ${
-            fadeOut ? 'opacity-0' : 'opacity-100'
-        }`}>
+        <div className={`bg-gradient-to-tl from-secondary to-primary fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300`}>
             <div className="flex flex-col items-center justify-center gap-1">
                 <div
                     aria-label="Orange and tan hamster running in a metal wheel"

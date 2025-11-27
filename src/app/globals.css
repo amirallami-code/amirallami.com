@@ -234,7 +234,9 @@
     }
 }
 
-@layer page-loader {
+@layer hamster-animation {
+
+    /*LOADER HAMSTER*/
     .wheel-and-hamster {
         @apply relative scale-75;
         width: 12em;
@@ -504,6 +506,54 @@
         to {
             transform: rotate(-1turn);
         }
+    }
+
+    /*STATIC HAMSTER FOR 404 PAGE*/
+    .hamster-404 .hamster,
+    .hamster-404 .hamster__head,
+    .hamster-404 .hamster__ear,
+    .hamster-404 .hamster__body,
+    .hamster-404 .hamster__limb--fr,
+    .hamster-404 .hamster__limb--fl,
+    .hamster-404 .hamster__limb--br,
+    .hamster-404 .hamster__limb--bl,
+    .hamster-404 .hamster__tail {
+        animation: none !important;
+    }
+
+    .hamster-404 .wheel, .hamster-404 .spoke {
+        animation: wheelSway 3s ease-in-out infinite !important;
+        transform-origin: center;
+    }
+
+    @keyframes wheelSway {
+        0% { transform: rotate(5deg); }
+        50% { transform: rotate(-5deg); }
+        100% { transform: rotate(5deg); }
+    }
+
+    .hamster-404 .hamster {
+        top: 9em !important;
+        left: 100% !important;
+        transform: translateX(-50%) !important;
+        z-index: 9;
+    }
+
+    .hamster-404 .hamster__limb--fr,
+    .hamster-404 .hamster__limb--fl,
+    .hamster-404 .hamster__limb--br,
+    .hamster-404 .hamster__limb--bl {
+        transform: rotate(0deg) !important;
+    }
+
+    .hamster-404 .hamster__head {
+        animation: headNod404 2.5s ease-in-out infinite !important;
+        transform-origin: 100% 50%;
+    }
+
+    @keyframes headNod404 {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(6deg); }
     }
 }
 
