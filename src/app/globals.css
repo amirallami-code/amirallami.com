@@ -200,6 +200,10 @@
         @apply bg-background text-foreground tracking-normal transition-colors duration-100;
     }
 
+    ::selection, ::-moz-selection{
+        @apply bg-primary text-background;
+    }
+
     b {
         @apply font-bold;
     }

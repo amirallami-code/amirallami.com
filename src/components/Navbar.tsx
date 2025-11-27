@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { twMerge } from "tailwind-merge";
 import Link from "next/link";
+import Signature from "@/components/ui/signature";
 
 // Navigation items configuration
 const navigationItems = [
@@ -174,20 +175,7 @@ const Navbar = () => {
             <div className="container h-full pr-0 lg:pr-5">
                 <div className="h-full flex items-center justify-between">
                     <div className="h-full flex items-center justify-center">
-                        <button
-                            onClick={() => scrollToSection('hero')}
-                            className="cursor-pointer"
-                            aria-label="Go to home"
-                        >
-                            <Image
-                                src={signature}
-                                alt="Amirhossein Allami signature"
-                                className="h-7 md:h-9 w-auto min-w-fit"
-                                priority
-                                width={120}
-                                aria-hidden={true}
-                            />
-                        </button>
+                        <Signature color={"#fff"} width={"150"} />
                     </div>
 
                     <div className="hidden lg:flex items-center gap-6">

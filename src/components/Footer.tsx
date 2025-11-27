@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
     DropdownMenu,
     DropdownMenuTrigger,
@@ -11,6 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import CreattieAnimation from './animation/CreattieAnimation';
+import Signature from "@/components/ui/signature";
 
 const Footer = () => {
     const [version, setVersion] = useState("Loading...");
@@ -101,10 +101,7 @@ const Footer = () => {
 
                     <div className="w-full flex flex-col items-end justify-start gap-5 mt-10">
                         <p className="font-serif font-medium tracking-wide text-secondary dark:text-chart-3">Sincerely, Amirhossein Allami.</p>
-                        <Image src={"/signature/blue.webp"} alt="Signature" width="0"
-                               height="0"
-                               sizes="200px"
-                               className="w-auto h-auto"/>
+                        <Signature color={"#507dbb"} width={"220"} />
                     </div>
                 </div>
             </div>
