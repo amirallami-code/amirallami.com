@@ -2,11 +2,11 @@
 
 # Amirhossein Allami | Portfolio
 
-![Version](https://img.shields.io/badge/version-2.1.1-yellow?style=flat-square)
-![Next.js](https://img.shields.io/badge/Next.js-15.4.6-black?style=flat-square&logo=next.js)
+![Version](https://img.shields.io/badge/version-2.3.0-white?style=flat-square)
+![Next.js](https://img.shields.io/badge/Next.js-16.0.7-black?style=flat-square&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)
-![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
+![Design License](https://img.shields.io/badge/design-proprietary-red?style=flat-square)
 ![GitHub stars](https://img.shields.io/github/stars/amirallami-code/amirallami.com?style=flat-square&color=yellow)
 
 <p align="center">
@@ -23,14 +23,20 @@
 
 ## Overview
 
-A high-performance portfolio website built with Next.js 15, React 19, and TypeScript. Features interactive 3D visualizations, real-time GitHub integration, and optimized performance with SSR/SSG.
+This repository contains the source code for my personal portfolio — a high-performance, fully custom Next.js 16 website featuring real-time integrations, 3D visualizations, and a polished UI built with React 19 and TypeScript.
 
-**Highlights:**
-- Interactive code editor with syntax highlighting
-- 3D GitHub globe powered by Three.js
-- Dark/Light theme with system detection
+> ⚠ **Important:**  
+> The **design, layout, branding, and overall visual presentation** of this portfolio are proprietary and may **not** be copied or reused.
+
+---
+
+## Highlights
+
+- Interactive code editor with typing animations
+- 3D GitHub globe (Three.js + R3F)
 - Real-time GitHub statistics
-- WCAG accessibility compliant
+- Motion-based UI animations
+- WCAG-compliant accessibility
 - Lighthouse score 95+
 
 ---
@@ -38,139 +44,59 @@ A high-performance portfolio website built with Next.js 15, React 19, and TypeSc
 ## Tech Stack
 
 **Core**
-- Next.js 15.4.6 - React framework with App Router
-- React 19.1.0 - UI library
-- TypeScript 5 - Type safety
-- Tailwind CSS 4 - Styling
+- Next.js 16.0.7
+- React 19.1.0
+- TypeScript 5
+- Tailwind CSS 4
 
 **UI & Animation**
-- Motion 12.23.12 - Animations
-- Lottie React - JSON animations
-- Three.js & React Three Fiber - 3D graphics
-- shadcn/ui - Component library
+- Motion 12
+- Lottie React
+- Three.js & React Three Fiber
+- shadcn/ui
+- Aceternity UI (third-party)
 
 **Tools**
-- Sentry - Error tracking
-- ESLint - Code quality
-- Web Vitals - Performance monitoring
+- Sentry
+- ESLint
+- Web Vitals
 
 ---
 
 ## Quick Start
 
+> ⚠ **Note:**  
+> You may view the code locally **for reference only**. Usage in your own projects is strictly prohibited.
+
 ### Prerequisites
-- Node.js 20.x or higher
-- npm, yarn, or pnpm
+- Node.js 20+
+- npm/yarn/pnpm
 
 ### Installation
-
 ```bash
-# Clone repository
 git clone https://github.com/amirallami-code/amirallami.com.git
 cd amirallami.com
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
-
-### Build for Production
-
-```bash
-npm run build
-npm run start
-```
-
----
-
-## Project Structure
-
-```
-src/
-├── app/              # Next.js App Router
-├── components/       # React components
-│   ├── ui/          # Reusable UI components
-│   └── animation/   # Animation components
-├── data/            # Static configurations
-├── hooks/           # Custom React hooks
-├── lib/             # Utilities
-└── types/           # TypeScript definitions
-```
-
----
-
-## Features
-
-- **Interactive Hero** - Dynamic code editor with typing animations
-- **3D GitHub Globe** - Real-time visualization with API integration
-- **Theme System** - Smooth dark/light mode transitions
-- **Certificate Showcase** - Auto-calculated timestamps and filtering
-- **Tech Stack Display** - Interactive skill proficiency indicators
-- **Performance** - SSR/SSG, lazy loading, optimized images
-
----
-
-## Configuration
-
-Create `.env.local` for environment variables:
-
-```env
-# Optional - for error tracking
-SENTRY_DSN=your_sentry_dsn_here
-
-# Optional - for bundle analysis
-ANALYZE=true
-```
-
----
-
-## Deployment
-
-### Vercel (Recommended)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/amirallami-code/amirallami.com)
-
-Push to `main` branch for automatic deployment.
-
-### Other Platforms
-
-Build command: `npm run build`  
-Output directory: `.next`  
-Node version: 20.x
-
----
-
-## Performance
-
-**Expected Metrics:**
-- Lighthouse: 95+
-- FCP: < 1.5s
-- LCP: < 2.5s
-- CLS: < 0.1
-
----
-
-## Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'feat: add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
-
-**Commit Convention:** Follow [Conventional Commits](https://www.conventionalcommits.org/)
-
----
-
 ## License
+### Design & Branding (Proprietary)
 
-MIT License - see [LICENSE](LICENSE) file for details.
+The overall design, layout, branding, animations, content structure, and visual presentation of this portfolio are proprietary and not available for reuse. Copying, replication, or adaptation for personal or commercial projects is strictly prohibited.
 
----
+### Third-Party Components
+
+External libraries and components (e.g., Aceternity UI, shadcn/ui, React, Next.js) remain licensed by their original authors and are not covered by this design restriction.
+
+### Source Code
+
+The repository’s source code may be viewed for learning or reference purposes only. Using the code to recreate or imitate this portfolio’s design is not permitted.
+
+For the full legal text, see: [LICENSE](https://github.com/amirallami-code/amirallami.com?tab=License-1-ov-file)
+
+MIT License (for code, if applicable)
+Some portions of the code may be under MIT License. Refer to the LICENSE file for details.
 
 ## Contact
 
@@ -185,13 +111,5 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Version History
 
-- **v2** - Complete rebuild with Next.js 15, React 19, TypeScript
+- **v2** - Complete rebuild with Next.js 16, React 19, TypeScript
 - **[v1.4.2](https://v1.amirallami.com)** - Legacy vanilla HTML/CSS/JS version
-
----
-
-<div align="center">
-
-Made with ❤️ by [Amirhossein Allami](https://github.com/amirallami-code)
-
-</div>
