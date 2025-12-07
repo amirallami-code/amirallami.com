@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import {
     Sheet,
@@ -11,8 +10,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import { Menu, House, User, Code, CircleStar, Github, Mail } from 'lucide-react';
-import signature from '@/../public/signature/default.webp';
+import { LucideIcon, Menu, House, User, Code, CircleStar, Github, Mail } from 'lucide-react';
 import { useThemeContext } from '@/components/ThemeProvider';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -21,14 +19,59 @@ import Link from "next/link";
 import Signature from "@/components/ui/signature";
 
 // Navigation items configuration
-const navigationItems = [
+type NavigationItemType = {
+    id: string;
+    label: string;
+    icon: LucideIcon;
+};
+const navigationItems: NavigationItemType[] = [
     { id: 'hero', label: 'Hero', icon: House },
     { id: 'about', label: 'About me', icon: User },
     { id: 'tech-stack', label: 'Tech Stack & Projects', icon: Code },
     { id: 'certificates', label: 'Certificates', icon: CircleStar },
     { id: 'github', label: 'Github', icon: Github },
     { id: 'stay-in-touch', label: 'Stay in touch', icon: Mail },
-] as const;
+];
+
+const useScrollSpy = () => {
+    const [activeSection, setActiveSection] = useState<string>(navigationItems[0].id);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = document.querySelectorAll('section');
+            const scrollPos = window.scrollY + 100;
+
+            for (const section of sections) {
+                const top = section.offsetTop;
+                const bottom = top + section.offsetHeight;
+
+                if (scrollPos >= top && scrollPos < bottom) {
+                    setActiveSection(section.id);
+                    break;
+                }
+            }
+        };
+
+        handleScroll();
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    return activeSection;
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 const ThemeSwitcher = () => {
     const { theme, toggleTheme, mounted } = useThemeContext();
@@ -88,42 +131,6 @@ const ThemeSwitcher = () => {
     );
 };
 
-const useScrollSpy = (sectionIds: readonly string[], offset: number = 100) => {
-    const [activeSection, setActiveSection] = useState<string>('');
-
-    useEffect(() => {
-        let ticking = false;
-
-        const handleScroll = () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    const scrollPosition = window.scrollY + offset;
-
-                    for (const id of sectionIds) {
-                        const element = document.getElementById(id);
-                        if (element) {
-                            const { offsetTop, offsetHeight } = element;
-                            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                                setActiveSection(id);
-                                break;
-                            }
-                        }
-                    }
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        };
-
-        handleScroll();
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [sectionIds, offset]);
-
-    return activeSection;
-};
-
 const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -135,12 +142,11 @@ const scrollToSection = (sectionId: string) => {
     }
 };
 
-const Navbar = () => {
+const Header = () => {
     const [isSheetOpen, setIsSheetOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
-    const sectionIds = useMemo(() => navigationItems.map(item => item.id), []);
-    const activeSection = useScrollSpy(sectionIds, 120);
+    const activeSection = useScrollSpy();
 
     const handleNavClick = useCallback((sectionId: string) => {
         scrollToSection(sectionId);
@@ -166,106 +172,108 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav
-            className={twMerge(
-                "fixed w-full h-20 z-20 top-0 start-0 transition-all duration-200",
-                scrolled && "bg-gradient-to-b from-primary/90 via-primary/70 to-primary/50 backdrop-blur-md"
-            )}
-        >
-            <div className="container h-full pr-0 lg:pr-5">
-                <div className="h-full flex items-center justify-between">
-                    <div className="h-full flex items-center justify-center">
-                        <Signature color={"#fff"} width={"150"} />
-                    </div>
+        <header>
+            <nav
+                className={twMerge(
+                    "fixed w-full h-20 z-20 top-0 start-0 transition-all duration-200",
+                    scrolled && "bg-gradient-to-b from-primary/90 via-primary/70 to-primary/50 backdrop-blur-md"
+                )}
+            >
+                <div className="container h-full pr-0 lg:pr-5">
+                    <div className="h-full flex items-center justify-between">
+                        <div className="h-full flex items-center justify-center">
+                            <Signature color={"#fff"} width={"150"} height={"35"} />
+                        </div>
 
-                    <div className="hidden lg:flex items-center gap-6">
-                        {navigationItems.map((item) => (
-                            <button
-                                key={item.id}
-                                onClick={() => handleNavClick(item.id)}
-                                className={cn(
-                                    "text-primary-foreground transition-all cursor-pointer hover:opacity-80",
-                                    activeSection === item.id && "font-extrabold tracking-wide"
-                                )}
-                                aria-label={`Navigate to ${item.label}`}
-                            >
-                                {item.label}
-                            </button>
-                        ))}
-                    </div>
+                        <div className="hidden lg:flex items-center gap-6">
+                            {navigationItems.map((item) => (
+                                <button
+                                    key={item.id}
+                                    onClick={() => handleNavClick(item.id)}
+                                    className={cn(
+                                        "text-primary-foreground transition-all cursor-pointer hover:opacity-80",
+                                        activeSection === item.id && "font-extrabold tracking-wide"
+                                    )}
+                                    aria-label={`Navigate to ${item.label}`}
+                                >
+                                    {item.label}
+                                </button>
+                            ))}
+                        </div>
 
-                    <div className="flex items-center justify-center h-full w-auto gap-2">
-                        <ThemeSwitcher />
-                        <div className="flex lg:hidden h-full w-16 rounded-2xl">
-                            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-                                <SheetTrigger className="relative h-3/4 m-auto me-2 w-full flex items-center justify-center rounded-2xl" aria-label="Open navigation menu">
-                                    <span className="absolute"></span>
-                                    <Menu className="text-background/80 w-6 h-6"/>
-                                </SheetTrigger>
-                                <SheetContent side={"bottom"} className="rounded-t-3xl gap-1 pb-3 border-none">
-                                    <SheetHeader className="relative pt-8 pb-0">
-                                        <span className="absolute w-12 h-1 top-0 right-0 left-0 m-auto mt-2.5 bg-gray-400/50 rounded-full"></span>
-                                        <SheetTitle className="px-1 text-md">Navigation</SheetTitle>
-                                    </SheetHeader>
+                        <div className="flex items-center justify-center h-full w-auto gap-2">
+                            <ThemeSwitcher />
+                            <div className="flex lg:hidden h-full w-16 rounded-2xl">
+                                <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+                                    <SheetTrigger className="relative h-3/4 m-auto me-2 w-full flex items-center justify-center rounded-2xl" aria-label="Open navigation menu">
+                                        <span className="absolute"></span>
+                                        <Menu className="text-background/80 w-6 h-6"/>
+                                    </SheetTrigger>
+                                    <SheetContent side={"bottom"} className="rounded-t-3xl gap-1 pb-3 border-none">
+                                        <SheetHeader className="relative pt-8 pb-0">
+                                            <span className="absolute w-12 h-1 top-0 right-0 left-0 m-auto mt-2.5 bg-gray-400/50 rounded-full"></span>
+                                            <SheetTitle className="px-1 text-md">Navigation</SheetTitle>
+                                        </SheetHeader>
 
-                                    <div>
-                                        <ul className="flex flex-col gap-1 px-3 py-2">
-                                            {navigationItems.map((item) => {
-                                                const Icon = item.icon;
-                                                const isActive = activeSection === item.id;
-                                                return (
-                                                    <li key={item.id}
-                                                        className={cn(
-                                                            "mobile-menu-item transition-colors",
-                                                            isActive && "active bg-primary/20 text-primary"
-                                                        )}
-                                                    >
+                                        <div>
+                                            <ul className="flex flex-col gap-1 px-3 py-2">
+                                                {navigationItems.map((item) => {
+                                                    const Icon = item.icon;
+                                                    const isActive = activeSection === item.id;
+                                                    return (
+                                                        <li key={item.id}
+                                                            className={cn(
+                                                                "mobile-menu-item transition-colors",
+                                                                isActive && "active bg-primary/20 text-primary"
+                                                            )}
+                                                        >
                                                         <span className="mobile-menu-icon-wrapper">
                                                             <Icon className={cn(
                                                                 "mobile-menu-icon",
                                                                 isActive && "text-primary"
                                                             )}/>
                                                         </span>
-                                                        <button
-                                                            onClick={() => handleNavClick(item.id)}
-                                                            className="flex-1 text-left absolute inset-0 w-full h-full ps-12 rounded-2xl"
-                                                            aria-label={`Navigate to ${item.label}`}
-                                                        >
-                                                            {item.label}
-                                                        </button>
-                                                    </li>
-                                                );
-                                            })}
-                                        </ul>
-                                    </div>
+                                                            <button
+                                                                onClick={() => handleNavClick(item.id)}
+                                                                className="flex-1 text-left absolute inset-0 w-full h-full ps-12 rounded-2xl"
+                                                                aria-label={`Navigate to ${item.label}`}
+                                                            >
+                                                                {item.label}
+                                                            </button>
+                                                        </li>
+                                                    );
+                                                })}
+                                            </ul>
+                                        </div>
 
 
-                                    <SheetFooter className="py-2">
-                                        <SheetHeader className="hidden">
-                                            <p>Quick Actions</p>
-                                        </SheetHeader>
-                                        <SheetDescription className="flex items-center justify-center gap-2">
-                                            <Link href="/cv.pdf" className="flex-1/2 min-w-fit flex items-center justify-center bg-primary text-white h-10 w-1/2 !rounded-lg" target="_blank" rel="noopener noreferrer">
-                                                Download CV
-                                            </Link>
+                                        <SheetFooter className="py-2">
+                                            <SheetHeader className="hidden">
+                                                <p>Quick Actions</p>
+                                            </SheetHeader>
+                                            <SheetDescription className="flex items-center justify-center gap-2">
+                                                <Link href="/cv.pdf" className="flex-1/2 min-w-fit flex items-center justify-center bg-primary text-white h-10 w-1/2 !rounded-lg" target="_blank" rel="noopener noreferrer">
+                                                    Download CV
+                                                </Link>
 
-                                            <Button
-                                                variant="ghost"
-                                                className="flex-1/2 h-10"
-                                                onClick={() => handleNavClick('stay-in-touch')}
-                                            >
-                                                Contact Me
-                                            </Button>
-                                        </SheetDescription>
-                                    </SheetFooter>
-                                </SheetContent>
-                            </Sheet>
+                                                <Button
+                                                    variant="ghost"
+                                                    className="flex-1/2 h-10"
+                                                    onClick={() => handleNavClick('stay-in-touch')}
+                                                >
+                                                    Contact Me
+                                                </Button>
+                                            </SheetDescription>
+                                        </SheetFooter>
+                                    </SheetContent>
+                                </Sheet>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
     )
 }
 
-export default Navbar;
+export default Header;

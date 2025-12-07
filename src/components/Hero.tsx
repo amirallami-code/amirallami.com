@@ -136,7 +136,7 @@ export const CodeBlock = ({language, filename, code, tabs = [], highlightLines =
 };
 
 const Hero = () => {
-    const roles = ['UI/UX Designer', 'Web Developer', 'Graphic Designer'];
+    const roles = ['Pixel Perfectionist', 'Web Developer', 'Graphic Designer'];
     const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
     const [displayedProfession, setDisplayedProfession] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);

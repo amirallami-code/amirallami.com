@@ -8,6 +8,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { WebVitalsReporter } from "@/components/WebVitalsReporter";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -90,7 +92,11 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             </head>
             <body className={clsx(montserrat.className, "antialiased bg-background")}>
                 <ThemeProvider>
-                    {children}
+                    <Header />
+                    <main>
+                        {children}
+                    </main>
+                    <Footer />
                     <WebVitalsReporter />
                 </ThemeProvider>
                 <Analytics />

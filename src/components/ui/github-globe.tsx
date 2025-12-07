@@ -423,7 +423,6 @@ export default function GithubGlobeContainer() {
             className="absolute max-w-[1500px] inset-0 w-full h-full overflow-visible"
         >
             <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent to-github-background/50 z-20" />
-            <div className="absolute w-96 right-0 inset-y-0 h-full bg-gradient-to-r pointer-events-none select-none from-transparent to-github-background/50 z-20" />
             {isVisible && (
                 <div key={key} className="w-full h-full">
                     <Canvas

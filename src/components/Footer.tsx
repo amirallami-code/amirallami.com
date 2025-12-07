@@ -73,8 +73,8 @@ const Footer = () => {
     }, []);
 
     return (
-        <footer id="stay-in-touch" className="section">
-            <div className="container section-padding flex flex-col lg:flex-row gap-10">
+        <footer className="section">
+            <section id="stay-in-touch" className="container section-padding flex flex-col lg:flex-row gap-10">
                 <div className="flex-1 flex items-center justify-center">
                     <CreattieAnimation
                         animationURL={'/animations/creattie-footer.json'}
@@ -101,10 +101,10 @@ const Footer = () => {
 
                     <div className="w-full flex flex-col items-end justify-start gap-5 mt-10">
                         <p className="font-serif font-medium tracking-wide text-secondary dark:text-chart-3">Sincerely, Amirhossein Allami.</p>
-                        <Signature color={"#507dbb"} width={"220"} />
+                        <Signature color={"#507dbb"} width={"220"} height={"50"} />
                     </div>
                 </div>
-            </div>
+            </section>
 
             <div className="container border-t border-github-border pt-3 pb-3">
                 <div className="flex flex-wrap justify-center md:justify-between items-center text-center gap-2 text-xs text-muted-foreground/90">
