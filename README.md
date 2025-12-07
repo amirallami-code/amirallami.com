@@ -105,7 +105,7 @@ Some portions of the code may be under MIT License. Refer to the LICENSE file fo
 - Website: [amirallami.com](https://amirallami.com)
 - Email: [amirallami.dev@gmail.com](mailto:amirallami.dev@gmail.com)
 - GitHub: [@amirallami-code](https://github.com/amirallami-code)
-- LinkedIn: [in/amirhosseinallami](https://www.linkedin.com/in/amirhosseinallami)
+- LinkedIn: [in/amirallami](https://www.linkedin.com/in/amirallami)
 
 ---
 
