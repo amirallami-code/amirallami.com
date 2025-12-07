@@ -299,7 +299,7 @@ const Hero = () => {
 
     const packageJsonFile = `{
   "name": "amirallami.com",
-  "version": "2.1.1",
+  "version": "2.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -324,11 +324,11 @@ const Hero = () => {
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.540.0",
     "motion": "^12.23.12",
-    "next": "15.4.6",
+    "next": "^16.0.7",
     "ogl": "^1.0.11",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-syntax-highlighter": "^15.6.1",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-syntax-highlighter": "^16.1.0",
     "styled-components": "^6.1.19",
     "tailwind-merge": "^3.3.1",
     "three": "^0.180.0",
@@ -342,7 +342,7 @@ const Hero = () => {
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.4.6",
+    "eslint-config-next": "^16.0.7",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.7",
     "typescript": "^5"
