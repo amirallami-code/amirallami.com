@@ -1,12 +1,18 @@
 Copyright © 2025 Amirhossein Allami
 
-This portfolio’s **design, layout, branding, and visual presentation** are
-proprietary and may not be copied, reused, or adapted for your own
-portfolio or project.
+This portfolio’s **design, layout, branding, visual structure, content
+arrangement, and overall presentation** are original work by
+Amirhossein Allami and are **not permitted for reuse**, reproduction,
+or adaptation in any personal, commercial, or portfolio project.
 
-This restriction applies only to my original design work.  
-All third-party components (e.g., from Aceternity UI, shadcn/ui, etc.)
-remain the property of their respective authors and follow their own licenses.
+This restriction applies only to my original design as a whole.
+All third-party libraries used in this project (such as Aceternity UI,
+shadcn/ui, React, Next.js, and others) remain licensed under their
+original authors and are not covered by this proprietary restriction.
 
-The source code in this repository may be viewed for educational
-purposes but may not be reused to recreate the design of this portfolio.
+You may view the source code in this repository for learning or
+reference purposes, but you may **not** use it to recreate or imitate
+the design or structure of this portfolio.
+
+For any exceptions or permissions, contact:
+amirallami.dev@gmail.com
