@@ -969,7 +969,7 @@
     }
 
     .github-repos-badge {
-        @apply absolute -left-7.5 -mt-10 md:-mt-20 z-10 text-[10px] bg-github-border px-2 py-0.5 rounded-xl -rotate-90;
+        @apply absolute -left-8 -mt-10 md:-mt-20 z-10 text-[10px] bg-github-border px-2 py-0.5 rounded-full -rotate-90;
     }
 
     .github-repo {

@@ -74,7 +74,7 @@ const MyGithub: React.FC = () => {
                 const topRepos = reposData
                     .filter((repo: GitHubRepo) => !repo.fork) // Exclude forks
                     .sort((a, b) => b.stargazers_count - a.stargazers_count) // Sort by stars desc
-                    .slice(0, 3); // Take top 2
+                    .slice(0, 3); // Take top 3
 
 
                 setGithubData({
@@ -192,7 +192,7 @@ const MyGithub: React.FC = () => {
                                 </div>
                             </div>
 
-                            <Badge className={"github-repos-badge"}><p className={"opacity-75 text-github-text"}>Top Repositories</p></Badge>
+                            <Badge className={"github-repos-badge"}><p className={"opacity-50 font-semibold text-github-text"}>Top Repositories</p></Badge>
 
                             <div className="github-repos">
                                 {githubData.repositories.map((repo: GitHubRepo) => (
