@@ -2,9 +2,9 @@
 
 # Amirhossein Allami | Portfolio
 
-![Version](https://img.shields.io/badge/version-2.3.0-white?style=flat-square)
-![Next.js](https://img.shields.io/badge/Next.js-16.0.7-black?style=flat-square&logo=next.js)
-![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=flat-square&logo=react)
+![Version](https://img.shields.io/badge/version-2.3.1-white?style=flat-square)
+![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-19.2-61DAFB?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)
 ![Design License](https://img.shields.io/badge/design-proprietary-red?style=flat-square)
 ![GitHub stars](https://img.shields.io/github/stars/amirallami-code/amirallami.com?style=flat-square&color=yellow)
