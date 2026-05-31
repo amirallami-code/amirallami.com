@@ -965,7 +965,11 @@
     }
 
     .github-repos {
-        @apply flex flex-col gap-2 items-start justify-start ml-5 pt-3 overflow-hidden;
+        @apply relative flex flex-col gap-2 items-start justify-start ml-5 pt-3 overflow-hidden;
+    }
+
+    .github-repos-badge {
+        @apply absolute -left-7.5 -mt-10 md:-mt-20 z-10 text-[10px] bg-github-border px-2 py-0.5 rounded-xl -rotate-90;
     }
 
     .github-repo {

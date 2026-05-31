@@ -5,6 +5,7 @@ import Link from "next/link";
 import dynamic from 'next/dynamic';
 import Image from "next/image";
 import { BookMarked, Star, GitFork } from 'lucide-react';
+import {Badge} from "@/components/ui/badge";
 
 const GithubGlobeContainer = dynamic(() => import('./ui/github-globe'), {
     ssr: false,
@@ -73,7 +74,7 @@ const MyGithub: React.FC = () => {
                 const topRepos = reposData
                     .filter((repo: GitHubRepo) => !repo.fork) // Exclude forks
                     .sort((a, b) => b.stargazers_count - a.stargazers_count) // Sort by stars desc
-                    .slice(0, 2); // Take top 2
+                    .slice(0, 3); // Take top 2
 
 
                 setGithubData({
@@ -154,7 +155,7 @@ const MyGithub: React.FC = () => {
                             <span className="sr-only">Loading...</span>
                         </div>
                     ) : githubData ? (
-                        <div className="flex flex-col items-start justify-center gap-0 font-github-sans font-medium">
+                        <div className="relative flex flex-col items-start justify-center gap-0 font-github-sans font-medium">
                             <div className="w-fit flex flex-col gap-2 border-2 border-github-border p-3 rounded-2xl">
                                 <div className="w-full flex flex-row gap-3 items-center">
                                     <Image
@@ -190,6 +191,8 @@ const MyGithub: React.FC = () => {
                                     </p>
                                 </div>
                             </div>
+
+                            <Badge className={"github-repos-badge"}><p className={"opacity-75 text-github-text"}>Top Repositories</p></Badge>
 
                             <div className="github-repos">
                                 {githubData.repositories.map((repo: GitHubRepo) => (
