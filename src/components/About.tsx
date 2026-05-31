@@ -8,7 +8,7 @@ const About = () => {
                     <div className="about-wrapper md:!gap-3">
                         <h2 className="section-title">About me</h2>
                         <p>
-                            I&#39;m Amirhossein, a front-end developer accepting new projects and collaboratios. I combine my design expertise with modern web development skills to create exceptional digital experiences that users love and businesses need.
+                            I&#39;m Amir, a front-end developer accepting new projects and collaboratios. I combine my design expertise with modern web development skills to create exceptional digital experiences that users love and businesses need.
                         </p>
                     </div>
 
@@ -22,7 +22,7 @@ const About = () => {
                     <div className="about-wrapper">
                         <b className="text-xl">Background</b>
                         <p>
-                            I Started my work with web design which then evolved into web development. I am also pursuing my Computer Science degree (completing 2029). My professional experience at NeuroTRACT gives me a unique perspective on building user-focused interfaces.
+                            I Started my work with web design which then evolved into web development. I am also pursuing my Computer Engineering degree (completing 2029). My professional experience at NeuroTRACT gives me a unique perspective on building user-focused interfaces.
                         </p>
                     </div>
 

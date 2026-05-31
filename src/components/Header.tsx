@@ -252,12 +252,11 @@ const Header = () => {
                                                 <p>Quick Actions</p>
                                             </SheetHeader>
                                             <SheetDescription className="flex items-center justify-center gap-2">
-                                                <Link href="/cv.pdf" className="flex-1/2 min-w-fit flex items-center justify-center bg-primary text-white h-10 w-1/2 !rounded-lg" target="_blank" rel="noopener noreferrer">
-                                                    Download CV
-                                                </Link>
+                                                {/*<Link href="/cv.pdf" className="flex-1/2 min-w-fit flex items-center justify-center bg-primary text-white h-10 w-1/2 !rounded-lg" target="_blank" rel="noopener noreferrer">*/}
+                                                {/*    Download CV*/}
+                                                {/*</Link>*/}
 
                                                 <Button
-                                                    variant="ghost"
                                                     className="flex-1/2 h-10"
                                                     onClick={() => handleNavClick('stay-in-touch')}
                                                 >

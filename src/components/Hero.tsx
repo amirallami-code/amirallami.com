@@ -299,7 +299,7 @@ const Hero = () => {
 
     const packageJsonFile = `{
   "name": "amirallami.com",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -324,7 +324,7 @@ const Hero = () => {
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.540.0",
     "motion": "^12.23.12",
-    "next": "^16.0.7",
+    "next": "^16.2.6",
     "ogl": "^1.0.11",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
