@@ -27,14 +27,14 @@ const Footer = () => {
             text: "@amirallami-code"
         },
         {
-            label: "TELEGRAM",
-            href: "https://t.me/amirhosseinallami",
-            text: "t.me/@amirhosseinallami"
-        },
-        {
             label: "LINKEDIN",
             href: "https://www.linkedin.com/in/amirallami/",
             text: "in/amirallami"
+        },
+        {
+            label: "TELEGRAM",
+            href: "https://t.me/khodeamiroo",
+            text: "t.me/@khodeamiroo"
         }
     ];
 
